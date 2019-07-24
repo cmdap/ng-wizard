@@ -6,10 +6,11 @@ The NgWizard component is a simple wizard/stepper component for
 ## Installation
 The NgWizard component is available as an NPM package. It has a single
 (peer)dependency on `material-icons` for displaying
-[Material icons](https://material.io/tools/icons).  
+[Material icons](https://material.io/tools/icons) as well as some peer
+dependencies on Angular packages.  
 To install the NgWizard component in your Angular project directory run:
 ```
-$ npm install @cm/ng-wizard material-icons
+$ npm install ng-wizard material-icons
 ```
 
 Then you can add a route for the `NgWizardComponent` to your Angular
@@ -20,7 +21,7 @@ can look like this:
 ```typescript
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { NgWizardComponent } from '@cm/ng-wizard';
+import { NgWizardComponent } from 'ng-wizard';
 import { Step1Component } from './step1/step1.component';
 import { Step2Component } from './step2/step2.component';
 
@@ -48,7 +49,7 @@ are all set.
 A minimal step component file can look like this:
 ```typescript
 import { Component } from '@angular/core';
-import { NgWizardStep } from '@cm/ng-wizard';
+import { NgWizardStep } from 'ng-wizard';
 
 @Component({
   selector: 'app-step1',
