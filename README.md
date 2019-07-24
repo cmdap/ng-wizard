@@ -1,11 +1,11 @@
 # NgWizard
-The NgWizard component is a simple Wizard/Stepper component for
+The NgWizard component is a simple wizard/stepper component for
 [Angular](https://angular.io) 7 utilizing
 [Angular Routing](https://angular.io/guide/router) for navigation.
 
 ## Installation
 The NgWizard component is available as an NPM package. It has a single
-dependency on `material-icons` for displaying
+(peer)dependency on `material-icons` for displaying
 [Material icons](https://material.io/tools/icons).  
 To install the NgWizard component in your Angular project directory run:
 ```
@@ -13,7 +13,7 @@ $ npm install @cm/ng-wizard material-icons
 ```
 
 Then you can add a route for the `NgWizardComponent` to your Angular
-router configuration with each step in the wizard asa child route.
+router configuration with each step in the wizard as a child route.
 
 For example, your `app-routing.module.ts` file for a wizard with 2 steps
 can look like this:
