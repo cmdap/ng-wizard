@@ -1,0 +1,14 @@
+<div class="ng-wizard-buttons-container">
+  <div *ngIf="currentStepData$ | async as currentStepData" class="ng-wizard-buttons">
+    <button *ngIf="currentStepData.previousStep"
+            (click)="goToPreviousStep()"
+            class="ng-wizard-button-previous">
+      Previous
+    </button>
+    <button *ngIf="currentStepData.nextStep"
+            (click)="goToNextStep()"
+            class="ng-wizard-button-next">
+      Next
+    </button>
+  </div>
+</div>

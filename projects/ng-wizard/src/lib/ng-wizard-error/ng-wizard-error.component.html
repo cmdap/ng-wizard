@@ -1,0 +1,48 @@
+<div *ngIf="error" class="ng-wizard-error">
+  <i class="material-icons ng-wizard-error-icon">error_outline</i>
+  <div [ngSwitch]="error.type" class="ng-wizard-error-message">
+
+    <!-- NO_WIZARD_ROUTE error -->
+
+    <span *ngSwitchCase="NgWizardErrorType.NO_WIZARD_ROUTE" class="no-wizard-route">
+      No route configuration for the {{ error.wizardComponentName }} found.<br/>
+      Add a route for the {{ error.wizardComponentName }} to your AppRoutingModule.<br/>
+      <pre>
+const routes: Routes = [
+    &#123; path: '', component: {{ error.wizardComponentName }} &#125;,
+];
+
+@NgModule(&#123;
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+&#125;)
+export class AppRoutingModule &#123; &#125;</pre>
+    </span>
+
+    <!-- NO_CHILD_ROUTES error -->
+
+    <span *ngSwitchCase="NgWizardErrorType.NO_CHILD_ROUTES" class="no-child-routes">
+      No child routes for the {{ error.wizardComponentName }} found.<br/>
+      Add at least one child route for the {{ error.wizardComponentName }} to your AppRoutingModule.<br/>
+      <pre>
+&#123; path: '{{ error.wizardPath }}', component: {{ error.wizardComponentName }}, children: [
+    &#123; path: 'step1', component: Step1Component &#125;,
+    &#123; path: '**', redirectTo: 'step1' &#125;,
+] &#125;,</pre>
+    </span>
+
+    <!-- NO_WS_INTERFACE error -->
+
+    <span *ngSwitchCase="NgWizardErrorType.NO_WS_INTERFACE" class="no-ws-interface">
+      The {{ error.stepComponentName}} does not implement the NgWizardStep interface.<br/>
+      Implement the NgWizardStep interface in your {{ error.stepComponentName}}.<br/>
+      <pre>
+@NgComponent(...)
+export class {{ error.stepComponentName }} implements NgWizardStep &#123;
+    wsOnNext() &#123;...&#125;
+    wsOnPrevious() &#123;...&#125;
+&#125;</pre>
+    </span>
+
+  </div>
+</div>

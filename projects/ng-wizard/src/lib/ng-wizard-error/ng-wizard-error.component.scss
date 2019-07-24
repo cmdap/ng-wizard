@@ -1,0 +1,29 @@
+$material-icons-font-path: '~material-icons/iconfont/';
+@import '~material-icons/iconfont/material-icons.scss';
+
+$error-red: #D71117;
+
+.ng-wizard-error {
+  display: grid;
+  grid-template-columns: 35px auto;
+  grid-column-gap: 15px;
+
+  border: solid 1px $error-red;
+  border-radius: 5px;
+
+  color: $error-red;
+  padding: 10px 10px 0 10px;
+  margin-top: 10px;
+
+  .ng-wizard-error-icon {
+    font-size: 35px;
+  }
+
+  .ng-wizard-error-message pre {
+    display: inline-block;
+    border-radius: 3px;
+    background-color: rgba(218,215,197,.4);
+    color: #4D4D4D;
+    padding: 15px;
+  }
+}

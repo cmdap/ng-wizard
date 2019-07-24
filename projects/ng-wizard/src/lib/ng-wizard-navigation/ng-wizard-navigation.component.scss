@@ -1,0 +1,66 @@
+$material-icons-font-path: '~material-icons/iconfont/';
+@import '~material-icons/iconfont/material-icons.scss';
+
+div.ng-wizard-navigation-container {
+  background-color: rgba(218,215,197,.4);
+  border-radius: 5px;
+
+  nav.ng-wizard-navigation {
+
+    ul.ng-wizard-navigation-list {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: 50px;
+
+      list-style: none;
+      padding: 0;
+
+      li.ng-wizard-navigation-list-item {
+        display: inline-block;
+        text-align: center;
+        border-right: solid 1px rgba(218,215,197,.6);
+
+        &:last-of-type {
+          border-right: none;
+        }
+
+        div {
+          display: inline-block;
+          width: 100%;
+          height: 50px;
+
+          &.ng-wizard-navigation-link {
+            cursor: pointer;
+          }
+
+          &.ng-wizard-navigation-active {
+            background-color: rgba(218,215,197,.6);
+            border-radius: 5px;
+          }
+
+          &.ng-wizard-navigation-disabled {
+            color: rgb(128,128,128);
+
+            i {
+              color: rgb(198,195,177);
+              border: solid 1px rgb(198,195,177);
+            }
+          }
+
+          i.material-icons {
+            position: relative;
+            top: 7px;
+            border: solid 1px rgb(178,175,157);
+            border-radius: 50%;
+            padding: 5px;
+          }
+
+          span.ng-wizard-navigation-label {
+            display: inline-block;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}
