@@ -1,1 +1,11 @@
-<img src="https://placeimg.com/345/345/arch" alt="Architecture">
+<div [formGroup]="form">
+  <h1>Developer profile</h1>
+  <p>
+    <label>GitHub username</label>
+    <input type="text" formControlName="gitUser" />
+  </p>
+  <p>
+    <label>Favorite GitHub project</label>
+    <input type="text" formControlName="favoriteProject" />
+  </p>
+</div>

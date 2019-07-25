@@ -9,18 +9,18 @@ import { Step5Component } from './step5/step5.component';
 
 const routes: Routes = [
   { path: '', component: NgWizardComponent, children: [
-      { path: 'step-1', component: Step1Component },
-      { path: 'step-2', component: Step2Component },
-      { path: 'step-3', component: Step3Component },
-      { path: 'step-4', component: Step4Component },
-      { path: 'step-5', component: Step5Component },
-      { path: '**', redirectTo: 'step-1' },
+      { path: 'personal', component: Step1Component },
+      { path: 'developer', component: Step2Component },
+      { path: 'angular', component: Step3Component },
+      { path: 'confirmation', component: Step4Component },
+      { path: 'done', component: Step5Component },
+      { path: '**', redirectTo: 'personal' },
   ]},
   { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

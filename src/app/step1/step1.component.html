@@ -1,1 +1,11 @@
-<img src="https://placeimg.com/345/345/animals" alt="Animals">
+<div [formGroup]="form">
+  <h1>Personal information</h1>
+  <p>
+    <label>Last name*</label>
+    <input type="text" formControlName="lastName" />
+  </p>
+  <p>
+    <label>First name*</label>
+    <input type="text" formControlName="firstName" />
+  </p>
+</div>

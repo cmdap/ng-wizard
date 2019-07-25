@@ -746,12 +746,12 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var routes = [
     { path: '', component: _projects_ng_wizard_src_lib_ng_wizard_component__WEBPACK_IMPORTED_MODULE_2__["NgWizardComponent"], children: [
-            { path: 'step-1', component: _step1_step1_component__WEBPACK_IMPORTED_MODULE_3__["Step1Component"] },
-            { path: 'step-2', component: _step2_step2_component__WEBPACK_IMPORTED_MODULE_4__["Step2Component"] },
-            { path: 'step-3', component: _step3_step3_component__WEBPACK_IMPORTED_MODULE_5__["Step3Component"] },
-            { path: 'step-4', component: _step4_step4_component__WEBPACK_IMPORTED_MODULE_6__["Step4Component"] },
-            { path: 'step-5', component: _step5_step5_component__WEBPACK_IMPORTED_MODULE_7__["Step5Component"] },
-            { path: '**', redirectTo: 'step-1' },
+            { path: 'personal', component: _step1_step1_component__WEBPACK_IMPORTED_MODULE_3__["Step1Component"] },
+            { path: 'developer', component: _step2_step2_component__WEBPACK_IMPORTED_MODULE_4__["Step2Component"] },
+            { path: 'angular', component: _step3_step3_component__WEBPACK_IMPORTED_MODULE_5__["Step3Component"] },
+            { path: 'confirmation', component: _step4_step4_component__WEBPACK_IMPORTED_MODULE_6__["Step4Component"] },
+            { path: 'done', component: _step5_step5_component__WEBPACK_IMPORTED_MODULE_7__["Step5Component"] },
+            { path: '**', redirectTo: 'personal' },
         ] },
     { path: '**', redirectTo: '' },
 ];
@@ -760,7 +760,7 @@ var AppRoutingModule = /** @class */ (function () {
     }
     AppRoutingModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
-            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(routes)],
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(routes, { useHash: true })],
             exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
         })
     ], AppRoutingModule);
@@ -789,7 +789,7 @@ module.exports = "<div class=\"wizard-container\">\r\n  <router-outlet></router-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".wizard-container {\n  max-width: 800px;\n  margin: 25px auto;\n  padding: 0 25px 15px 25px;\n  border: solid 1px lightgrey;\n  border-radius: 10px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXGRldmVudlxcbWVhblxcbmctd2l6YXJkL3NyY1xcYXBwXFxhcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxpQkFBZ0I7RUFDaEIsa0JBQWlCO0VBQ2pCLDBCQUF5QjtFQUN6Qiw0QkFBMkI7RUFDM0Isb0JBQW1CLEVBQ3BCIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLndpemFyZC1jb250YWluZXIge1xyXG4gIG1heC13aWR0aDogODAwcHg7XHJcbiAgbWFyZ2luOiAyNXB4IGF1dG87XHJcbiAgcGFkZGluZzogMCAyNXB4IDE1cHggMjVweDtcclxuICBib3JkZXI6IHNvbGlkIDFweCBsaWdodGdyZXk7XHJcbiAgYm9yZGVyLXJhZGl1czogMTBweDtcclxufVxyXG4iXX0= */"
+module.exports = ".wizard-container {\n  max-width: 800px;\n  margin: 25px auto;\n  padding: 0 25px 15px 25px;\n  border: solid 1px lightgrey;\n  border-radius: 10px; }\n\n::ng-deep label {\n  font-weight: bold;\n  margin-right: 15px; }\n\n::ng-deep input.ng-invalid.ng-touched {\n  border: solid 1px red; }\n\n::ng-deep span.error {\n  color: red;\n  margin-left: 15px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXGRldmVudlxcbWVhblxcbmctd2l6YXJkL3NyY1xcYXBwXFxhcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxpQkFBZ0I7RUFDaEIsa0JBQWlCO0VBQ2pCLDBCQUF5QjtFQUN6Qiw0QkFBMkI7RUFDM0Isb0JBQW1CLEVBQ3BCOztBQUVEO0VBQ0Usa0JBQWlCO0VBQ2pCLG1CQUFrQixFQUNuQjs7QUFFRDtFQUNFLHNCQUFxQixFQUN0Qjs7QUFFRDtFQUNFLFdBQVU7RUFDVixrQkFBaUIsRUFDbEIiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIud2l6YXJkLWNvbnRhaW5lciB7XHJcbiAgbWF4LXdpZHRoOiA4MDBweDtcclxuICBtYXJnaW46IDI1cHggYXV0bztcclxuICBwYWRkaW5nOiAwIDI1cHggMTVweCAyNXB4O1xyXG4gIGJvcmRlcjogc29saWQgMXB4IGxpZ2h0Z3JleTtcclxuICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG59XHJcblxyXG46Om5nLWRlZXAgbGFiZWwge1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gIG1hcmdpbi1yaWdodDogMTVweDtcclxufVxyXG5cclxuOjpuZy1kZWVwIGlucHV0Lm5nLWludmFsaWQubmctdG91Y2hlZCB7XHJcbiAgYm9yZGVyOiBzb2xpZCAxcHggcmVkO1xyXG59XHJcblxyXG46Om5nLWRlZXAgc3Bhbi5lcnJvciB7XHJcbiAgY29sb3I6IHJlZDtcclxuICBtYXJnaW4tbGVmdDogMTVweDtcclxufVxyXG4iXX0= */"
 
 /***/ }),
 
@@ -813,7 +813,6 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.title = 'ng-wizard-demo';
     }
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -897,6 +896,70 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/app.service.ts":
+/*!********************************!*\
+  !*** ./src/app/app.service.ts ***!
+  \********************************/
+/*! exports provided: AppService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppService", function() { return AppService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var AppService = /** @class */ (function () {
+    function AppService() {
+        this.formValues = {
+            lastName: '',
+            firstName: '',
+            gitUser: '',
+            favoriteProject: '',
+            ngVersion: 0,
+            ngRouter: false,
+        };
+    }
+    AppService.prototype.setFormValues = function (values) {
+        this.formValues = __assign({}, this.formValues, values);
+    };
+    AppService.prototype.step1IsValid = function () {
+        return this.formValues.lastName && this.formValues.firstName;
+    };
+    AppService.prototype.step2IsValid = function () {
+        return this.step1IsValid();
+    };
+    AppService.prototype.step3IsValid = function () {
+        return this.step2IsValid() && this.formValues.ngVersion >= 7;
+    };
+    AppService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], AppService);
+    return AppService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/step1/step1.component.html":
 /*!********************************************!*\
   !*** ./src/app/step1/step1.component.html ***!
@@ -904,7 +967,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<img src=\"https://placeimg.com/345/345/animals\" alt=\"Animals\">\n"
+module.exports = "<div [formGroup]=\"form\">\n  <h1>Personal information</h1>\n  <p>\n    <label>Last name*</label>\n    <input type=\"text\" formControlName=\"lastName\" />\n  </p>\n  <p>\n    <label>First name*</label>\n    <input type=\"text\" formControlName=\"firstName\" />\n  </p>\n</div>\n"
 
 /***/ }),
 
@@ -919,6 +982,8 @@ module.exports = "<img src=\"https://placeimg.com/345/345/animals\" alt=\"Animal
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Step1Component", function() { return Step1Component; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _app_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../app.service */ "./src/app/app.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -929,17 +994,35 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var Step1Component = /** @class */ (function () {
-    function Step1Component() {
+    function Step1Component(service) {
+        this.service = service;
+        this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]({
+            lastName: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
+            firstName: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
+        });
     }
-    Step1Component.prototype.wsOnNext = function () { };
+    Step1Component.prototype.ngOnInit = function () {
+        this.form.get('lastName').setValue(this.service.formValues.lastName);
+        this.form.get('firstName').setValue(this.service.formValues.firstName);
+    };
+    Step1Component.prototype.wsOnNext = function () {
+        if (!this.form.valid) {
+            this.form.get('lastName').markAsTouched();
+            this.form.get('firstName').markAsTouched();
+            return false;
+        }
+        this.service.setFormValues(this.form.value);
+    };
     Step1Component.prototype.wsOnPrevious = function () { };
     Step1Component = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-step1',
             template: __webpack_require__(/*! ./step1.component.html */ "./src/app/step1/step1.component.html"),
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_app_service__WEBPACK_IMPORTED_MODULE_2__["AppService"]])
     ], Step1Component);
     return Step1Component;
 }());
@@ -955,7 +1038,7 @@ var Step1Component = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<img src=\"https://placeimg.com/345/345/arch\" alt=\"Architecture\">\n"
+module.exports = "<div [formGroup]=\"form\">\n  <h1>Developer profile</h1>\n  <p>\n    <label>GitHub username</label>\n    <input type=\"text\" formControlName=\"gitUser\" />\n  </p>\n  <p>\n    <label>Favorite GitHub project</label>\n    <input type=\"text\" formControlName=\"favoriteProject\" />\n  </p>\n</div>\n"
 
 /***/ }),
 
@@ -970,6 +1053,9 @@ module.exports = "<img src=\"https://placeimg.com/345/345/arch\" alt=\"Architect
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Step2Component", function() { return Step2Component; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _app_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../app.service */ "./src/app/app.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -980,19 +1066,37 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
 var Step2Component = /** @class */ (function () {
-    function Step2Component() {
+    function Step2Component(service, router) {
+        this.service = service;
+        this.router = router;
+        this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]({
+            gitUser: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            favoriteProject: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+        });
     }
     Step2Component.prototype.ngOnInit = function () {
+        if (!this.service.step1IsValid()) {
+            return this.router.navigate(['personal']);
+        }
+        this.form.get('gitUser').setValue(this.service.formValues.gitUser);
+        this.form.get('favoriteProject').setValue(this.service.formValues.favoriteProject);
     };
-    Step2Component.prototype.wsOnNext = function () { };
-    Step2Component.prototype.wsOnPrevious = function () { };
+    Step2Component.prototype.wsOnNext = function () {
+        this.service.setFormValues(this.form.value);
+    };
+    Step2Component.prototype.wsOnPrevious = function () {
+        this.service.setFormValues(this.form.value);
+    };
     Step2Component = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-step2',
             template: __webpack_require__(/*! ./step2.component.html */ "./src/app/step2/step2.component.html"),
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_app_service__WEBPACK_IMPORTED_MODULE_2__["AppService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
     ], Step2Component);
     return Step2Component;
 }());
@@ -1008,7 +1112,7 @@ var Step2Component = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<img src=\"https://placeimg.com/345/345/nature\" alt=\"Nature\">\n"
+module.exports = "<div [formGroup]=\"form\">\n  <h1>Angular usage</h1>\n  <p>\n    <label>Your project's Angular version*</label>\n    <input type=\"number\" formControlName=\"ngVersion\" size=\"3\"/>\n    <span class=\"error\"\n          *ngIf=\"form.get('ngVersion').touched && !form.get('ngVersion').valid\">\n      Version must be equal to or greater than 7.</span>\n  </p>\n  <p>\n    <input type=\"checkbox\" formControlName=\"ngRouter\">\n    <label>Your projects includes Angular's Router</label>\n  </p>\n</div>\n"
 
 /***/ }),
 
@@ -1023,6 +1127,9 @@ module.exports = "<img src=\"https://placeimg.com/345/345/nature\" alt=\"Nature\
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Step3Component", function() { return Step3Component; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _app_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../app.service */ "./src/app/app.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1033,19 +1140,44 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
 var Step3Component = /** @class */ (function () {
-    function Step3Component() {
+    function Step3Component(service, router) {
+        this.service = service;
+        this.router = router;
+        this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]({
+            ngVersion: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, this.validateNgVersion]),
+            ngRouter: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+        });
     }
     Step3Component.prototype.ngOnInit = function () {
+        if (!this.service.step2IsValid()) {
+            return this.router.navigate(['developer']);
+        }
+        this.form.get('ngVersion').setValue(this.service.formValues.ngVersion);
+        this.form.get('ngRouter').setValue(this.service.formValues.ngRouter);
     };
-    Step3Component.prototype.wsOnNext = function () { };
-    Step3Component.prototype.wsOnPrevious = function () { };
+    Step3Component.prototype.wsOnNext = function () {
+        if (!this.form.valid) {
+            this.form.get('ngVersion').markAsTouched();
+            return false;
+        }
+        this.service.setFormValues(this.form.value);
+    };
+    Step3Component.prototype.wsOnPrevious = function () {
+        this.service.setFormValues(this.form.value);
+    };
+    Step3Component.prototype.validateNgVersion = function (control) {
+        return control.value && control.value >= 7 ? null : { validateNgVersion: { valid: false } };
+    };
     Step3Component = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-step3',
             template: __webpack_require__(/*! ./step3.component.html */ "./src/app/step3/step3.component.html"),
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_app_service__WEBPACK_IMPORTED_MODULE_2__["AppService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
     ], Step3Component);
     return Step3Component;
 }());
@@ -1061,7 +1193,7 @@ var Step3Component = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<img src=\"https://placeimg.com/345/345/people\" alt=\"People\">\n"
+module.exports = "<h1>Confirmation</h1>\n<table>\n  <tr>\n    <td>Last name</td>\n    <td>{{values.lastName}}</td>\n  </tr>\n  <tr>\n    <td>First name</td>\n    <td>{{values.firstName}}</td>\n  </tr>\n  <tr>\n    <td>GitHub username</td>\n    <td>{{values.gitUser}}</td>\n  </tr>\n  <tr>\n    <td>Favorite GitHub project</td>\n    <td>{{values.favoriteProject}}</td>\n  </tr>\n  <tr>\n    <td>Angular version</td>\n    <td>{{values.ngVersion}}</td>\n  </tr>\n  <tr>\n    <td>Angular router</td>\n    <td>{{values.ngRouter ? 'Yes' : 'No'}}</td>\n  </tr>\n</table>\n\n<br/><br/>\nTODO: Rename next button to 'Confirm' and previous button to 'Edit'\n"
 
 /***/ }),
 
@@ -1076,7 +1208,8 @@ module.exports = "<img src=\"https://placeimg.com/345/345/people\" alt=\"People\
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Step4Component", function() { return Step4Component; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _app_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../app.service */ "./src/app/app.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1088,13 +1221,17 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var Step4Component = /** @class */ (function () {
-    function Step4Component() {
-        this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]({
-            input: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
-        });
+    function Step4Component(service, router) {
+        this.service = service;
+        this.router = router;
     }
     Step4Component.prototype.ngOnInit = function () {
+        if (!this.service.step3IsValid()) {
+            return this.router.navigate(['angular']);
+        }
+        this.values = this.service.formValues;
     };
     Step4Component.prototype.wsOnNext = function () { };
     Step4Component.prototype.wsOnPrevious = function () { };
@@ -1103,7 +1240,7 @@ var Step4Component = /** @class */ (function () {
             selector: 'app-step4',
             template: __webpack_require__(/*! ./step4.component.html */ "./src/app/step4/step4.component.html"),
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_app_service__WEBPACK_IMPORTED_MODULE_1__["AppService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], Step4Component);
     return Step4Component;
 }());
@@ -1119,7 +1256,7 @@ var Step4Component = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<img src=\"https://placeimg.com/345/345/tech\" alt=\"Technology\">\n"
+module.exports = "<h1>All steps completed!</h1>\n<br/>\nTODO: remove previous button and disable navigation\n"
 
 /***/ }),
 

@@ -5,3 +5,17 @@
   border: solid 1px lightgrey;
   border-radius: 10px;
 }
+
+::ng-deep label {
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+::ng-deep input.ng-invalid.ng-touched {
+  border: solid 1px red;
+}
+
+::ng-deep span.error {
+  color: red;
+  margin-left: 15px;
+}

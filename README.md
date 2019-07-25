@@ -3,6 +3,9 @@ The NgWizard component is a simple wizard/stepper component for
 [Angular](https://angular.io) 7 utilizing
 [Angular Routing](https://angular.io/guide/router) for navigation.
 
+A demo can be found at
+[https://jbrems.github.io/ng-wizard/](https://jbrems.github.io/ng-wizard/).
+
 ## Installation
 The NgWizard component is available as an NPM package. It has a single
 (peer)dependency on `material-icons` for displaying
