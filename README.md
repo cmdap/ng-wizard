@@ -24,7 +24,7 @@ can look like this:
 ```typescript
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { NgWizardComponent } from 'ng-wizard';
+import { NgWizardComponent } from '@cmdap/ng-wizard';
 import { Step1Component } from './step1/step1.component';
 import { Step2Component } from './step2/step2.component';
 
@@ -52,7 +52,7 @@ are all set.
 A minimal step component file can look like this:
 ```typescript
 import { Component } from '@angular/core';
-import { NgWizardStep } from 'ng-wizard';
+import { NgWizardStep } from '@cmdap/ng-wizard';
 
 @Component({
   selector: 'app-step1',
