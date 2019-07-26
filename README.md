@@ -8,6 +8,10 @@ The NgWizard component is a simple wizard/stepper component for
 A demo can be found at
 [https://cmdap.github.io/ng-wizard/](https://cmdap.github.io/ng-wizard/).
 
+  
+
+  
+
 ## Installation
 The NgWizard component is available as an NPM package. It has a single
 (peer)dependency on `material-icons` for displaying
