@@ -11,6 +11,7 @@ A demo can be found at
   
 
   
+.
 
 ## Installation
 The NgWizard component is available as an NPM package. It has a single
