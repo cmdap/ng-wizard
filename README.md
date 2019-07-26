@@ -48,7 +48,7 @@ export class AppRoutingModule { }
 ```
 
 Finally, have your step components extend the `NgWizardStep` class or
-define the `wsIsValid`, `wsOnNext` and `wsOnPrevious` methods and you
+implement the `NgWizardStepInterface` and you
 are all set.
 
 A minimal step component file can look like this:
