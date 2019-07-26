@@ -31,16 +31,29 @@ export class AppRoutingModule &#123; &#125;</pre>
 ] &#125;,</pre>
     </span>
 
-    <!-- NO_WS_INTERFACE error -->
+    <!-- NO_WS_INHERITANCE error -->
 
     <span *ngSwitchCase="NgWizardErrorType.NO_WS_INTERFACE" class="no-ws-interface">
-      The {{ error.stepComponentName}} does not implement the NgWizardStep interface.<br/>
-      Implement the NgWizardStep interface in your {{ error.stepComponentName}}.<br/>
+      The {{ error.stepComponentName}} does not extend the NgWizardStep class or implement the
+      NgWizardStepInterface.<br/>
+      Extend the NgWizardStep class in your {{ error.stepComponentName}} or implement the
+      NgWizardStepInterface.<br/>
       <pre>
 @NgComponent(...)
-export class {{ error.stepComponentName }} implements NgWizardStep &#123;
-    wsOnNext() &#123;...&#125;
-    wsOnPrevious() &#123;...&#125;
+export class {{ error.stepComponentName }} extends NgWizardStep &#123;
+    constructor() &#123;
+        super();
+    &#125;
+&#125;</pre><br/>
+      or<br/>
+      <pre>
+@NgComponent(...)
+export class {{ error.stepComponentName }} implements NgWizardStepInterface &#123;
+    wsIsValid() &#123;
+        return true;
+    &#125;
+    wsOnNext() &#123; &#125;
+    wsOnPrevious() &#123; &#125;
 &#125;</pre>
     </span>
 

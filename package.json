@@ -1,10 +1,11 @@
 {
   "name": "ng-wizard-demo",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build ng-wizard && cpy README.md dist/ng-wizard && cpy LICENSE.txt dist/ng-wizard",
+    "build": "ng build ng-wizard && npm run copyFiles",
+    "copyFiles": "cpy README.md dist/ng-wizard && cpy ng-wizard.png dist/ng-wizard && cpy LICENSE.txt dist/ng-wizard",
     "test": "ng test ng-wizard --code-coverage",
     "lint": "ng lint ng-wizard"
   },

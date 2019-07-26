@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgWizardStep } from '../../../projects/ng-wizard/src/lib/ng-wizard-step/ng-wizard-step.interface';
+import { NgWizardStep } from '../../../projects/ng-wizard/src/lib/ng-wizard-step/ng-wizard-step';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AppService } from '../app.service';
 import { Router } from '@angular/router';
@@ -8,13 +8,15 @@ import { Router } from '@angular/router';
   selector: 'app-step3',
   templateUrl: './step3.component.html',
 })
-export class Step3Component implements OnInit, NgWizardStep {
+export class Step3Component extends NgWizardStep implements OnInit {
   public form = new FormGroup({
     ngVersion: new FormControl('', [Validators.required, this.validateNgVersion]),
     ngRouter: new FormControl(''),
   });
 
-  constructor(private service: AppService, private router: Router) { }
+  constructor(private service: AppService, private router: Router) {
+    super();
+  }
 
   ngOnInit() {
     if (!this.service.step2IsValid()) {
@@ -25,11 +27,12 @@ export class Step3Component implements OnInit, NgWizardStep {
     this.form.get('ngRouter').setValue(this.service.formValues.ngRouter);
   }
 
+  wsIsValid() {
+    this.form.get('ngVersion').markAsTouched();
+    return this.form.valid;
+  }
+
   wsOnNext() {
-    if (!this.form.valid) {
-      this.form.get('ngVersion').markAsTouched();
-      return false;
-    }
     this.service.setFormValues(this.form.value);
   }
 

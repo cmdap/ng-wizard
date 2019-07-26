@@ -18,7 +18,7 @@ module.exports = "<div class=\"ng-wizard-buttons-container\">\n  <div *ngIf=\"cu
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "div.ng-wizard-buttons-container {\n  margin-top: 25px; }\n  div.ng-wizard-buttons-container div.ng-wizard-buttons {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    grid-template-areas: \"btn-previous btn-next\"; }\n  div.ng-wizard-buttons-container div.ng-wizard-buttons button {\n      width: 150px;\n      height: 35px;\n      background-color: rgba(218, 215, 197, 0.4);\n      border: solid 1px #dad7c5;\n      border-radius: 5px;\n      cursor: pointer;\n      outline: none; }\n  div.ng-wizard-buttons-container div.ng-wizard-buttons button.ng-wizard-button-previous {\n        grid-area: btn-previous;\n        justify-self: start; }\n  div.ng-wizard-buttons-container div.ng-wizard-buttons button.ng-wizard-button-next {\n        grid-area: btn-next;\n        justify-self: end; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb2plY3RzL25nLXdpemFyZC9zcmMvbGliL25nLXdpemFyZC1idXR0b25zL0M6XFxkZXZlbnZcXG1lYW5cXG5nLXdpemFyZC9wcm9qZWN0c1xcbmctd2l6YXJkXFxzcmNcXGxpYlxcbmctd2l6YXJkLWJ1dHRvbnNcXG5nLXdpemFyZC1idXR0b25zLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsaUJBQWdCLEVBMkJqQjtFQTVCRDtJQUlJLGNBQWE7SUFDYiwrQkFBOEI7SUFDOUIsNkNBQTRDLEVBcUI3QztFQTNCSDtNQVNNLGFBQVk7TUFDWixhQUFZO01BQ1osMkNBQXNDO01BQ3RDLDBCQUFxQztNQUNyQyxtQkFBa0I7TUFDbEIsZ0JBQWU7TUFDZixjQUFhLEVBV2Q7RUExQkw7UUFrQlEsd0JBQXVCO1FBQ3ZCLG9CQUFtQixFQUNwQjtFQXBCUDtRQXVCUSxvQkFBbUI7UUFDbkIsa0JBQWlCLEVBQ2xCIiwiZmlsZSI6InByb2plY3RzL25nLXdpemFyZC9zcmMvbGliL25nLXdpemFyZC1idXR0b25zL25nLXdpemFyZC1idXR0b25zLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiZGl2Lm5nLXdpemFyZC1idXR0b25zLWNvbnRhaW5lciB7XHJcbiAgbWFyZ2luLXRvcDogMjVweDtcclxuXHJcbiAgZGl2Lm5nLXdpemFyZC1idXR0b25zIHtcclxuICAgIGRpc3BsYXk6IGdyaWQ7XHJcbiAgICBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IDFmciAxZnI7XHJcbiAgICBncmlkLXRlbXBsYXRlLWFyZWFzOiBcImJ0bi1wcmV2aW91cyBidG4tbmV4dFwiO1xyXG5cclxuICAgIGJ1dHRvbiB7XHJcbiAgICAgIHdpZHRoOiAxNTBweDtcclxuICAgICAgaGVpZ2h0OiAzNXB4O1xyXG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDIxOCwyMTUsMTk3LC40KTtcclxuICAgICAgYm9yZGVyOiBzb2xpZCAxcHggcmdiYSgyMTgsMjE1LDE5NywxKTtcclxuICAgICAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gICAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICAgIG91dGxpbmU6IG5vbmU7XHJcblxyXG4gICAgICAmLm5nLXdpemFyZC1idXR0b24tcHJldmlvdXMge1xyXG4gICAgICAgIGdyaWQtYXJlYTogYnRuLXByZXZpb3VzO1xyXG4gICAgICAgIGp1c3RpZnktc2VsZjogc3RhcnQ7XHJcbiAgICAgIH1cclxuXHJcbiAgICAgICYubmctd2l6YXJkLWJ1dHRvbi1uZXh0IHtcclxuICAgICAgICBncmlkLWFyZWE6IGJ0bi1uZXh0O1xyXG4gICAgICAgIGp1c3RpZnktc2VsZjogZW5kO1xyXG4gICAgICB9XHJcbiAgICB9XHJcbiAgfVxyXG59XHJcbiJdfQ== */"
+module.exports = "div.ng-wizard-buttons-container {\n  margin-top: 25px; }\n  div.ng-wizard-buttons-container div.ng-wizard-buttons {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    grid-template-areas: \"btn-previous btn-next\"; }\n  div.ng-wizard-buttons-container div.ng-wizard-buttons button {\n      width: 150px;\n      height: 35px;\n      background-color: #F0EFE8;\n      border: solid 1px #dad7c5;\n      border-radius: 5px;\n      cursor: pointer;\n      outline: none; }\n  div.ng-wizard-buttons-container div.ng-wizard-buttons button.ng-wizard-button-previous {\n        grid-area: btn-previous;\n        justify-self: start; }\n  div.ng-wizard-buttons-container div.ng-wizard-buttons button.ng-wizard-button-next {\n        grid-area: btn-next;\n        justify-self: end; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb2plY3RzL25nLXdpemFyZC9zcmMvbGliL25nLXdpemFyZC1idXR0b25zL0M6XFxkZXZlbnZcXG1lYW5cXG5nLXdpemFyZC9wcm9qZWN0c1xcbmctd2l6YXJkXFxzcmNcXGxpYlxcbmctd2l6YXJkLWJ1dHRvbnNcXG5nLXdpemFyZC1idXR0b25zLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsaUJBQWdCLEVBMkJqQjtFQTVCRDtJQUlJLGNBQWE7SUFDYiwrQkFBOEI7SUFDOUIsNkNBQTRDLEVBcUI3QztFQTNCSDtNQVNNLGFBQVk7TUFDWixhQUFZO01BQ1osMEJBQXlCO01BQ3pCLDBCQUFxQztNQUNyQyxtQkFBa0I7TUFDbEIsZ0JBQWU7TUFDZixjQUFhLEVBV2Q7RUExQkw7UUFrQlEsd0JBQXVCO1FBQ3ZCLG9CQUFtQixFQUNwQjtFQXBCUDtRQXVCUSxvQkFBbUI7UUFDbkIsa0JBQWlCLEVBQ2xCIiwiZmlsZSI6InByb2plY3RzL25nLXdpemFyZC9zcmMvbGliL25nLXdpemFyZC1idXR0b25zL25nLXdpemFyZC1idXR0b25zLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiZGl2Lm5nLXdpemFyZC1idXR0b25zLWNvbnRhaW5lciB7XHJcbiAgbWFyZ2luLXRvcDogMjVweDtcclxuXHJcbiAgZGl2Lm5nLXdpemFyZC1idXR0b25zIHtcclxuICAgIGRpc3BsYXk6IGdyaWQ7XHJcbiAgICBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IDFmciAxZnI7XHJcbiAgICBncmlkLXRlbXBsYXRlLWFyZWFzOiBcImJ0bi1wcmV2aW91cyBidG4tbmV4dFwiO1xyXG5cclxuICAgIGJ1dHRvbiB7XHJcbiAgICAgIHdpZHRoOiAxNTBweDtcclxuICAgICAgaGVpZ2h0OiAzNXB4O1xyXG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjRjBFRkU4O1xyXG4gICAgICBib3JkZXI6IHNvbGlkIDFweCByZ2JhKDIxOCwyMTUsMTk3LDEpO1xyXG4gICAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgICAgb3V0bGluZTogbm9uZTtcclxuXHJcbiAgICAgICYubmctd2l6YXJkLWJ1dHRvbi1wcmV2aW91cyB7XHJcbiAgICAgICAgZ3JpZC1hcmVhOiBidG4tcHJldmlvdXM7XHJcbiAgICAgICAganVzdGlmeS1zZWxmOiBzdGFydDtcclxuICAgICAgfVxyXG5cclxuICAgICAgJi5uZy13aXphcmQtYnV0dG9uLW5leHQge1xyXG4gICAgICAgIGdyaWQtYXJlYTogYnRuLW5leHQ7XHJcbiAgICAgICAganVzdGlmeS1zZWxmOiBlbmQ7XHJcbiAgICAgIH1cclxuICAgIH1cclxuICB9XHJcbn1cclxuIl19 */"
 
 /***/ }),
 
@@ -101,7 +101,7 @@ var NgWizardErrorType;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"error\" class=\"ng-wizard-error\">\n  <i class=\"material-icons ng-wizard-error-icon\">error_outline</i>\n  <div [ngSwitch]=\"error.type\" class=\"ng-wizard-error-message\">\n\n    <!-- NO_WIZARD_ROUTE error -->\n\n    <span *ngSwitchCase=\"NgWizardErrorType.NO_WIZARD_ROUTE\" class=\"no-wizard-route\">\n      No route configuration for the {{ error.wizardComponentName }} found.<br/>\n      Add a route for the {{ error.wizardComponentName }} to your AppRoutingModule.<br/>\n      <pre>\nconst routes: Routes = [\n    &#123; path: '', component: {{ error.wizardComponentName }} &#125;,\n];\n\n@NgModule(&#123;\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule]\n&#125;)\nexport class AppRoutingModule &#123; &#125;</pre>\n    </span>\n\n    <!-- NO_CHILD_ROUTES error -->\n\n    <span *ngSwitchCase=\"NgWizardErrorType.NO_CHILD_ROUTES\" class=\"no-child-routes\">\n      No child routes for the {{ error.wizardComponentName }} found.<br/>\n      Add at least one child route for the {{ error.wizardComponentName }} to your AppRoutingModule.<br/>\n      <pre>\n&#123; path: '{{ error.wizardPath }}', component: {{ error.wizardComponentName }}, children: [\n    &#123; path: 'step1', component: Step1Component &#125;,\n    &#123; path: '**', redirectTo: 'step1' &#125;,\n] &#125;,</pre>\n    </span>\n\n    <!-- NO_WS_INTERFACE error -->\n\n    <span *ngSwitchCase=\"NgWizardErrorType.NO_WS_INTERFACE\" class=\"no-ws-interface\">\n      The {{ error.stepComponentName}} does not implement the NgWizardStep interface.<br/>\n      Implement the NgWizardStep interface in your {{ error.stepComponentName}}.<br/>\n      <pre>\n@NgComponent(...)\nexport class {{ error.stepComponentName }} implements NgWizardStep &#123;\n    wsOnNext() &#123;...&#125;\n    wsOnPrevious() &#123;...&#125;\n&#125;</pre>\n    </span>\n\n  </div>\n</div>\n"
+module.exports = "<div *ngIf=\"error\" class=\"ng-wizard-error\">\r\n  <i class=\"material-icons ng-wizard-error-icon\">error_outline</i>\r\n  <div [ngSwitch]=\"error.type\" class=\"ng-wizard-error-message\">\r\n\r\n    <!-- NO_WIZARD_ROUTE error -->\r\n\r\n    <span *ngSwitchCase=\"NgWizardErrorType.NO_WIZARD_ROUTE\" class=\"no-wizard-route\">\r\n      No route configuration for the {{ error.wizardComponentName }} found.<br/>\r\n      Add a route for the {{ error.wizardComponentName }} to your AppRoutingModule.<br/>\r\n      <pre>\r\nconst routes: Routes = [\r\n    &#123; path: '', component: {{ error.wizardComponentName }} &#125;,\r\n];\r\n\r\n@NgModule(&#123;\r\n  imports: [RouterModule.forRoot(routes)],\r\n  exports: [RouterModule]\r\n&#125;)\r\nexport class AppRoutingModule &#123; &#125;</pre>\r\n    </span>\r\n\r\n    <!-- NO_CHILD_ROUTES error -->\r\n\r\n    <span *ngSwitchCase=\"NgWizardErrorType.NO_CHILD_ROUTES\" class=\"no-child-routes\">\r\n      No child routes for the {{ error.wizardComponentName }} found.<br/>\r\n      Add at least one child route for the {{ error.wizardComponentName }} to your AppRoutingModule.<br/>\r\n      <pre>\r\n&#123; path: '{{ error.wizardPath }}', component: {{ error.wizardComponentName }}, children: [\r\n    &#123; path: 'step1', component: Step1Component &#125;,\r\n    &#123; path: '**', redirectTo: 'step1' &#125;,\r\n] &#125;,</pre>\r\n    </span>\r\n\r\n    <!-- NO_WS_INHERITANCE error -->\r\n\r\n    <span *ngSwitchCase=\"NgWizardErrorType.NO_WS_INTERFACE\" class=\"no-ws-interface\">\r\n      The {{ error.stepComponentName}} does not extend the NgWizardStep class or implement the\r\n      NgWizardStepInterface.<br/>\r\n      Extend the NgWizardStep class in your {{ error.stepComponentName}} or implement the\r\n      NgWizardStepInterface.<br/>\r\n      <pre>\r\n@NgComponent(...)\r\nexport class {{ error.stepComponentName }} extends NgWizardStep &#123;\r\n    constructor() &#123;\r\n        super();\r\n    &#125;\r\n&#125;</pre><br/>\r\n      or<br/>\r\n      <pre>\r\n@NgComponent(...)\r\nexport class {{ error.stepComponentName }} implements NgWizardStepInterface &#123;\r\n    wsIsValid() &#123;\r\n        return true;\r\n    &#125;\r\n    wsOnNext() &#123; &#125;\r\n    wsOnPrevious() &#123; &#125;\r\n&#125;</pre>\r\n    </span>\r\n\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -228,7 +228,7 @@ var NoChildRoutes = /** @class */ (function (_super) {
 var NoWsInterface = /** @class */ (function (_super) {
     __extends(NoWsInterface, _super);
     function NoWsInterface(stepComponentName) {
-        var _this = _super.call(this, _ng_wizard_error_type_enum__WEBPACK_IMPORTED_MODULE_0__["NgWizardErrorType"].NO_WS_INTERFACE, "The " + stepComponentName + " does not implement the NgWizardStep interface.") || this;
+        var _this = _super.call(this, _ng_wizard_error_type_enum__WEBPACK_IMPORTED_MODULE_0__["NgWizardErrorType"].NO_WS_INTERFACE, "The " + stepComponentName + " does not extend the NgWizardStep class or implement the NgWizardStepInterface.") || this;
         _this.stepComponentName = stepComponentName;
         return _this;
     }
@@ -257,7 +257,7 @@ module.exports = "<div class=\"ng-wizard-navigation-container\">\n  <nav class=\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "@font-face {\n  font-family: \"Material Icons\";\n  font-style: normal;\n  font-weight: 400;\n  src: url('MaterialIcons-Regular.eot');\n  /* For IE6-8 */\n  src: local(\"Material Icons\"), local(\"MaterialIcons-Regular\"), url('MaterialIcons-Regular.woff2') format(\"woff2\"), url('MaterialIcons-Regular.woff') format(\"woff\"), url('MaterialIcons-Regular.ttf') format(\"truetype\"); }\n\n.material-icons {\n  font-family: \"Material Icons\";\n  font-weight: normal;\n  font-style: normal;\n  font-size: 24px;\n  display: inline-block;\n  line-height: 1;\n  text-transform: none;\n  letter-spacing: normal;\n  word-wrap: normal;\n  white-space: nowrap;\n  direction: ltr;\n  /* Support for all WebKit browsers. */\n  -webkit-font-smoothing: antialiased;\n  /* Support for Safari and Chrome. */\n  text-rendering: optimizeLegibility;\n  /* Support for Firefox. */\n  -moz-osx-font-smoothing: grayscale;\n  /* Support for IE. */\n  -webkit-font-feature-settings: 'liga';\n          font-feature-settings: 'liga'; }\n\ndiv.ng-wizard-navigation-container {\n  background-color: rgba(218, 215, 197, 0.4);\n  border-radius: 5px; }\n\ndiv.ng-wizard-navigation-container nav.ng-wizard-navigation ul.ng-wizard-navigation-list {\n    display: grid;\n    grid-template-columns: repeat(5, 1fr);\n    grid-template-rows: 50px;\n    list-style: none;\n    padding: 0; }\n\ndiv.ng-wizard-navigation-container nav.ng-wizard-navigation ul.ng-wizard-navigation-list li.ng-wizard-navigation-list-item {\n      display: inline-block;\n      text-align: center;\n      border-right: solid 1px rgba(218, 215, 197, 0.6); }\n\ndiv.ng-wizard-navigation-container nav.ng-wizard-navigation ul.ng-wizard-navigation-list li.ng-wizard-navigation-list-item:last-of-type {\n        border-right: none; }\n\ndiv.ng-wizard-navigation-container nav.ng-wizard-navigation ul.ng-wizard-navigation-list li.ng-wizard-navigation-list-item div {\n        display: inline-block;\n        width: 100%;\n        height: 50px; }\n\ndiv.ng-wizard-navigation-container nav.ng-wizard-navigation ul.ng-wizard-navigation-list li.ng-wizard-navigation-list-item div.ng-wizard-navigation-link {\n          cursor: pointer; }\n\ndiv.ng-wizard-navigation-container nav.ng-wizard-navigation ul.ng-wizard-navigation-list li.ng-wizard-navigation-list-item div.ng-wizard-navigation-active {\n          background-color: rgba(218, 215, 197, 0.6);\n          border-radius: 5px; }\n\ndiv.ng-wizard-navigation-container nav.ng-wizard-navigation ul.ng-wizard-navigation-list li.ng-wizard-navigation-list-item div.ng-wizard-navigation-disabled {\n          color: gray; }\n\ndiv.ng-wizard-navigation-container nav.ng-wizard-navigation ul.ng-wizard-navigation-list li.ng-wizard-navigation-list-item div.ng-wizard-navigation-disabled i {\n            color: #c6c3b1;\n            border: solid 1px #c6c3b1; }\n\ndiv.ng-wizard-navigation-container nav.ng-wizard-navigation ul.ng-wizard-navigation-list li.ng-wizard-navigation-list-item div i.material-icons {\n          position: relative;\n          top: 7px;\n          border: solid 1px #b2af9d;\n          border-radius: 50%;\n          padding: 5px; }\n\ndiv.ng-wizard-navigation-container nav.ng-wizard-navigation ul.ng-wizard-navigation-list li.ng-wizard-navigation-list-item div span.ng-wizard-navigation-label {\n          display: inline-block;\n          margin-left: 10px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb2plY3RzL25nLXdpemFyZC9zcmMvbGliL25nLXdpemFyZC1uYXZpZ2F0aW9uL0M6XFxkZXZlbnZcXG1lYW5cXG5nLXdpemFyZC9ub2RlX21vZHVsZXNcXG1hdGVyaWFsLWljb25zXFxpY29uZm9udFxcbWF0ZXJpYWwtaWNvbnMuc2NzcyIsInByb2plY3RzL25nLXdpemFyZC9zcmMvbGliL25nLXdpemFyZC1uYXZpZ2F0aW9uL0M6XFxkZXZlbnZcXG1lYW5cXG5nLXdpemFyZC9ub2RlX21vZHVsZXNcXG1hdGVyaWFsLWljb25zXFxpY29uZm9udFxcdmFyaWFibGVzLnNjc3MiLCJwcm9qZWN0cy9uZy13aXphcmQvc3JjL2xpYi9uZy13aXphcmQtbmF2aWdhdGlvbi9DOlxcZGV2ZW52XFxtZWFuXFxuZy13aXphcmQvbm9kZV9tb2R1bGVzXFxtYXRlcmlhbC1pY29uc1xcaWNvbmZvbnRcXG1peGlucy5zY3NzIiwicHJvamVjdHMvbmctd2l6YXJkL3NyYy9saWIvbmctd2l6YXJkLW5hdmlnYXRpb24vQzpcXGRldmVudlxcbWVhblxcbmctd2l6YXJkL3Byb2plY3RzXFxuZy13aXphcmRcXHNyY1xcbGliXFxuZy13aXphcmQtbmF2aWdhdGlvblxcbmctd2l6YXJkLW5hdmlnYXRpb24uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBR0E7RUFDRSw4QkNDMkM7RURBM0MsbUJBQWtCO0VBQ2xCLGlCQUFnQjtFQUNoQixzQ0FBNEM7RUFBRSxlQUFlO0VBQzdELHdOQUc0RCxFQUFBOztBQUc5RDtFRUlFLDhCRGIyQztFQ2MzQyxvQkFBbUI7RUFDbkIsbUJBQWtCO0VBQ2xCLGdCRGpCNkI7RUNrQjdCLHNCQUFxQjtFQUNyQixlQUFjO0VBQ2QscUJBQW9CO0VBQ3BCLHVCQUFzQjtFQUN0QixrQkFBaUI7RUFDakIsb0JBQW1CO0VBQ25CLGVBQWM7RUFFZCxzQ0FBc0M7RUFDdEMsb0NBQW1DO0VBQ25DLG9DQUFvQztFQUNwQyxtQ0FBa0M7RUFFbEMsMEJBQTBCO0VBQzFCLG1DQUFrQztFQUVsQyxxQkFBcUI7RUFDckIsc0NBQTZCO1VBQTdCLDhCQUE2QixFRnZCOUI7O0FHYkQ7RUFDRSwyQ0FBc0M7RUFDdEMsbUJBQWtCLEVBNERuQjs7QUE5REQ7SUFPTSxjQUFhO0lBQ2Isc0NBQXFDO0lBQ3JDLHlCQUF3QjtJQUV4QixpQkFBZ0I7SUFDaEIsV0FBVSxFQWdEWDs7QUE1REw7TUFlUSxzQkFBcUI7TUFDckIsbUJBQWtCO01BQ2xCLGlEQUE0QyxFQTBDN0M7O0FBM0RQO1FBb0JVLG1CQUFrQixFQUNuQjs7QUFyQlQ7UUF3QlUsc0JBQXFCO1FBQ3JCLFlBQVc7UUFDWCxhQUFZLEVBZ0NiOztBQTFEVDtVQTZCWSxnQkFBZSxFQUNoQjs7QUE5Qlg7VUFpQ1ksMkNBQXNDO1VBQ3RDLG1CQUFrQixFQUNuQjs7QUFuQ1g7VUFzQ1ksWUFBdUIsRUFNeEI7O0FBNUNYO1lBeUNjLGVBQXVCO1lBQ3ZCLDBCQUFrQyxFQUNuQzs7QUEzQ2I7VUErQ1ksbUJBQWtCO1VBQ2xCLFNBQVE7VUFDUiwwQkFBa0M7VUFDbEMsbUJBQWtCO1VBQ2xCLGFBQVksRUFDYjs7QUFwRFg7VUF1RFksc0JBQXFCO1VBQ3JCLGtCQUFpQixFQUNsQiIsImZpbGUiOiJwcm9qZWN0cy9uZy13aXphcmQvc3JjL2xpYi9uZy13aXphcmQtbmF2aWdhdGlvbi9uZy13aXphcmQtbmF2aWdhdGlvbi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJ3ZhcmlhYmxlcyc7XG5AaW1wb3J0ICdtaXhpbnMnO1xuXG5AZm9udC1mYWNlIHtcbiAgZm9udC1mYW1pbHk6ICRtYXRlcmlhbC1pY29ucy1mb250LWZhbWlseTtcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LXdlaWdodDogNDAwO1xuICBzcmM6IHVybCgnI3skbWF0ZXJpYWwtaWNvbnMtZm9udC1maWxlfS5lb3QnKTsgLyogRm9yIElFNi04ICovXG4gIHNyYzogbG9jYWwoJG1hdGVyaWFsLWljb25zLWZvbnQtZmFtaWx5KSwgbG9jYWwoJG1hdGVyaWFsLWljb25zLWZvbnQtbmFtZSksXG4gICAgdXJsKCcjeyRtYXRlcmlhbC1pY29ucy1mb250LWZpbGV9LndvZmYyJykgZm9ybWF0KCd3b2ZmMicpLFxuICAgIHVybCgnI3skbWF0ZXJpYWwtaWNvbnMtZm9udC1maWxlfS53b2ZmJykgZm9ybWF0KCd3b2ZmJyksXG4gICAgdXJsKCcjeyRtYXRlcmlhbC1pY29ucy1mb250LWZpbGV9LnR0ZicpIGZvcm1hdCgndHJ1ZXR5cGUnKTtcbn1cblxuLm1hdGVyaWFsLWljb25zIHtcbiAgQGluY2x1ZGUgbWF0ZXJpYWwtaWNvbnMoKTtcbn1cbiIsIkBpbXBvcnQgJ2NvZGVwb2ludHMuc2Nzcyc7XG5cbiRtYXRlcmlhbC1pY29ucy1mb250LXBhdGg6ICcnICFkZWZhdWx0O1xuJG1hdGVyaWFsLWljb25zLWZvbnQtbmFtZTogJ01hdGVyaWFsSWNvbnMtUmVndWxhcicgIWRlZmF1bHQ7XG4kbWF0ZXJpYWwtaWNvbnMtZm9udC1zaXplOiAyNHB4ICFkZWZhdWx0O1xuJG1hdGVyaWFsLWljb25zLWZvbnQtZmFtaWx5OiAnTWF0ZXJpYWwgSWNvbnMnICFkZWZhdWx0O1xuXG4kbWF0ZXJpYWwtaWNvbnMtZm9udC1maWxlOiAkbWF0ZXJpYWwtaWNvbnMtZm9udC1wYXRoICsgJG1hdGVyaWFsLWljb25zLWZvbnQtbmFtZTtcbiIsIkBmdW5jdGlvbiBtYXRlcmlhbC1pY29ucy1zdHItcmVwbGFjZSgkc3RyaW5nLCAkc2VhcmNoLCAkcmVwbGFjZTogJycpIHtcbiAgJGluZGV4OiBzdHItaW5kZXgoJHN0cmluZywgJHNlYXJjaCk7XG5cbiAgQGlmICRpbmRleCB7XG4gICAgQHJldHVybiBzdHItc2xpY2UoJHN0cmluZywgMSwgJGluZGV4IC0gMSkgKyAkcmVwbGFjZSArIG1hdGVyaWFsLWljb25zLXN0ci1yZXBsYWNlKHN0ci1zbGljZSgkc3RyaW5nLCAkaW5kZXggKyBzdHItbGVuZ3RoKCRzZWFyY2gpKSwgJHNlYXJjaCwgJHJlcGxhY2UpO1xuICB9XG5cbiAgQHJldHVybiAkc3RyaW5nO1xufVxuXG5AZnVuY3Rpb24gbWF0ZXJpYWwtaWNvbnMtY29udGVudCgkY29kZXBvaW50KSB7XG4gIEByZXR1cm4gdW5xdW90ZSgnXCJcXFxcI3skY29kZXBvaW50fVwiJyk7XG59XG5cbkBtaXhpbiBtYXRlcmlhbC1pY29ucyhcbiAgJGZvbnQtc2l6ZTogJG1hdGVyaWFsLWljb25zLWZvbnQtc2l6ZSxcbiAgJGZvbnQtZmFtaWx5OiAkbWF0ZXJpYWwtaWNvbnMtZm9udC1mYW1pbHlcbikge1xuICBmb250LWZhbWlseTogJGZvbnQtZmFtaWx5O1xuICBmb250LXdlaWdodDogbm9ybWFsO1xuICBmb250LXN0eWxlOiBub3JtYWw7XG4gIGZvbnQtc2l6ZTogJGZvbnQtc2l6ZTtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBsaW5lLWhlaWdodDogMTtcbiAgdGV4dC10cmFuc2Zvcm06IG5vbmU7XG4gIGxldHRlci1zcGFjaW5nOiBub3JtYWw7XG4gIHdvcmQtd3JhcDogbm9ybWFsO1xuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuICBkaXJlY3Rpb246IGx0cjtcblxuICAvKiBTdXBwb3J0IGZvciBhbGwgV2ViS2l0IGJyb3dzZXJzLiAqL1xuICAtd2Via2l0LWZvbnQtc21vb3RoaW5nOiBhbnRpYWxpYXNlZDtcbiAgLyogU3VwcG9ydCBmb3IgU2FmYXJpIGFuZCBDaHJvbWUuICovXG4gIHRleHQtcmVuZGVyaW5nOiBvcHRpbWl6ZUxlZ2liaWxpdHk7XG5cbiAgLyogU3VwcG9ydCBmb3IgRmlyZWZveC4gKi9cbiAgLW1vei1vc3gtZm9udC1zbW9vdGhpbmc6IGdyYXlzY2FsZTtcblxuICAvKiBTdXBwb3J0IGZvciBJRS4gKi9cbiAgZm9udC1mZWF0dXJlLXNldHRpbmdzOiAnbGlnYSc7XG59XG5cbkBtaXhpbiBtYXRlcmlhbC1pY29uKCRuYW1lLCAkcHNldWRvOiAnYmVmb3JlJykge1xuICAkY29kZXBvaW50OiBtYXAtZ2V0KCRtYXRlcmlhbC1pY29ucy1jb2RlcG9pbnRzLCAkbmFtZSk7XG5cbiAgJjojeyRwc2V1ZG99IHtcbiAgICBjb250ZW50OiBtYXRlcmlhbC1pY29ucy1jb250ZW50KCRjb2RlcG9pbnQpO1xuICB9XG59XG4iLCIkbWF0ZXJpYWwtaWNvbnMtZm9udC1wYXRoOiAnfm1hdGVyaWFsLWljb25zL2ljb25mb250Lyc7XHJcbkBpbXBvcnQgJ35tYXRlcmlhbC1pY29ucy9pY29uZm9udC9tYXRlcmlhbC1pY29ucy5zY3NzJztcclxuXHJcbmRpdi5uZy13aXphcmQtbmF2aWdhdGlvbi1jb250YWluZXIge1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMjE4LDIxNSwxOTcsLjQpO1xyXG4gIGJvcmRlci1yYWRpdXM6IDVweDtcclxuXHJcbiAgbmF2Lm5nLXdpemFyZC1uYXZpZ2F0aW9uIHtcclxuXHJcbiAgICB1bC5uZy13aXphcmQtbmF2aWdhdGlvbi1saXN0IHtcclxuICAgICAgZGlzcGxheTogZ3JpZDtcclxuICAgICAgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiByZXBlYXQoNSwgMWZyKTtcclxuICAgICAgZ3JpZC10ZW1wbGF0ZS1yb3dzOiA1MHB4O1xyXG5cclxuICAgICAgbGlzdC1zdHlsZTogbm9uZTtcclxuICAgICAgcGFkZGluZzogMDtcclxuXHJcbiAgICAgIGxpLm5nLXdpemFyZC1uYXZpZ2F0aW9uLWxpc3QtaXRlbSB7XHJcbiAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgICAgICBib3JkZXItcmlnaHQ6IHNvbGlkIDFweCByZ2JhKDIxOCwyMTUsMTk3LC42KTtcclxuXHJcbiAgICAgICAgJjpsYXN0LW9mLXR5cGUge1xyXG4gICAgICAgICAgYm9yZGVyLXJpZ2h0OiBub25lO1xyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgZGl2IHtcclxuICAgICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICAgICAgaGVpZ2h0OiA1MHB4O1xyXG5cclxuICAgICAgICAgICYubmctd2l6YXJkLW5hdmlnYXRpb24tbGluayB7XHJcbiAgICAgICAgICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAmLm5nLXdpemFyZC1uYXZpZ2F0aW9uLWFjdGl2ZSB7XHJcbiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMjE4LDIxNSwxOTcsLjYpO1xyXG4gICAgICAgICAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgICAgICAgICB9XHJcblxyXG4gICAgICAgICAgJi5uZy13aXphcmQtbmF2aWdhdGlvbi1kaXNhYmxlZCB7XHJcbiAgICAgICAgICAgIGNvbG9yOiByZ2IoMTI4LDEyOCwxMjgpO1xyXG5cclxuICAgICAgICAgICAgaSB7XHJcbiAgICAgICAgICAgICAgY29sb3I6IHJnYigxOTgsMTk1LDE3Nyk7XHJcbiAgICAgICAgICAgICAgYm9yZGVyOiBzb2xpZCAxcHggcmdiKDE5OCwxOTUsMTc3KTtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgICAgfVxyXG5cclxuICAgICAgICAgIGkubWF0ZXJpYWwtaWNvbnMge1xyXG4gICAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICAgICAgICAgIHRvcDogN3B4O1xyXG4gICAgICAgICAgICBib3JkZXI6IHNvbGlkIDFweCByZ2IoMTc4LDE3NSwxNTcpO1xyXG4gICAgICAgICAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgICAgICAgICAgIHBhZGRpbmc6IDVweDtcclxuICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICBzcGFuLm5nLXdpemFyZC1uYXZpZ2F0aW9uLWxhYmVsIHtcclxuICAgICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgICAgICBtYXJnaW4tbGVmdDogMTBweDtcclxuICAgICAgICAgIH1cclxuICAgICAgICB9XHJcbiAgICAgIH1cclxuICAgIH1cclxuICB9XHJcbn1cclxuIl19 */"
+module.exports = "@font-face {\n  font-family: \"Material Icons\";\n  font-style: normal;\n  font-weight: 400;\n  src: url('MaterialIcons-Regular.eot');\n  /* For IE6-8 */\n  src: local(\"Material Icons\"), local(\"MaterialIcons-Regular\"), url('MaterialIcons-Regular.woff2') format(\"woff2\"), url('MaterialIcons-Regular.woff') format(\"woff\"), url('MaterialIcons-Regular.ttf') format(\"truetype\"); }\n\n.material-icons {\n  font-family: \"Material Icons\";\n  font-weight: normal;\n  font-style: normal;\n  font-size: 24px;\n  display: inline-block;\n  line-height: 1;\n  text-transform: none;\n  letter-spacing: normal;\n  word-wrap: normal;\n  white-space: nowrap;\n  direction: ltr;\n  /* Support for all WebKit browsers. */\n  -webkit-font-smoothing: antialiased;\n  /* Support for Safari and Chrome. */\n  text-rendering: optimizeLegibility;\n  /* Support for Firefox. */\n  -moz-osx-font-smoothing: grayscale;\n  /* Support for IE. */\n  -webkit-font-feature-settings: 'liga';\n          font-feature-settings: 'liga'; }\n\ndiv.ng-wizard-navigation-container {\n  background-color: #F0EFE8;\n  border-radius: 5px; }\n\ndiv.ng-wizard-navigation-container nav.ng-wizard-navigation ul.ng-wizard-navigation-list {\n    display: grid;\n    grid-template-columns: repeat(5, 1fr);\n    grid-template-rows: 50px;\n    list-style: none;\n    padding: 0; }\n\ndiv.ng-wizard-navigation-container nav.ng-wizard-navigation ul.ng-wizard-navigation-list li.ng-wizard-navigation-list-item {\n      display: inline-block;\n      text-align: center;\n      border-right: solid 1px rgba(218, 215, 197, 0.6); }\n\ndiv.ng-wizard-navigation-container nav.ng-wizard-navigation ul.ng-wizard-navigation-list li.ng-wizard-navigation-list-item:last-of-type {\n        border-right: none; }\n\ndiv.ng-wizard-navigation-container nav.ng-wizard-navigation ul.ng-wizard-navigation-list li.ng-wizard-navigation-list-item div {\n        display: inline-block;\n        width: 100%;\n        height: 50px; }\n\ndiv.ng-wizard-navigation-container nav.ng-wizard-navigation ul.ng-wizard-navigation-list li.ng-wizard-navigation-list-item div.ng-wizard-navigation-link {\n          cursor: pointer; }\n\ndiv.ng-wizard-navigation-container nav.ng-wizard-navigation ul.ng-wizard-navigation-list li.ng-wizard-navigation-list-item div.ng-wizard-navigation-active {\n          background-color: rgba(218, 215, 197, 0.6);\n          border-radius: 5px; }\n\ndiv.ng-wizard-navigation-container nav.ng-wizard-navigation ul.ng-wizard-navigation-list li.ng-wizard-navigation-list-item div.ng-wizard-navigation-disabled {\n          color: gray; }\n\ndiv.ng-wizard-navigation-container nav.ng-wizard-navigation ul.ng-wizard-navigation-list li.ng-wizard-navigation-list-item div.ng-wizard-navigation-disabled i {\n            color: #c6c3b1;\n            border: solid 1px #c6c3b1; }\n\ndiv.ng-wizard-navigation-container nav.ng-wizard-navigation ul.ng-wizard-navigation-list li.ng-wizard-navigation-list-item div i.material-icons {\n          position: relative;\n          top: 7px;\n          border: solid 1px #b2af9d;\n          border-radius: 50%;\n          padding: 5px; }\n\ndiv.ng-wizard-navigation-container nav.ng-wizard-navigation ul.ng-wizard-navigation-list li.ng-wizard-navigation-list-item div span.ng-wizard-navigation-label {\n          display: inline-block;\n          margin-left: 10px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb2plY3RzL25nLXdpemFyZC9zcmMvbGliL25nLXdpemFyZC1uYXZpZ2F0aW9uL0M6XFxkZXZlbnZcXG1lYW5cXG5nLXdpemFyZC9ub2RlX21vZHVsZXNcXG1hdGVyaWFsLWljb25zXFxpY29uZm9udFxcbWF0ZXJpYWwtaWNvbnMuc2NzcyIsInByb2plY3RzL25nLXdpemFyZC9zcmMvbGliL25nLXdpemFyZC1uYXZpZ2F0aW9uL0M6XFxkZXZlbnZcXG1lYW5cXG5nLXdpemFyZC9ub2RlX21vZHVsZXNcXG1hdGVyaWFsLWljb25zXFxpY29uZm9udFxcdmFyaWFibGVzLnNjc3MiLCJwcm9qZWN0cy9uZy13aXphcmQvc3JjL2xpYi9uZy13aXphcmQtbmF2aWdhdGlvbi9DOlxcZGV2ZW52XFxtZWFuXFxuZy13aXphcmQvbm9kZV9tb2R1bGVzXFxtYXRlcmlhbC1pY29uc1xcaWNvbmZvbnRcXG1peGlucy5zY3NzIiwicHJvamVjdHMvbmctd2l6YXJkL3NyYy9saWIvbmctd2l6YXJkLW5hdmlnYXRpb24vQzpcXGRldmVudlxcbWVhblxcbmctd2l6YXJkL3Byb2plY3RzXFxuZy13aXphcmRcXHNyY1xcbGliXFxuZy13aXphcmQtbmF2aWdhdGlvblxcbmctd2l6YXJkLW5hdmlnYXRpb24uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBR0E7RUFDRSw4QkNDMkM7RURBM0MsbUJBQWtCO0VBQ2xCLGlCQUFnQjtFQUNoQixzQ0FBNEM7RUFBRSxlQUFlO0VBQzdELHdOQUc0RCxFQUFBOztBQUc5RDtFRUlFLDhCRGIyQztFQ2MzQyxvQkFBbUI7RUFDbkIsbUJBQWtCO0VBQ2xCLGdCRGpCNkI7RUNrQjdCLHNCQUFxQjtFQUNyQixlQUFjO0VBQ2QscUJBQW9CO0VBQ3BCLHVCQUFzQjtFQUN0QixrQkFBaUI7RUFDakIsb0JBQW1CO0VBQ25CLGVBQWM7RUFFZCxzQ0FBc0M7RUFDdEMsb0NBQW1DO0VBQ25DLG9DQUFvQztFQUNwQyxtQ0FBa0M7RUFFbEMsMEJBQTBCO0VBQzFCLG1DQUFrQztFQUVsQyxxQkFBcUI7RUFDckIsc0NBQTZCO1VBQTdCLDhCQUE2QixFRnZCOUI7O0FHYkQ7RUFDRSwwQkFBeUI7RUFDekIsbUJBQWtCLEVBNERuQjs7QUE5REQ7SUFPTSxjQUFhO0lBQ2Isc0NBQXFDO0lBQ3JDLHlCQUF3QjtJQUV4QixpQkFBZ0I7SUFDaEIsV0FBVSxFQWdEWDs7QUE1REw7TUFlUSxzQkFBcUI7TUFDckIsbUJBQWtCO01BQ2xCLGlEQUE0QyxFQTBDN0M7O0FBM0RQO1FBb0JVLG1CQUFrQixFQUNuQjs7QUFyQlQ7UUF3QlUsc0JBQXFCO1FBQ3JCLFlBQVc7UUFDWCxhQUFZLEVBZ0NiOztBQTFEVDtVQTZCWSxnQkFBZSxFQUNoQjs7QUE5Qlg7VUFpQ1ksMkNBQXNDO1VBQ3RDLG1CQUFrQixFQUNuQjs7QUFuQ1g7VUFzQ1ksWUFBdUIsRUFNeEI7O0FBNUNYO1lBeUNjLGVBQXVCO1lBQ3ZCLDBCQUFrQyxFQUNuQzs7QUEzQ2I7VUErQ1ksbUJBQWtCO1VBQ2xCLFNBQVE7VUFDUiwwQkFBa0M7VUFDbEMsbUJBQWtCO1VBQ2xCLGFBQVksRUFDYjs7QUFwRFg7VUF1RFksc0JBQXFCO1VBQ3JCLGtCQUFpQixFQUNsQiIsImZpbGUiOiJwcm9qZWN0cy9uZy13aXphcmQvc3JjL2xpYi9uZy13aXphcmQtbmF2aWdhdGlvbi9uZy13aXphcmQtbmF2aWdhdGlvbi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJ3ZhcmlhYmxlcyc7XG5AaW1wb3J0ICdtaXhpbnMnO1xuXG5AZm9udC1mYWNlIHtcbiAgZm9udC1mYW1pbHk6ICRtYXRlcmlhbC1pY29ucy1mb250LWZhbWlseTtcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LXdlaWdodDogNDAwO1xuICBzcmM6IHVybCgnI3skbWF0ZXJpYWwtaWNvbnMtZm9udC1maWxlfS5lb3QnKTsgLyogRm9yIElFNi04ICovXG4gIHNyYzogbG9jYWwoJG1hdGVyaWFsLWljb25zLWZvbnQtZmFtaWx5KSwgbG9jYWwoJG1hdGVyaWFsLWljb25zLWZvbnQtbmFtZSksXG4gICAgdXJsKCcjeyRtYXRlcmlhbC1pY29ucy1mb250LWZpbGV9LndvZmYyJykgZm9ybWF0KCd3b2ZmMicpLFxuICAgIHVybCgnI3skbWF0ZXJpYWwtaWNvbnMtZm9udC1maWxlfS53b2ZmJykgZm9ybWF0KCd3b2ZmJyksXG4gICAgdXJsKCcjeyRtYXRlcmlhbC1pY29ucy1mb250LWZpbGV9LnR0ZicpIGZvcm1hdCgndHJ1ZXR5cGUnKTtcbn1cblxuLm1hdGVyaWFsLWljb25zIHtcbiAgQGluY2x1ZGUgbWF0ZXJpYWwtaWNvbnMoKTtcbn1cbiIsIkBpbXBvcnQgJ2NvZGVwb2ludHMuc2Nzcyc7XG5cbiRtYXRlcmlhbC1pY29ucy1mb250LXBhdGg6ICcnICFkZWZhdWx0O1xuJG1hdGVyaWFsLWljb25zLWZvbnQtbmFtZTogJ01hdGVyaWFsSWNvbnMtUmVndWxhcicgIWRlZmF1bHQ7XG4kbWF0ZXJpYWwtaWNvbnMtZm9udC1zaXplOiAyNHB4ICFkZWZhdWx0O1xuJG1hdGVyaWFsLWljb25zLWZvbnQtZmFtaWx5OiAnTWF0ZXJpYWwgSWNvbnMnICFkZWZhdWx0O1xuXG4kbWF0ZXJpYWwtaWNvbnMtZm9udC1maWxlOiAkbWF0ZXJpYWwtaWNvbnMtZm9udC1wYXRoICsgJG1hdGVyaWFsLWljb25zLWZvbnQtbmFtZTtcbiIsIkBmdW5jdGlvbiBtYXRlcmlhbC1pY29ucy1zdHItcmVwbGFjZSgkc3RyaW5nLCAkc2VhcmNoLCAkcmVwbGFjZTogJycpIHtcbiAgJGluZGV4OiBzdHItaW5kZXgoJHN0cmluZywgJHNlYXJjaCk7XG5cbiAgQGlmICRpbmRleCB7XG4gICAgQHJldHVybiBzdHItc2xpY2UoJHN0cmluZywgMSwgJGluZGV4IC0gMSkgKyAkcmVwbGFjZSArIG1hdGVyaWFsLWljb25zLXN0ci1yZXBsYWNlKHN0ci1zbGljZSgkc3RyaW5nLCAkaW5kZXggKyBzdHItbGVuZ3RoKCRzZWFyY2gpKSwgJHNlYXJjaCwgJHJlcGxhY2UpO1xuICB9XG5cbiAgQHJldHVybiAkc3RyaW5nO1xufVxuXG5AZnVuY3Rpb24gbWF0ZXJpYWwtaWNvbnMtY29udGVudCgkY29kZXBvaW50KSB7XG4gIEByZXR1cm4gdW5xdW90ZSgnXCJcXFxcI3skY29kZXBvaW50fVwiJyk7XG59XG5cbkBtaXhpbiBtYXRlcmlhbC1pY29ucyhcbiAgJGZvbnQtc2l6ZTogJG1hdGVyaWFsLWljb25zLWZvbnQtc2l6ZSxcbiAgJGZvbnQtZmFtaWx5OiAkbWF0ZXJpYWwtaWNvbnMtZm9udC1mYW1pbHlcbikge1xuICBmb250LWZhbWlseTogJGZvbnQtZmFtaWx5O1xuICBmb250LXdlaWdodDogbm9ybWFsO1xuICBmb250LXN0eWxlOiBub3JtYWw7XG4gIGZvbnQtc2l6ZTogJGZvbnQtc2l6ZTtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBsaW5lLWhlaWdodDogMTtcbiAgdGV4dC10cmFuc2Zvcm06IG5vbmU7XG4gIGxldHRlci1zcGFjaW5nOiBub3JtYWw7XG4gIHdvcmQtd3JhcDogbm9ybWFsO1xuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuICBkaXJlY3Rpb246IGx0cjtcblxuICAvKiBTdXBwb3J0IGZvciBhbGwgV2ViS2l0IGJyb3dzZXJzLiAqL1xuICAtd2Via2l0LWZvbnQtc21vb3RoaW5nOiBhbnRpYWxpYXNlZDtcbiAgLyogU3VwcG9ydCBmb3IgU2FmYXJpIGFuZCBDaHJvbWUuICovXG4gIHRleHQtcmVuZGVyaW5nOiBvcHRpbWl6ZUxlZ2liaWxpdHk7XG5cbiAgLyogU3VwcG9ydCBmb3IgRmlyZWZveC4gKi9cbiAgLW1vei1vc3gtZm9udC1zbW9vdGhpbmc6IGdyYXlzY2FsZTtcblxuICAvKiBTdXBwb3J0IGZvciBJRS4gKi9cbiAgZm9udC1mZWF0dXJlLXNldHRpbmdzOiAnbGlnYSc7XG59XG5cbkBtaXhpbiBtYXRlcmlhbC1pY29uKCRuYW1lLCAkcHNldWRvOiAnYmVmb3JlJykge1xuICAkY29kZXBvaW50OiBtYXAtZ2V0KCRtYXRlcmlhbC1pY29ucy1jb2RlcG9pbnRzLCAkbmFtZSk7XG5cbiAgJjojeyRwc2V1ZG99IHtcbiAgICBjb250ZW50OiBtYXRlcmlhbC1pY29ucy1jb250ZW50KCRjb2RlcG9pbnQpO1xuICB9XG59XG4iLCIkbWF0ZXJpYWwtaWNvbnMtZm9udC1wYXRoOiAnfm1hdGVyaWFsLWljb25zL2ljb25mb250Lyc7XHJcbkBpbXBvcnQgJ35tYXRlcmlhbC1pY29ucy9pY29uZm9udC9tYXRlcmlhbC1pY29ucy5zY3NzJztcclxuXHJcbmRpdi5uZy13aXphcmQtbmF2aWdhdGlvbi1jb250YWluZXIge1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNGMEVGRTg7XHJcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG5cclxuICBuYXYubmctd2l6YXJkLW5hdmlnYXRpb24ge1xyXG5cclxuICAgIHVsLm5nLXdpemFyZC1uYXZpZ2F0aW9uLWxpc3Qge1xyXG4gICAgICBkaXNwbGF5OiBncmlkO1xyXG4gICAgICBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IHJlcGVhdCg1LCAxZnIpO1xyXG4gICAgICBncmlkLXRlbXBsYXRlLXJvd3M6IDUwcHg7XHJcblxyXG4gICAgICBsaXN0LXN0eWxlOiBub25lO1xyXG4gICAgICBwYWRkaW5nOiAwO1xyXG5cclxuICAgICAgbGkubmctd2l6YXJkLW5hdmlnYXRpb24tbGlzdC1pdGVtIHtcclxuICAgICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgICAgIGJvcmRlci1yaWdodDogc29saWQgMXB4IHJnYmEoMjE4LDIxNSwxOTcsLjYpO1xyXG5cclxuICAgICAgICAmOmxhc3Qtb2YtdHlwZSB7XHJcbiAgICAgICAgICBib3JkZXItcmlnaHQ6IG5vbmU7XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICBkaXYge1xyXG4gICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgICBoZWlnaHQ6IDUwcHg7XHJcblxyXG4gICAgICAgICAgJi5uZy13aXphcmQtbmF2aWdhdGlvbi1saW5rIHtcclxuICAgICAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgICAgICAgfVxyXG5cclxuICAgICAgICAgICYubmctd2l6YXJkLW5hdmlnYXRpb24tYWN0aXZlIHtcclxuICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgyMTgsMjE1LDE5NywuNik7XHJcbiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAmLm5nLXdpemFyZC1uYXZpZ2F0aW9uLWRpc2FibGVkIHtcclxuICAgICAgICAgICAgY29sb3I6IHJnYigxMjgsMTI4LDEyOCk7XHJcblxyXG4gICAgICAgICAgICBpIHtcclxuICAgICAgICAgICAgICBjb2xvcjogcmdiKDE5OCwxOTUsMTc3KTtcclxuICAgICAgICAgICAgICBib3JkZXI6IHNvbGlkIDFweCByZ2IoMTk4LDE5NSwxNzcpO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgICB9XHJcblxyXG4gICAgICAgICAgaS5tYXRlcmlhbC1pY29ucyB7XHJcbiAgICAgICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgICAgICAgICAgdG9wOiA3cHg7XHJcbiAgICAgICAgICAgIGJvcmRlcjogc29saWQgMXB4IHJnYigxNzgsMTc1LDE1Nyk7XHJcbiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgICAgICAgICAgcGFkZGluZzogNXB4O1xyXG4gICAgICAgICAgfVxyXG5cclxuICAgICAgICAgIHNwYW4ubmctd2l6YXJkLW5hdmlnYXRpb24tbGFiZWwge1xyXG4gICAgICAgICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICAgICAgICAgIG1hcmdpbi1sZWZ0OiAxMHB4O1xyXG4gICAgICAgICAgfVxyXG4gICAgICAgIH1cclxuICAgICAgfVxyXG4gICAgfVxyXG4gIH1cclxufVxyXG4iXX0= */"
 
 /***/ }),
 
@@ -304,6 +304,35 @@ var NgWizardNavigationComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_ng_wizard_service__WEBPACK_IMPORTED_MODULE_1__["NgWizardService"]])
     ], NgWizardNavigationComponent);
     return NgWizardNavigationComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./projects/ng-wizard/src/lib/ng-wizard-step/ng-wizard-step.ts":
+/*!*********************************************************************!*\
+  !*** ./projects/ng-wizard/src/lib/ng-wizard-step/ng-wizard-step.ts ***!
+  \*********************************************************************/
+/*! exports provided: NgWizardStep */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NgWizardStep", function() { return NgWizardStep; });
+var NgWizardStep = /** @class */ (function () {
+    function NgWizardStep() {
+    }
+    NgWizardStep.prototype.wsIsValid = function () {
+        return true;
+    };
+    NgWizardStep.prototype.wsOnNext = function () {
+        return;
+    };
+    NgWizardStep.prototype.wsOnPrevious = function () {
+        return;
+    };
+    return NgWizardStep;
 }());
 
 
@@ -486,7 +515,7 @@ var NgWizardService = /** @class */ (function () {
      * @param componentRef A reference to the currently displayed component
      */
     NgWizardService.prototype.registerActiveComponent = function (componentRef) {
-        if (!_ng_wizard_utils__WEBPACK_IMPORTED_MODULE_2__["componentImportsWizardStepInterface"](componentRef)) {
+        if (!_ng_wizard_utils__WEBPACK_IMPORTED_MODULE_2__["componentImplementsNgWizardStepInterface"](componentRef)) {
             throw new _ng_wizard_error_ng_wizard_error__WEBPACK_IMPORTED_MODULE_3__["NoWsInterface"](componentRef.constructor.name);
         }
         // Cast to unknown before casting to NgWizardStep to let typescript know we checked and approve
@@ -500,7 +529,8 @@ var NgWizardService = /** @class */ (function () {
     };
     /**
      * Calls the current component's wsOnPrevious() or wsOnNext()) methods and navigates to the given
-     * step if the component does not abort.
+     * step if the component does not abort or its state is invalid (for next navigation).
+     *
      * @param stepData The NgWizardStepData of the the step to navigate to
      */
     NgWizardService.prototype.navigateToStep = function (stepData) {
@@ -509,7 +539,7 @@ var NgWizardService = /** @class */ (function () {
             goAhead = this.currentComponent.wsOnPrevious();
         }
         else {
-            goAhead = this.currentComponent.wsOnNext();
+            goAhead = this.currentComponent.wsIsValid() && this.currentComponent.wsOnNext();
         }
         if (goAhead === false) {
             return;
@@ -616,13 +646,13 @@ var NgWizardService = /** @class */ (function () {
 /*!*******************************************************!*\
   !*** ./projects/ng-wizard/src/lib/ng-wizard.utils.ts ***!
   \*******************************************************/
-/*! exports provided: getStepTitleFromRoute, componentImportsWizardStepInterface, getStepDataForComponentName, getStepDataForPath */
+/*! exports provided: getStepTitleFromRoute, componentImplementsNgWizardStepInterface, getStepDataForComponentName, getStepDataForPath */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStepTitleFromRoute", function() { return getStepTitleFromRoute; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "componentImportsWizardStepInterface", function() { return componentImportsWizardStepInterface; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "componentImplementsNgWizardStepInterface", function() { return componentImplementsNgWizardStepInterface; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStepDataForComponentName", function() { return getStepDataForComponentName; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStepDataForPath", function() { return getStepDataForPath; });
 /**
@@ -639,13 +669,12 @@ function getStepTitleFromRoute(route) {
     return capitalize(insertSpaces(route.path));
 }
 /**
- * Returns true if the component has defined the 'wsOnNext' and 'wsOnPrevious' methods defined in
- * the NgWizardStep interface.
+ * Returns true if the component extends the NgWizardStep class or implements the NgWizardStepInterface.
  *
  * @param componentRef The reference to the component to verify
  */
-function componentImportsWizardStepInterface(componentRef) {
-    return 'wsOnNext' in componentRef && 'wsOnPrevious' in componentRef;
+function componentImplementsNgWizardStepInterface(componentRef) {
+    return 'wsIsValid' in componentRef && 'wsOnNext' in componentRef && 'wsOnPrevious' in componentRef;
 }
 /**
  * Returns the NgWizardStepData with the given ComponentName in the stepData list or undefined if
@@ -789,7 +818,7 @@ module.exports = "<div class=\"wizard-container\">\r\n  <router-outlet></router-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".wizard-container {\n  max-width: 800px;\n  margin: 25px auto;\n  padding: 0 25px 15px 25px;\n  border: solid 1px lightgrey;\n  border-radius: 10px; }\n\n::ng-deep label {\n  font-weight: bold;\n  margin-right: 15px; }\n\n::ng-deep input.ng-invalid.ng-touched {\n  border: solid 1px red; }\n\n::ng-deep span.error {\n  color: red;\n  margin-left: 15px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXGRldmVudlxcbWVhblxcbmctd2l6YXJkL3NyY1xcYXBwXFxhcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxpQkFBZ0I7RUFDaEIsa0JBQWlCO0VBQ2pCLDBCQUF5QjtFQUN6Qiw0QkFBMkI7RUFDM0Isb0JBQW1CLEVBQ3BCOztBQUVEO0VBQ0Usa0JBQWlCO0VBQ2pCLG1CQUFrQixFQUNuQjs7QUFFRDtFQUNFLHNCQUFxQixFQUN0Qjs7QUFFRDtFQUNFLFdBQVU7RUFDVixrQkFBaUIsRUFDbEIiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIud2l6YXJkLWNvbnRhaW5lciB7XHJcbiAgbWF4LXdpZHRoOiA4MDBweDtcclxuICBtYXJnaW46IDI1cHggYXV0bztcclxuICBwYWRkaW5nOiAwIDI1cHggMTVweCAyNXB4O1xyXG4gIGJvcmRlcjogc29saWQgMXB4IGxpZ2h0Z3JleTtcclxuICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG59XHJcblxyXG46Om5nLWRlZXAgbGFiZWwge1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gIG1hcmdpbi1yaWdodDogMTVweDtcclxufVxyXG5cclxuOjpuZy1kZWVwIGlucHV0Lm5nLWludmFsaWQubmctdG91Y2hlZCB7XHJcbiAgYm9yZGVyOiBzb2xpZCAxcHggcmVkO1xyXG59XHJcblxyXG46Om5nLWRlZXAgc3Bhbi5lcnJvciB7XHJcbiAgY29sb3I6IHJlZDtcclxuICBtYXJnaW4tbGVmdDogMTVweDtcclxufVxyXG4iXX0= */"
+module.exports = ".wizard-container {\n  max-width: 800px;\n  margin: 25px auto;\n  padding: 0 25px 15px 25px;\n  border: solid 1px lightgrey;\n  border-radius: 10px;\n  background: url('ng-wizard-transparent.png') no-repeat right bottom;\n  background-size: contain; }\n\n::ng-deep label {\n  font-weight: bold;\n  margin-right: 15px; }\n\n::ng-deep input.ng-invalid.ng-touched {\n  border: solid 1px red; }\n\n::ng-deep span.error {\n  color: red;\n  margin-left: 15px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXGRldmVudlxcbWVhblxcbmctd2l6YXJkL3NyY1xcYXBwXFxhcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxpQkFBZ0I7RUFDaEIsa0JBQWlCO0VBQ2pCLDBCQUF5QjtFQUN6Qiw0QkFBMkI7RUFDM0Isb0JBQW1CO0VBRW5CLG9FQUE2RTtFQUM3RSx5QkFBd0IsRUFDekI7O0FBRUQ7RUFDRSxrQkFBaUI7RUFDakIsbUJBQWtCLEVBQ25COztBQUVEO0VBQ0Usc0JBQXFCLEVBQ3RCOztBQUVEO0VBQ0UsV0FBVTtFQUNWLGtCQUFpQixFQUNsQiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi53aXphcmQtY29udGFpbmVyIHtcclxuICBtYXgtd2lkdGg6IDgwMHB4O1xyXG4gIG1hcmdpbjogMjVweCBhdXRvO1xyXG4gIHBhZGRpbmc6IDAgMjVweCAxNXB4IDI1cHg7XHJcbiAgYm9yZGVyOiBzb2xpZCAxcHggbGlnaHRncmV5O1xyXG4gIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcblxyXG4gIGJhY2tncm91bmQ6IHVybCgnLi4vYXNzZXRzL25nLXdpemFyZC10cmFuc3BhcmVudC5wbmcnKSBuby1yZXBlYXQgcmlnaHQgYm90dG9tO1xyXG4gIGJhY2tncm91bmQtc2l6ZTogY29udGFpbjtcclxufVxyXG5cclxuOjpuZy1kZWVwIGxhYmVsIHtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuICBtYXJnaW4tcmlnaHQ6IDE1cHg7XHJcbn1cclxuXHJcbjo6bmctZGVlcCBpbnB1dC5uZy1pbnZhbGlkLm5nLXRvdWNoZWQge1xyXG4gIGJvcmRlcjogc29saWQgMXB4IHJlZDtcclxufVxyXG5cclxuOjpuZy1kZWVwIHNwYW4uZXJyb3Ige1xyXG4gIGNvbG9yOiByZWQ7XHJcbiAgbWFyZ2luLWxlZnQ6IDE1cHg7XHJcbn1cclxuIl19 */"
 
 /***/ }),
 
@@ -982,8 +1011,22 @@ module.exports = "<div [formGroup]=\"form\">\n  <h1>Personal information</h1>\n 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Step1Component", function() { return Step1Component; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _app_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../app.service */ "./src/app/app.service.ts");
+/* harmony import */ var _projects_ng_wizard_src_lib_ng_wizard_step_ng_wizard_step__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../projects/ng-wizard/src/lib/ng-wizard-step/ng-wizard-step */ "./projects/ng-wizard/src/lib/ng-wizard-step/ng-wizard-step.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _app_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../app.service */ "./src/app/app.service.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -996,36 +1039,39 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var Step1Component = /** @class */ (function () {
+
+var Step1Component = /** @class */ (function (_super) {
+    __extends(Step1Component, _super);
     function Step1Component(service) {
-        this.service = service;
-        this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]({
-            lastName: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
-            firstName: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
+        var _this = _super.call(this) || this;
+        _this.service = service;
+        _this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
+            lastName: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            firstName: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
         });
+        return _this;
     }
     Step1Component.prototype.ngOnInit = function () {
         this.form.get('lastName').setValue(this.service.formValues.lastName);
         this.form.get('firstName').setValue(this.service.formValues.firstName);
     };
+    Step1Component.prototype.wsIsValid = function () {
+        this.form.get('lastName').markAsTouched();
+        this.form.get('firstName').markAsTouched();
+        return this.form.valid;
+    };
     Step1Component.prototype.wsOnNext = function () {
-        if (!this.form.valid) {
-            this.form.get('lastName').markAsTouched();
-            this.form.get('firstName').markAsTouched();
-            return false;
-        }
         this.service.setFormValues(this.form.value);
     };
-    Step1Component.prototype.wsOnPrevious = function () { };
     Step1Component = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-step1',
             template: __webpack_require__(/*! ./step1.component.html */ "./src/app/step1/step1.component.html"),
         }),
-        __metadata("design:paramtypes", [_app_service__WEBPACK_IMPORTED_MODULE_2__["AppService"]])
+        __metadata("design:paramtypes", [_app_service__WEBPACK_IMPORTED_MODULE_3__["AppService"]])
     ], Step1Component);
     return Step1Component;
-}());
+}(_projects_ng_wizard_src_lib_ng_wizard_step_ng_wizard_step__WEBPACK_IMPORTED_MODULE_1__["NgWizardStep"]));
 
 
 
@@ -1053,9 +1099,23 @@ module.exports = "<div [formGroup]=\"form\">\n  <h1>Developer profile</h1>\n  <p
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Step2Component", function() { return Step2Component; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _app_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../app.service */ "./src/app/app.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _projects_ng_wizard_src_lib_ng_wizard_step_ng_wizard_step__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../projects/ng-wizard/src/lib/ng-wizard-step/ng-wizard-step */ "./projects/ng-wizard/src/lib/ng-wizard-step/ng-wizard-step.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _app_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../app.service */ "./src/app/app.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1069,14 +1129,18 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var Step2Component = /** @class */ (function () {
+
+var Step2Component = /** @class */ (function (_super) {
+    __extends(Step2Component, _super);
     function Step2Component(service, router) {
-        this.service = service;
-        this.router = router;
-        this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]({
-            gitUser: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
-            favoriteProject: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+        var _this = _super.call(this) || this;
+        _this.service = service;
+        _this.router = router;
+        _this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
+            gitUser: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](''),
+            favoriteProject: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](''),
         });
+        return _this;
     }
     Step2Component.prototype.ngOnInit = function () {
         if (!this.service.step1IsValid()) {
@@ -1096,10 +1160,10 @@ var Step2Component = /** @class */ (function () {
             selector: 'app-step2',
             template: __webpack_require__(/*! ./step2.component.html */ "./src/app/step2/step2.component.html"),
         }),
-        __metadata("design:paramtypes", [_app_service__WEBPACK_IMPORTED_MODULE_2__["AppService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+        __metadata("design:paramtypes", [_app_service__WEBPACK_IMPORTED_MODULE_3__["AppService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
     ], Step2Component);
     return Step2Component;
-}());
+}(_projects_ng_wizard_src_lib_ng_wizard_step_ng_wizard_step__WEBPACK_IMPORTED_MODULE_1__["NgWizardStep"]));
 
 
 
@@ -1127,9 +1191,23 @@ module.exports = "<div [formGroup]=\"form\">\n  <h1>Angular usage</h1>\n  <p>\n 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Step3Component", function() { return Step3Component; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _app_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../app.service */ "./src/app/app.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _projects_ng_wizard_src_lib_ng_wizard_step_ng_wizard_step__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../projects/ng-wizard/src/lib/ng-wizard-step/ng-wizard-step */ "./projects/ng-wizard/src/lib/ng-wizard-step/ng-wizard-step.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _app_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../app.service */ "./src/app/app.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1143,14 +1221,18 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var Step3Component = /** @class */ (function () {
+
+var Step3Component = /** @class */ (function (_super) {
+    __extends(Step3Component, _super);
     function Step3Component(service, router) {
-        this.service = service;
-        this.router = router;
-        this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]({
-            ngVersion: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, this.validateNgVersion]),
-            ngRouter: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+        var _this = _super.call(this) || this;
+        _this.service = service;
+        _this.router = router;
+        _this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
+            ngVersion: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _this.validateNgVersion]),
+            ngRouter: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](''),
         });
+        return _this;
     }
     Step3Component.prototype.ngOnInit = function () {
         if (!this.service.step2IsValid()) {
@@ -1159,11 +1241,11 @@ var Step3Component = /** @class */ (function () {
         this.form.get('ngVersion').setValue(this.service.formValues.ngVersion);
         this.form.get('ngRouter').setValue(this.service.formValues.ngRouter);
     };
+    Step3Component.prototype.wsIsValid = function () {
+        this.form.get('ngVersion').markAsTouched();
+        return this.form.valid;
+    };
     Step3Component.prototype.wsOnNext = function () {
-        if (!this.form.valid) {
-            this.form.get('ngVersion').markAsTouched();
-            return false;
-        }
         this.service.setFormValues(this.form.value);
     };
     Step3Component.prototype.wsOnPrevious = function () {
@@ -1177,10 +1259,10 @@ var Step3Component = /** @class */ (function () {
             selector: 'app-step3',
             template: __webpack_require__(/*! ./step3.component.html */ "./src/app/step3/step3.component.html"),
         }),
-        __metadata("design:paramtypes", [_app_service__WEBPACK_IMPORTED_MODULE_2__["AppService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+        __metadata("design:paramtypes", [_app_service__WEBPACK_IMPORTED_MODULE_3__["AppService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
     ], Step3Component);
     return Step3Component;
-}());
+}(_projects_ng_wizard_src_lib_ng_wizard_step_ng_wizard_step__WEBPACK_IMPORTED_MODULE_1__["NgWizardStep"]));
 
 
 
@@ -1208,8 +1290,22 @@ module.exports = "<h1>Confirmation</h1>\n<table>\n  <tr>\n    <td>Last name</td>
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Step4Component", function() { return Step4Component; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _app_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../app.service */ "./src/app/app.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _projects_ng_wizard_src_lib_ng_wizard_step_ng_wizard_step__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../projects/ng-wizard/src/lib/ng-wizard-step/ng-wizard-step */ "./projects/ng-wizard/src/lib/ng-wizard-step/ng-wizard-step.ts");
+/* harmony import */ var _app_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../app.service */ "./src/app/app.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1222,10 +1318,14 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var Step4Component = /** @class */ (function () {
+
+var Step4Component = /** @class */ (function (_super) {
+    __extends(Step4Component, _super);
     function Step4Component(service, router) {
-        this.service = service;
-        this.router = router;
+        var _this = _super.call(this) || this;
+        _this.service = service;
+        _this.router = router;
+        return _this;
     }
     Step4Component.prototype.ngOnInit = function () {
         if (!this.service.step3IsValid()) {
@@ -1233,17 +1333,15 @@ var Step4Component = /** @class */ (function () {
         }
         this.values = this.service.formValues;
     };
-    Step4Component.prototype.wsOnNext = function () { };
-    Step4Component.prototype.wsOnPrevious = function () { };
     Step4Component = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-step4',
             template: __webpack_require__(/*! ./step4.component.html */ "./src/app/step4/step4.component.html"),
         }),
-        __metadata("design:paramtypes", [_app_service__WEBPACK_IMPORTED_MODULE_1__["AppService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+        __metadata("design:paramtypes", [_app_service__WEBPACK_IMPORTED_MODULE_2__["AppService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
     ], Step4Component);
     return Step4Component;
-}());
+}(_projects_ng_wizard_src_lib_ng_wizard_step_ng_wizard_step__WEBPACK_IMPORTED_MODULE_1__["NgWizardStep"]));
 
 
 
@@ -1271,7 +1369,20 @@ module.exports = "<h1>All steps completed!</h1>\n<br/>\nTODO: remove previous bu
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Step5Component", function() { return Step5Component; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _projects_ng_wizard_src_lib_ng_wizard_step_ng_wizard_step__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../projects/ng-wizard/src/lib/ng-wizard-step/ng-wizard-step */ "./projects/ng-wizard/src/lib/ng-wizard-step/ng-wizard-step.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1283,18 +1394,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
-var Step5Component = /** @class */ (function () {
+var Step5Component = /** @class */ (function (_super) {
+    __extends(Step5Component, _super);
     function Step5Component() {
-        this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]({
-            input: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
-        });
+        return _super.call(this) || this;
     }
-    Step5Component.prototype.ngOnInit = function () {
-    };
-    Step5Component.prototype.wsOnNext = function () {
-    };
-    Step5Component.prototype.wsOnPrevious = function () {
-    };
     Step5Component = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-step5',
@@ -1303,7 +1407,7 @@ var Step5Component = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], Step5Component);
     return Step5Component;
-}());
+}(_projects_ng_wizard_src_lib_ng_wizard_step_ng_wizard_step__WEBPACK_IMPORTED_MODULE_1__["NgWizardStep"]));
 
 
 
