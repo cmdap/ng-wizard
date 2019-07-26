@@ -35,7 +35,7 @@ export class NoWsInterface extends NgWizardError {
   constructor(public stepComponentName: string) {
     super(
       NgWizardErrorType.NO_WS_INTERFACE,
-      `The ${stepComponentName} does not implement the NgWizardStep interface.`,
+      `The ${stepComponentName} does not extend the NgWizardStep class or implement the NgWizardStepInterface.`,
     );
   }
 }

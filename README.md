@@ -1,4 +1,6 @@
 # NgWizard
+<img src="ng-wizard.png" alt="ng-wizard logo" width="200" align="left"/>
+
 The NgWizard component is a simple wizard/stepper component for
 [Angular](https://angular.io) 7 utilizing
 [Angular Routing](https://angular.io/guide/router) for navigation.
@@ -13,7 +15,7 @@ The NgWizard component is available as an NPM package. It has a single
 dependencies on Angular packages.  
 To install the NgWizard component in your Angular project directory run:
 ```
-$ npm install ng-wizard material-icons
+$ npm install @cmdap/ng-wizard material-icons
 ```
 
 Then you can add a route for the `NgWizardComponent` to your Angular
@@ -45,8 +47,8 @@ const routes: Routes = [
 export class AppRoutingModule { }
 ```
 
-Finally, have your step components implement the `NgWizardStep`
-interface and define the `wsOnNext` and `wsOnPrevious` methods and you
+Finally, have your step components extend the `NgWizardStep` class or
+implement the `NgWizardStepInterface` and you
 are all set.
 
 A minimal step component file can look like this:
@@ -58,19 +60,23 @@ import { NgWizardStep } from '@cmdap/ng-wizard';
   selector: 'app-step1',
   templateUrl: './step1.component.html',
 })
-export class Step1Component implements NgWizardStep {
-  constructor() { }
-
-  wsOnNext() { }
-  wsOnPrevious() { }
+export class Step1Component extends NgWizardStep {
+  constructor() {
+    super();
+  }
 }
 ```
 
 ### Cancel navigation
-If your step component contains an invalid form or for any other reason
-you want to cancel the next or previous navigation make sure your
-`wsOnNext` and/or `wsOnPrevious` method returns `false`.  
-This will cancel the Wizard's navigation.  
+If your step component's state is invalid return `false` from your
+`wsIsValid` method. This will cancel the navigation to the next step but
+will allow navigating to previous steps.
+
+For any other reason you want to cancel the next or
+previous navigation make sure your `wsOnNext` and/or `wsOnPrevious`
+method returns `false`.  
+This will cancel the Wizard's navigation.   
+
 Your step component is responsible for displaying an error message or
 other reason why the navigation is cancelled.
 
@@ -94,5 +100,6 @@ your own style rules overwriting the existing ones.
 * Improve the responsiveness of the basic styles.
 * Improve the component's Accessibility (ARIA attributes, colors and
   contrasts).
-* Create a logo for this component.
+* Remove peerDependency on material-icons
+* Add support for more Angular versions
 

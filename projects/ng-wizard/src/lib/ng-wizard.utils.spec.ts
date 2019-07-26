@@ -1,10 +1,10 @@
 import {
-  componentImportsWizardStepInterface,
+  componentImplementsNgWizardStepInterface,
   getStepDataForComponentName,
   getStepDataForPath,
   getStepTitleFromRoute
 } from './ng-wizard.utils';
-import { NgWizardStep } from './ng-wizard-step/ng-wizard-step.interface';
+import { NgWizardStep } from './ng-wizard-step/ng-wizard-step';
 import { ComponentRef } from '@angular/core';
 import { NgWizardStepData } from './ng-wizard-step/ng-wizard-step-data.interface';
 
@@ -23,20 +23,17 @@ describe('Utils', () => {
     });
   });
 
-  describe('componentImportsWizardStepInterface', () => {
-    it('should return true if the component has defined the wsOnNext and wsOnPrevious methods', () => {
-      class NgWizardStepImplementer implements NgWizardStep {
-        wsOnNext() {}
-        wsOnPrevious() {}
-      }
+  describe('componentExtendsNgWizardStep', () => {
+    it('should return true if the component has defined the wsIsValid, wsOnNext and wsOnPrevious methods', () => {
+      class NgWizardStepExtender extends NgWizardStep { }
 
-      expect(componentImportsWizardStepInterface(new NgWizardStepImplementer() as unknown as ComponentRef<any>)).toBe(true);
+      expect(componentImplementsNgWizardStepInterface(new NgWizardStepExtender() as unknown as ComponentRef<any>)).toBe(true);
     });
 
-    it('should return false if the component has not defined the wsOnNext and wsOnPrevious methods', () => {
+    it('should return false if the component has not defined the wsIsValid, wsOnNext and wsOnPrevious methods', () => {
       class BasicClass {}
 
-      expect(componentImportsWizardStepInterface(new BasicClass() as unknown as ComponentRef<any>)).toBe(false);
+      expect(componentImplementsNgWizardStepInterface(new BasicClass() as unknown as ComponentRef<any>)).toBe(false);
     });
   });
 

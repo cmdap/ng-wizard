@@ -3,7 +3,7 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 import * as utils from './ng-wizard.utils';
 import { NoChildRoutes, NoWizardRoute, NoWsInterface } from './ng-wizard-error/ng-wizard.error';
 import { NgWizardStepData } from './ng-wizard-step/ng-wizard-step-data.interface';
-import { NgWizardStep } from './ng-wizard-step/ng-wizard-step.interface';
+import { NgWizardStep } from './ng-wizard-step/ng-wizard-step';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -36,7 +36,7 @@ export class NgWizardService {
    * @param componentRef A reference to the currently displayed component
    */
   public registerActiveComponent(componentRef: ComponentRef<any>) {
-    if (!utils.componentImportsWizardStepInterface(componentRef)) {
+    if (!utils.componentImplementsNgWizardStepInterface(componentRef)) {
       throw new NoWsInterface(componentRef.constructor.name);
     }
 
@@ -55,7 +55,8 @@ export class NgWizardService {
 
   /**
    * Calls the current component's wsOnPrevious() or wsOnNext()) methods and navigates to the given
-   * step if the component does not abort.
+   * step if the component does not abort or its state is invalid (for next navigation).
+   *
    * @param stepData The NgWizardStepData of the the step to navigate to
    */
   public navigateToStep(stepData: NgWizardStepData) {
@@ -63,7 +64,7 @@ export class NgWizardService {
     if (this.currentStepData.order > stepData.order) {
       goAhead = this.currentComponent.wsOnPrevious();
     } else {
-      goAhead = this.currentComponent.wsOnNext();
+      goAhead = this.currentComponent.wsIsValid() && this.currentComponent.wsOnNext();
     }
     if (goAhead === false) {
       return;

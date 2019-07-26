@@ -17,13 +17,12 @@ export function getStepTitleFromRoute(route: Route): string {
 }
 
 /**
- * Returns true if the component has defined the 'wsOnNext' and 'wsOnPrevious' methods defined in
- * the NgWizardStep interface.
+ * Returns true if the component extends the NgWizardStep class or implements the NgWizardStepInterface.
  *
  * @param componentRef The reference to the component to verify
  */
-export function componentImportsWizardStepInterface(componentRef: ComponentRef<any>): boolean {
-  return 'wsOnNext' in componentRef && 'wsOnPrevious' in componentRef;
+export function componentImplementsNgWizardStepInterface(componentRef: ComponentRef<any>): boolean {
+  return 'wsIsValid' in componentRef && 'wsOnNext' in componentRef && 'wsOnPrevious' in componentRef;
 }
 
 /**

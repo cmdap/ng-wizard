@@ -2,8 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NgWizardErrorComponent } from './ng-wizard-error.component';
 import { CommonModule } from '@angular/common';
-import { NgWizardErrorType } from './ng-wizard-error-type.enum';
-import { NgWizardError, NoChildRoutes, NoWizardRoute, NoWsInterface } from './ng-wizard.error';
+import { NoChildRoutes, NoWizardRoute, NoWsInterface } from './ng-wizard.error';
 
 describe('NgWizardErrorComponent', () => {
   let component: NgWizardErrorComponent;

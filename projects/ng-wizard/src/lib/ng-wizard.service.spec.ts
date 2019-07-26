@@ -7,24 +7,18 @@ import { NgWizardModule } from './ng-wizard.module';
 import { Component, ComponentRef } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { NgWizardStepData } from './ng-wizard-step/ng-wizard-step-data.interface';
-import { NgWizardStep } from './ng-wizard-step/ng-wizard-step.interface';
+import { NgWizardStep } from './ng-wizard-step/ng-wizard-step';
 import { NoChildRoutes, NoWizardRoute, NoWsInterface } from './ng-wizard-error/ng-wizard.error';
 
 @Component({
   template: 'Step 1 works!',
 })
-class Step1Component implements NgWizardStep {
-  wsOnNext() {}
-  wsOnPrevious() {}
-}
+class Step1Component extends NgWizardStep { }
 
 @Component({
   template: 'Step 2 works!',
 })
-class Step2Component implements NgWizardStep {
-  wsOnNext() {}
-  wsOnPrevious() {}
-}
+class Step2Component extends NgWizardStep { }
 
 @Component({
   template: 'Step 3 does not work!',
@@ -172,6 +166,15 @@ describe('NgWizardService', () => {
       spyOn(router, 'navigate');
 
       service.loadWizardRoutes(ngWizardComponentName);
+    });
+
+    it("should call the current component's wsIsValid method", () => {
+      const component1Ref = (new Step1Component() as unknown) as ComponentRef<any>;
+      service.registerActiveComponent(component1Ref);
+
+      spyOn((component1Ref as unknown) as NgWizardStep, 'wsIsValid');
+      service.navigateToStep(stepData[1]);
+      expect(((component1Ref as unknown) as NgWizardStep).wsIsValid).toHaveBeenCalled();
     });
 
     it("should call the current component's wsOnNext method if the order of the step is greater than the current step", () => {
