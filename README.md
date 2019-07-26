@@ -6,12 +6,11 @@ The NgWizard component is a simple wizard/stepper component for
 [Angular Routing](https://angular.io/guide/router) for navigation.
 
 A demo can be found at
-[https://cmdap.github.io/ng-wizard/](https://cmdap.github.io/ng-wizard/).
+[https://cmdap.github.io/ng-wizard/](https://cmdap.github.io/ng-wizard/).  
 
-  
+.  
 
-  
-.
+.  
 
 ## Installation
 The NgWizard component is available as an NPM package. It has a single
