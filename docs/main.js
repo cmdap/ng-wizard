@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ng-wizard-buttons-container\">\n  <div *ngIf=\"currentStepData$ | async as currentStepData\" class=\"ng-wizard-buttons\">\n    <button *ngIf=\"currentStepData.previousStep\"\n            (click)=\"goToPreviousStep()\"\n            class=\"ng-wizard-button-previous\">\n      Previous\n    </button>\n    <button *ngIf=\"currentStepData.nextStep\"\n            (click)=\"goToNextStep()\"\n            class=\"ng-wizard-button-next\">\n      Next\n    </button>\n  </div>\n</div>\n"
+module.exports = "<div class=\"ng-wizard-buttons-container\">\r\n  <div *ngIf=\"currentStepData$ | async as currentStepData\" class=\"ng-wizard-buttons\">\r\n    <button *ngIf=\"currentStepData.previousStep\"\r\n            (click)=\"goToPreviousStep()\"\r\n            class=\"ng-wizard-button-previous\">\r\n      <span [innerHTML]=\"wizardOptions.buttons.previous.label\" class=\"ng-wizard-button-label\"></span>\r\n    </button>\r\n    <button *ngIf=\"currentStepData.nextStep\"\r\n            (click)=\"goToNextStep()\"\r\n            class=\"ng-wizard-button-next\">\r\n      <span [innerHTML]=\"wizardOptions.buttons.next.label\" class=\"ng-wizard-button-label\"></span>\r\n    </button>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -18,7 +18,7 @@ module.exports = "<div class=\"ng-wizard-buttons-container\">\n  <div *ngIf=\"cu
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "div.ng-wizard-buttons-container {\n  margin-top: 25px; }\n  div.ng-wizard-buttons-container div.ng-wizard-buttons {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    grid-template-areas: \"btn-previous btn-next\"; }\n  div.ng-wizard-buttons-container div.ng-wizard-buttons button {\n      width: 150px;\n      height: 35px;\n      background-color: #F0EFE8;\n      border: solid 1px #dad7c5;\n      border-radius: 5px;\n      cursor: pointer;\n      outline: none; }\n  div.ng-wizard-buttons-container div.ng-wizard-buttons button.ng-wizard-button-previous {\n        grid-area: btn-previous;\n        justify-self: start; }\n  div.ng-wizard-buttons-container div.ng-wizard-buttons button.ng-wizard-button-next {\n        grid-area: btn-next;\n        justify-self: end; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb2plY3RzL25nLXdpemFyZC9zcmMvbGliL25nLXdpemFyZC1idXR0b25zL0M6XFxkZXZlbnZcXG1lYW5cXG5nLXdpemFyZC9wcm9qZWN0c1xcbmctd2l6YXJkXFxzcmNcXGxpYlxcbmctd2l6YXJkLWJ1dHRvbnNcXG5nLXdpemFyZC1idXR0b25zLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsaUJBQWdCLEVBMkJqQjtFQTVCRDtJQUlJLGNBQWE7SUFDYiwrQkFBOEI7SUFDOUIsNkNBQTRDLEVBcUI3QztFQTNCSDtNQVNNLGFBQVk7TUFDWixhQUFZO01BQ1osMEJBQXlCO01BQ3pCLDBCQUFxQztNQUNyQyxtQkFBa0I7TUFDbEIsZ0JBQWU7TUFDZixjQUFhLEVBV2Q7RUExQkw7UUFrQlEsd0JBQXVCO1FBQ3ZCLG9CQUFtQixFQUNwQjtFQXBCUDtRQXVCUSxvQkFBbUI7UUFDbkIsa0JBQWlCLEVBQ2xCIiwiZmlsZSI6InByb2plY3RzL25nLXdpemFyZC9zcmMvbGliL25nLXdpemFyZC1idXR0b25zL25nLXdpemFyZC1idXR0b25zLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiZGl2Lm5nLXdpemFyZC1idXR0b25zLWNvbnRhaW5lciB7XHJcbiAgbWFyZ2luLXRvcDogMjVweDtcclxuXHJcbiAgZGl2Lm5nLXdpemFyZC1idXR0b25zIHtcclxuICAgIGRpc3BsYXk6IGdyaWQ7XHJcbiAgICBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IDFmciAxZnI7XHJcbiAgICBncmlkLXRlbXBsYXRlLWFyZWFzOiBcImJ0bi1wcmV2aW91cyBidG4tbmV4dFwiO1xyXG5cclxuICAgIGJ1dHRvbiB7XHJcbiAgICAgIHdpZHRoOiAxNTBweDtcclxuICAgICAgaGVpZ2h0OiAzNXB4O1xyXG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjRjBFRkU4O1xyXG4gICAgICBib3JkZXI6IHNvbGlkIDFweCByZ2JhKDIxOCwyMTUsMTk3LDEpO1xyXG4gICAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgICAgb3V0bGluZTogbm9uZTtcclxuXHJcbiAgICAgICYubmctd2l6YXJkLWJ1dHRvbi1wcmV2aW91cyB7XHJcbiAgICAgICAgZ3JpZC1hcmVhOiBidG4tcHJldmlvdXM7XHJcbiAgICAgICAganVzdGlmeS1zZWxmOiBzdGFydDtcclxuICAgICAgfVxyXG5cclxuICAgICAgJi5uZy13aXphcmQtYnV0dG9uLW5leHQge1xyXG4gICAgICAgIGdyaWQtYXJlYTogYnRuLW5leHQ7XHJcbiAgICAgICAganVzdGlmeS1zZWxmOiBlbmQ7XHJcbiAgICAgIH1cclxuICAgIH1cclxuICB9XHJcbn1cclxuIl19 */"
+module.exports = "div.ng-wizard-buttons-container {\n  margin-top: 25px; }\n  div.ng-wizard-buttons-container div.ng-wizard-buttons {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    grid-template-areas: \"btn-previous btn-next\"; }\n  div.ng-wizard-buttons-container div.ng-wizard-buttons button {\n      width: 150px;\n      height: 35px;\n      background-color: #F0EFE8;\n      border: solid 1px #dad7c5;\n      border-radius: 5px;\n      cursor: pointer;\n      outline: none; }\n  div.ng-wizard-buttons-container div.ng-wizard-buttons button.ng-wizard-button-previous {\n        grid-area: btn-previous;\n        justify-self: start; }\n  div.ng-wizard-buttons-container div.ng-wizard-buttons button.ng-wizard-button-next {\n        grid-area: btn-next;\n        justify-self: end; }\n  div.ng-wizard-buttons-container div.ng-wizard-buttons button .ng-wizard-button-label {\n        position: relative;\n        top: -5px; }\n  div.ng-wizard-buttons-container div.ng-wizard-buttons button .ng-wizard-button-label i {\n          position: relative;\n          top: 7px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb2plY3RzL25nLXdpemFyZC9zcmMvbGliL25nLXdpemFyZC1idXR0b25zL0M6XFxkZXZlbnZcXG1lYW5cXG5nLXdpemFyZC9wcm9qZWN0c1xcbmctd2l6YXJkXFxzcmNcXGxpYlxcbmctd2l6YXJkLWJ1dHRvbnNcXG5nLXdpemFyZC1idXR0b25zLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsaUJBQWdCLEVBcUNqQjtFQXRDRDtJQUlJLGNBQWE7SUFDYiwrQkFBOEI7SUFDOUIsNkNBQTRDLEVBK0I3QztFQXJDSDtNQVNNLGFBQVk7TUFDWixhQUFZO01BQ1osMEJBQXlCO01BQ3pCLDBCQUFxQztNQUNyQyxtQkFBa0I7TUFDbEIsZ0JBQWU7TUFDZixjQUFhLEVBcUJkO0VBcENMO1FBa0JRLHdCQUF1QjtRQUN2QixvQkFBbUIsRUFDcEI7RUFwQlA7UUF1QlEsb0JBQW1CO1FBQ25CLGtCQUFpQixFQUNsQjtFQXpCUDtRQTRCUSxtQkFBa0I7UUFDbEIsVUFBUyxFQU1WO0VBbkNQO1VBZ0NVLG1CQUFrQjtVQUNsQixTQUFRLEVBQ1QiLCJmaWxlIjoicHJvamVjdHMvbmctd2l6YXJkL3NyYy9saWIvbmctd2l6YXJkLWJ1dHRvbnMvbmctd2l6YXJkLWJ1dHRvbnMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJkaXYubmctd2l6YXJkLWJ1dHRvbnMtY29udGFpbmVyIHtcclxuICBtYXJnaW4tdG9wOiAyNXB4O1xyXG5cclxuICBkaXYubmctd2l6YXJkLWJ1dHRvbnMge1xyXG4gICAgZGlzcGxheTogZ3JpZDtcclxuICAgIGdyaWQtdGVtcGxhdGUtY29sdW1uczogMWZyIDFmcjtcclxuICAgIGdyaWQtdGVtcGxhdGUtYXJlYXM6IFwiYnRuLXByZXZpb3VzIGJ0bi1uZXh0XCI7XHJcblxyXG4gICAgYnV0dG9uIHtcclxuICAgICAgd2lkdGg6IDE1MHB4O1xyXG4gICAgICBoZWlnaHQ6IDM1cHg7XHJcbiAgICAgIGJhY2tncm91bmQtY29sb3I6ICNGMEVGRTg7XHJcbiAgICAgIGJvcmRlcjogc29saWQgMXB4IHJnYmEoMjE4LDIxNSwxOTcsMSk7XHJcbiAgICAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICAgICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgICBvdXRsaW5lOiBub25lO1xyXG5cclxuICAgICAgJi5uZy13aXphcmQtYnV0dG9uLXByZXZpb3VzIHtcclxuICAgICAgICBncmlkLWFyZWE6IGJ0bi1wcmV2aW91cztcclxuICAgICAgICBqdXN0aWZ5LXNlbGY6IHN0YXJ0O1xyXG4gICAgICB9XHJcblxyXG4gICAgICAmLm5nLXdpemFyZC1idXR0b24tbmV4dCB7XHJcbiAgICAgICAgZ3JpZC1hcmVhOiBidG4tbmV4dDtcclxuICAgICAgICBqdXN0aWZ5LXNlbGY6IGVuZDtcclxuICAgICAgfVxyXG5cclxuICAgICAgLm5nLXdpemFyZC1idXR0b24tbGFiZWwge1xyXG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgICAgICB0b3A6IC01cHg7XHJcblxyXG4gICAgICAgIGkge1xyXG4gICAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICAgICAgdG9wOiA3cHg7XHJcbiAgICAgICAgfVxyXG4gICAgICB9XHJcbiAgICB9XHJcbiAgfVxyXG59XHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -51,6 +51,7 @@ var NgWizardButtonsComponent = /** @class */ (function () {
     }
     NgWizardButtonsComponent.prototype.ngOnInit = function () {
         this.currentStepData$ = this.service.getCurrentStepDataAsObservable();
+        this.wizardOptions = this.service.wizardOptions;
     };
     NgWizardButtonsComponent.prototype.goToNextStep = function () {
         this.service.navigateToNextStep();
@@ -62,7 +63,8 @@ var NgWizardButtonsComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'ng-wizard-buttons',
             template: __webpack_require__(/*! ./ng-wizard-buttons.component.html */ "./projects/ng-wizard/src/lib/ng-wizard-buttons/ng-wizard-buttons.component.html"),
-            styles: [__webpack_require__(/*! ./ng-wizard-buttons.component.scss */ "./projects/ng-wizard/src/lib/ng-wizard-buttons/ng-wizard-buttons.component.scss")]
+            styles: [__webpack_require__(/*! ./ng-wizard-buttons.component.scss */ "./projects/ng-wizard/src/lib/ng-wizard-buttons/ng-wizard-buttons.component.scss")],
+            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewEncapsulation"].None,
         }),
         __metadata("design:paramtypes", [_ng_wizard_service__WEBPACK_IMPORTED_MODULE_1__["NgWizardService"]])
     ], NgWizardButtonsComponent);
@@ -101,7 +103,7 @@ var NgWizardErrorType;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"error\" class=\"ng-wizard-error\">\r\n  <i class=\"material-icons ng-wizard-error-icon\">error_outline</i>\r\n  <div [ngSwitch]=\"error.type\" class=\"ng-wizard-error-message\">\r\n\r\n    <!-- NO_WIZARD_ROUTE error -->\r\n\r\n    <span *ngSwitchCase=\"NgWizardErrorType.NO_WIZARD_ROUTE\" class=\"no-wizard-route\">\r\n      No route configuration for the {{ error.wizardComponentName }} found.<br/>\r\n      Add a route for the {{ error.wizardComponentName }} to your AppRoutingModule.<br/>\r\n      <pre>\r\nconst routes: Routes = [\r\n    &#123; path: '', component: {{ error.wizardComponentName }} &#125;,\r\n];\r\n\r\n@NgModule(&#123;\r\n  imports: [RouterModule.forRoot(routes)],\r\n  exports: [RouterModule]\r\n&#125;)\r\nexport class AppRoutingModule &#123; &#125;</pre>\r\n    </span>\r\n\r\n    <!-- NO_CHILD_ROUTES error -->\r\n\r\n    <span *ngSwitchCase=\"NgWizardErrorType.NO_CHILD_ROUTES\" class=\"no-child-routes\">\r\n      No child routes for the {{ error.wizardComponentName }} found.<br/>\r\n      Add at least one child route for the {{ error.wizardComponentName }} to your AppRoutingModule.<br/>\r\n      <pre>\r\n&#123; path: '{{ error.wizardPath }}', component: {{ error.wizardComponentName }}, children: [\r\n    &#123; path: 'step1', component: Step1Component &#125;,\r\n    &#123; path: '**', redirectTo: 'step1' &#125;,\r\n] &#125;,</pre>\r\n    </span>\r\n\r\n    <!-- NO_WS_INHERITANCE error -->\r\n\r\n    <span *ngSwitchCase=\"NgWizardErrorType.NO_WS_INTERFACE\" class=\"no-ws-interface\">\r\n      The {{ error.stepComponentName}} does not extend the NgWizardStep class or implement the\r\n      NgWizardStepInterface.<br/>\r\n      Extend the NgWizardStep class in your {{ error.stepComponentName}} or implement the\r\n      NgWizardStepInterface.<br/>\r\n      <pre>\r\n@NgComponent(...)\r\nexport class {{ error.stepComponentName }} extends NgWizardStep &#123;\r\n    constructor() &#123;\r\n        super();\r\n    &#125;\r\n&#125;</pre><br/>\r\n      or<br/>\r\n      <pre>\r\n@NgComponent(...)\r\nexport class {{ error.stepComponentName }} implements NgWizardStepInterface &#123;\r\n    wsIsValid() &#123;\r\n        return true;\r\n    &#125;\r\n    wsOnNext() &#123; &#125;\r\n    wsOnPrevious() &#123; &#125;\r\n&#125;</pre>\r\n    </span>\r\n\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div *ngIf=\"error\" class=\"ng-wizard-error\">\r\n  <i class=\"material-icons ng-wizard-error-icon\">error_outline</i>\r\n  <div [ngSwitch]=\"error.type\" class=\"ng-wizard-error-message\">\r\n\r\n    <!-- NO_WIZARD_ROUTE error -->\r\n\r\n    <span *ngSwitchCase=\"NgWizardErrorType.NO_WIZARD_ROUTE\" class=\"no-wizard-route\">\r\n      No route configuration for the {{ error.wizardComponentName }} found.<br/>\r\n      Add a route for the {{ error.wizardComponentName }} to your AppRoutingModule.<br/>\r\n      <pre>\r\nconst routes: Routes = [\r\n    &#123; path: '', component: {{ error.wizardComponentName }} &#125;,\r\n];\r\n\r\n@NgModule(&#123;\r\n  imports: [RouterModule.forRoot(routes)],\r\n  exports: [RouterModule]\r\n&#125;)\r\nexport class AppRoutingModule &#123; &#125;</pre>\r\n    </span>\r\n\r\n    <!-- NO_CHILD_ROUTES error -->\r\n\r\n    <span *ngSwitchCase=\"NgWizardErrorType.NO_CHILD_ROUTES\" class=\"no-child-routes\">\r\n      No child routes for the {{ error.wizardComponentName }} found.<br/>\r\n      Add at least one child route for the {{ error.wizardComponentName }} to your AppRoutingModule.<br/>\r\n      <pre>\r\n&#123; path: '{{ error.wizardPath }}', component: {{ error.wizardComponentName }}, children: [\r\n    &#123; path: 'step1', component: Step1Component &#125;,\r\n    &#123; path: '**', redirectTo: 'step1' &#125;,\r\n] &#125;,</pre>\r\n    </span>\r\n\r\n    <!-- NO_WS_INTERFACE error -->\r\n\r\n    <span *ngSwitchCase=\"NgWizardErrorType.NO_WS_INTERFACE\" class=\"no-ws-interface\">\r\n      The {{ error.stepComponentName}} does not extend the NgWizardStep class or implement the\r\n      NgWizardStepInterface.<br/>\r\n      Extend the NgWizardStep class in your {{ error.stepComponentName}} or implement the\r\n      NgWizardStepInterface.<br/>\r\n      <pre>\r\n@NgComponent(...)\r\nexport class {{ error.stepComponentName }} extends NgWizardStep &#123;\r\n    constructor() &#123;\r\n        super();\r\n    &#125;\r\n&#125;</pre><br/>\r\n      or<br/>\r\n      <pre>\r\n@NgComponent(...)\r\nexport class {{ error.stepComponentName }} implements NgWizardStepInterface &#123;\r\n    wsIsValid() &#123;\r\n        return true;\r\n    &#125;\r\n    wsOnNext() &#123; &#125;\r\n    wsOnPrevious() &#123; &#125;\r\n&#125;</pre>\r\n    </span>\r\n\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -246,7 +248,7 @@ var NoWsInterface = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ng-wizard-navigation-container\">\n  <nav class=\"ng-wizard-navigation\">\n    <ul class=\"ng-wizard-navigation-list\">\n      <li *ngFor=\"let stepData of stepData$ | async\" class=\"ng-wizard-navigation-list-item\">\n        <div *ngIf=\"stepData?.order < (currentStepData$ | async)?.order\"\n             (click)=\"goToStep(stepData)\" class=\"ng-wizard-navigation-link\">\n          <i class=\"material-icons\">done</i>\n          <span class=\"ng-wizard-navigation-label\">\n            {{ stepData.title }}\n          </span>\n        </div>\n\n        <div\n          *ngIf=\"stepData?.order === (currentStepData$ | async)?.order\"\n          class=\"ng-wizard-navigation-active\">\n          <i class=\"material-icons\">create</i>\n          <span class=\"ng-wizard-navigation-label\">\n            {{ stepData.title }}\n          </span>\n        </div>\n\n        <div *ngIf=\"stepData?.order > (currentStepData$ | async)?.order\"\n             class=\"ng-wizard-navigation-disabled\">\n          <i class=\"material-icons\">lock</i>\n          <span class=\"ng-wizard-navigation-label\">\n            {{ stepData.title }}\n          </span>\n        </div>\n      </li>\n    </ul>\n  </nav>\n</div>\n"
+module.exports = "<div class=\"ng-wizard-navigation-container\">\r\n  <nav class=\"ng-wizard-navigation\">\r\n    <ul class=\"ng-wizard-navigation-list\">\r\n      <li *ngFor=\"let stepData of stepData$ | async\" class=\"ng-wizard-navigation-list-item\">\r\n        <div *ngIf=\"stepData?.order < (currentStepData$ | async)?.order\"\r\n             (click)=\"goToStep(stepData)\" class=\"ng-wizard-navigation-link\">\r\n          <span [innerHTML]=\"wizardOptions.navBar.icons.previous\"></span>\r\n          <span class=\"ng-wizard-navigation-label\">\r\n            {{ stepData.title }}\r\n          </span>\r\n        </div>\r\n\r\n        <div\r\n          *ngIf=\"stepData?.order === (currentStepData$ | async)?.order\"\r\n          class=\"ng-wizard-navigation-active\">\r\n          <span [innerHTML]=\"wizardOptions.navBar.icons.current\"></span>\r\n          <span class=\"ng-wizard-navigation-label\">\r\n            {{ stepData.title }}\r\n          </span>\r\n        </div>\r\n\r\n        <div *ngIf=\"stepData?.order > (currentStepData$ | async)?.order\"\r\n             class=\"ng-wizard-navigation-disabled\">\r\n          <span [innerHTML]=\"wizardOptions.navBar.icons.next\"></span>\r\n          <span class=\"ng-wizard-navigation-label\">\r\n            {{ stepData.title }}\r\n          </span>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -291,6 +293,7 @@ var NgWizardNavigationComponent = /** @class */ (function () {
     NgWizardNavigationComponent.prototype.ngOnInit = function () {
         this.stepData$ = this.service.getStepDataChangesAsObservable();
         this.currentStepData$ = this.service.getCurrentStepDataAsObservable();
+        this.wizardOptions = this.service.wizardOptions;
     };
     NgWizardNavigationComponent.prototype.goToStep = function (stepData) {
         this.service.navigateToStep(stepData);
@@ -299,7 +302,8 @@ var NgWizardNavigationComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'ng-wizard-navigation',
             template: __webpack_require__(/*! ./ng-wizard-navigation.component.html */ "./projects/ng-wizard/src/lib/ng-wizard-navigation/ng-wizard-navigation.component.html"),
-            styles: [__webpack_require__(/*! ./ng-wizard-navigation.component.scss */ "./projects/ng-wizard/src/lib/ng-wizard-navigation/ng-wizard-navigation.component.scss")]
+            styles: [__webpack_require__(/*! ./ng-wizard-navigation.component.scss */ "./projects/ng-wizard/src/lib/ng-wizard-navigation/ng-wizard-navigation.component.scss")],
+            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewEncapsulation"].None,
         }),
         __metadata("design:paramtypes", [_ng_wizard_service__WEBPACK_IMPORTED_MODULE_1__["NgWizardService"]])
     ], NgWizardNavigationComponent);
@@ -508,6 +512,7 @@ var NgWizardService = /** @class */ (function () {
         if (!this.wizardRoute) {
             throw new _ng_wizard_error_ng_wizard_error__WEBPACK_IMPORTED_MODULE_3__["NoWizardRoute"](wizardComponentName);
         }
+        this.wizardOptions = _ng_wizard_utils__WEBPACK_IMPORTED_MODULE_2__["mergeWizardOptions"](this.wizardRoute.data);
         this.loadChildRoutes(this.wizardRoute);
     };
     /**
@@ -646,7 +651,7 @@ var NgWizardService = /** @class */ (function () {
 /*!*******************************************************!*\
   !*** ./projects/ng-wizard/src/lib/ng-wizard.utils.ts ***!
   \*******************************************************/
-/*! exports provided: getStepTitleFromRoute, componentImplementsNgWizardStepInterface, getStepDataForComponentName, getStepDataForPath */
+/*! exports provided: getStepTitleFromRoute, componentImplementsNgWizardStepInterface, getStepDataForComponentName, getStepDataForPath, getDefaultWizardOptions, mergeWizardOptions */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -655,6 +660,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "componentImplementsNgWizardStepInterface", function() { return componentImplementsNgWizardStepInterface; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStepDataForComponentName", function() { return getStepDataForComponentName; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStepDataForPath", function() { return getStepDataForPath; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDefaultWizardOptions", function() { return getDefaultWizardOptions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mergeWizardOptions", function() { return mergeWizardOptions; });
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 /**
  * Returns the step title based on the Route configuration.
  * If the route has a data.title attribute it will be returned.
@@ -695,6 +713,39 @@ function getStepDataForComponentName(stepData, componentName) {
  */
 function getStepDataForPath(stepData, path) {
     return stepData.find(function (data) { return data.path === path; });
+}
+/**
+ * Returns the default wizard options.
+ */
+function getDefaultWizardOptions() {
+    return {
+        navBar: {
+            icons: {
+                previous: '<i class="material-icons">done</i>',
+                current: '<i class="material-icons">create</i>',
+                next: '<i class="material-icons">lock</i>',
+            },
+        },
+        buttons: {
+            previous: {
+                label: '<i class="material-icons">chevron_left</i> Previous',
+            },
+            next: {
+                label: 'Next <i class="material-icons">chevron_right</i>',
+            },
+        }
+    };
+}
+/**
+ * Merges the wizard options in the wizard route's config with the default wizard options.
+ *
+ * @param wizardOptions The wizard options in the wizard route's config
+ */
+function mergeWizardOptions(wizardOptions) {
+    if (!wizardOptions) {
+        return getDefaultWizardOptions();
+    }
+    return __assign({}, getDefaultWizardOptions(), wizardOptions);
 }
 /**
  * Capitalizes the first character of the passed value.
@@ -773,6 +824,23 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+var wizardConfig = {
+// navBar: {
+//   icons: {
+//     previous: '<i class="material-icons">cake</i>',
+//     current: '<i class="material-icons">star</i>',
+//     next: '<i class="material-icons">pool</i>',
+//   },
+// },
+// buttons: {
+//   previous: {
+//     label: '<i class="material-icons">arrow_left</i> Previous',
+//   },
+//   next: {
+//     label: 'Next <i class="material-icons">arrow_right</i>',
+//   },
+// }
+};
 var routes = [
     { path: '', component: _projects_ng_wizard_src_lib_ng_wizard_component__WEBPACK_IMPORTED_MODULE_2__["NgWizardComponent"], children: [
             { path: 'personal', component: _step1_step1_component__WEBPACK_IMPORTED_MODULE_3__["Step1Component"] },
@@ -781,7 +849,7 @@ var routes = [
             { path: 'confirmation', component: _step4_step4_component__WEBPACK_IMPORTED_MODULE_6__["Step4Component"] },
             { path: 'done', component: _step5_step5_component__WEBPACK_IMPORTED_MODULE_7__["Step5Component"] },
             { path: '**', redirectTo: 'personal' },
-        ] },
+        ], data: wizardConfig },
     { path: '**', redirectTo: '' },
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -996,7 +1064,7 @@ var AppService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div [formGroup]=\"form\">\n  <h1>Personal information</h1>\n  <p>\n    <label>Last name*</label>\n    <input type=\"text\" formControlName=\"lastName\" />\n  </p>\n  <p>\n    <label>First name*</label>\n    <input type=\"text\" formControlName=\"firstName\" />\n  </p>\n</div>\n"
+module.exports = "<div [formGroup]=\"form\">\r\n  <h1>Personal information</h1>\r\n  <p>\r\n    <label>Last name*</label>\r\n    <input type=\"text\" formControlName=\"lastName\" />\r\n  </p>\r\n  <p>\r\n    <label>First name*</label>\r\n    <input type=\"text\" formControlName=\"firstName\" />\r\n  </p>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1084,7 +1152,7 @@ var Step1Component = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div [formGroup]=\"form\">\n  <h1>Developer profile</h1>\n  <p>\n    <label>GitHub username</label>\n    <input type=\"text\" formControlName=\"gitUser\" />\n  </p>\n  <p>\n    <label>Favorite GitHub project</label>\n    <input type=\"text\" formControlName=\"favoriteProject\" />\n  </p>\n</div>\n"
+module.exports = "<div [formGroup]=\"form\">\r\n  <h1>Developer profile</h1>\r\n  <p>\r\n    <label>GitHub username</label>\r\n    <input type=\"text\" formControlName=\"gitUser\" />\r\n  </p>\r\n  <p>\r\n    <label>Favorite GitHub project</label>\r\n    <input type=\"text\" formControlName=\"favoriteProject\" />\r\n  </p>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1176,7 +1244,7 @@ var Step2Component = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div [formGroup]=\"form\">\n  <h1>Angular usage</h1>\n  <p>\n    <label>Your project's Angular version*</label>\n    <input type=\"number\" formControlName=\"ngVersion\" size=\"3\"/>\n    <span class=\"error\"\n          *ngIf=\"form.get('ngVersion').touched && !form.get('ngVersion').valid\">\n      Version must be equal to or greater than 7.</span>\n  </p>\n  <p>\n    <input type=\"checkbox\" formControlName=\"ngRouter\">\n    <label>Your projects includes Angular's Router</label>\n  </p>\n</div>\n"
+module.exports = "<div [formGroup]=\"form\">\r\n  <h1>Angular usage</h1>\r\n  <p>\r\n    <label>Your project's Angular version*</label>\r\n    <input type=\"number\" formControlName=\"ngVersion\" size=\"3\"/>\r\n    <span class=\"error\"\r\n          *ngIf=\"form.get('ngVersion').touched && !form.get('ngVersion').valid\">\r\n      Version must be equal to or greater than 7.</span>\r\n  </p>\r\n  <p>\r\n    <input type=\"checkbox\" formControlName=\"ngRouter\">\r\n    <label>Your projects includes Angular's Router</label>\r\n  </p>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1275,7 +1343,7 @@ var Step3Component = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Confirmation</h1>\n<table>\n  <tr>\n    <td>Last name</td>\n    <td>{{values.lastName}}</td>\n  </tr>\n  <tr>\n    <td>First name</td>\n    <td>{{values.firstName}}</td>\n  </tr>\n  <tr>\n    <td>GitHub username</td>\n    <td>{{values.gitUser}}</td>\n  </tr>\n  <tr>\n    <td>Favorite GitHub project</td>\n    <td>{{values.favoriteProject}}</td>\n  </tr>\n  <tr>\n    <td>Angular version</td>\n    <td>{{values.ngVersion}}</td>\n  </tr>\n  <tr>\n    <td>Angular router</td>\n    <td>{{values.ngRouter ? 'Yes' : 'No'}}</td>\n  </tr>\n</table>\n\n<br/><br/>\nTODO: Rename next button to 'Confirm' and previous button to 'Edit'\n"
+module.exports = "<h1>Confirmation</h1>\r\n<table>\r\n  <tr>\r\n    <td>Last name</td>\r\n    <td>{{values.lastName}}</td>\r\n  </tr>\r\n  <tr>\r\n    <td>First name</td>\r\n    <td>{{values.firstName}}</td>\r\n  </tr>\r\n  <tr>\r\n    <td>GitHub username</td>\r\n    <td>{{values.gitUser}}</td>\r\n  </tr>\r\n  <tr>\r\n    <td>Favorite GitHub project</td>\r\n    <td>{{values.favoriteProject}}</td>\r\n  </tr>\r\n  <tr>\r\n    <td>Angular version</td>\r\n    <td>{{values.ngVersion}}</td>\r\n  </tr>\r\n  <tr>\r\n    <td>Angular router</td>\r\n    <td>{{values.ngRouter ? 'Yes' : 'No'}}</td>\r\n  </tr>\r\n</table>\r\n\r\n<br/><br/>\r\nTODO: Rename next button to 'Confirm' and previous button to 'Edit'\r\n"
 
 /***/ }),
 
@@ -1354,7 +1422,7 @@ var Step4Component = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>All steps completed!</h1>\n<br/>\nTODO: remove previous button and disable navigation\n"
+module.exports = "<h1>All steps completed!</h1>\r\n<br/>\r\nTODO: remove previous button and disable navigation\r\n"
 
 /***/ }),
 
