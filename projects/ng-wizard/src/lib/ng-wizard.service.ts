@@ -6,9 +6,12 @@ import { NgWizardStepData } from './ng-wizard-step/ng-wizard-step-data.interface
 import { NgWizardStep } from './ng-wizard-step/ng-wizard-step';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { NgWizardOptions } from './ng-wizard-options/ng-wizard-options.interface';
 
 @Injectable()
 export class NgWizardService {
+  public wizardOptions: NgWizardOptions = this.getDefaultWizardOptions();
+
   private wizardRoute: Route;
   private stepData: NgWizardStepData[] = [];
   private currentStepData: NgWizardStepData;
@@ -175,5 +178,25 @@ export class NgWizardService {
       stepData.isCurrent = false;
       return stepData;
     });
+  }
+
+  private getDefaultWizardOptions(): NgWizardOptions {
+    return {
+      navBar: {
+        icons: {
+          previous: '<i class="material-icons">done</i>',
+          current: '<i class="material-icons">create</i>',
+          next: '<i class="material-icons">lock</i>',
+        },
+      },
+      buttons: {
+        previous: {
+          label: '<i class="material-icons">keyboard_arrow_left</i> Previous',
+        },
+        next: {
+          label: 'Next <i class="material-icons">keyboard_arrow_right</i>',
+        },
+      }
+    };
   }
 }

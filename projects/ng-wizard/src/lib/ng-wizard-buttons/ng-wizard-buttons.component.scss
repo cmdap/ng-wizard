@@ -24,6 +24,16 @@ div.ng-wizard-buttons-container {
         grid-area: btn-next;
         justify-self: end;
       }
+
+      .ng-wizard-button-label {
+        position: relative;
+        top: -5px;
+
+        i {
+          position: relative;
+          top: 7px;
+        }
+      }
     }
   }
 }

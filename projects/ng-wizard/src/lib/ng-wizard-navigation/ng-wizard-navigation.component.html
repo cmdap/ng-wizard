@@ -4,7 +4,7 @@
       <li *ngFor="let stepData of stepData$ | async" class="ng-wizard-navigation-list-item">
         <div *ngIf="stepData?.order < (currentStepData$ | async)?.order"
              (click)="goToStep(stepData)" class="ng-wizard-navigation-link">
-          <i class="material-icons">done</i>
+          <span [innerHTML]="wizardOptions.navBar.icons.previous"></span>
           <span class="ng-wizard-navigation-label">
             {{ stepData.title }}
           </span>
@@ -13,7 +13,7 @@
         <div
           *ngIf="stepData?.order === (currentStepData$ | async)?.order"
           class="ng-wizard-navigation-active">
-          <i class="material-icons">create</i>
+          <span [innerHTML]="wizardOptions.navBar.icons.current"></span>
           <span class="ng-wizard-navigation-label">
             {{ stepData.title }}
           </span>
@@ -21,7 +21,7 @@
 
         <div *ngIf="stepData?.order > (currentStepData$ | async)?.order"
              class="ng-wizard-navigation-disabled">
-          <i class="material-icons">lock</i>
+          <span [innerHTML]="wizardOptions.navBar.icons.next"></span>
           <span class="ng-wizard-navigation-label">
             {{ stepData.title }}
           </span>

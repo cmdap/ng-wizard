@@ -4,13 +4,13 @@
   "description": "A simple wizard/stepper component for Angular 7 utilizing Angular Routing for navigation.",
   "keywords": ["Angular", "Angular 7", "Wizard", "Stepper", "Router"],
   "bugs": {
-    "url" : "https://github.com/jbrems/ng-wizard/issues",
+    "url" : "https://github.com/cmdap/ng-wizard/issues",
     "email" : "jonasbrems@gmail.com"
   },
   "license": "MIT",
   "repository": {
     "type" : "git",
-    "url" : "https://github.com/jbrems/ng-wizard.git"
+    "url" : "https://github.com/cmdap/ng-wizard.git"
   },
   "author": "Jonas Brems",
   "contributors": [],
@@ -18,7 +18,9 @@
   "peerDependencies": {
     "@angular/common": "^7.0.0",
     "@angular/core": "^7.0.0",
-    "@angular/router": "^7.0.0",
+    "@angular/router": "^7.0.0"
+  },
+  "optionalDependencies": {
     "material-icons": "^0.3.1"
   }
 }

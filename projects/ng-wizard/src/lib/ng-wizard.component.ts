@@ -1,4 +1,4 @@
-import { Component, ComponentRef } from '@angular/core';
+import { Component, ComponentRef, ViewEncapsulation } from '@angular/core';
 import { NgWizardService } from './ng-wizard.service';
 
 @Component({

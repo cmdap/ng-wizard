@@ -1,5 +1,5 @@
 # NgWizard
-<img src="ng-wizard.png" alt="ng-wizard logo" width="200" align="left"/>
+![ng-wizard logo](ng-wizard-200.png)
 
 The NgWizard component is a simple wizard/stepper component for
 [Angular](https://angular.io) 7 utilizing

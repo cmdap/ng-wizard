@@ -7,6 +7,8 @@ import { Step3Component } from './step3/step3.component';
 import { Step4Component } from './step4/step4.component';
 import { Step5Component } from './step5/step5.component';
 
+const wizardConfig = {};
+
 const routes: Routes = [
   { path: '', component: NgWizardComponent, children: [
       { path: 'personal', component: Step1Component },
@@ -15,7 +17,7 @@ const routes: Routes = [
       { path: 'confirmation', component: Step4Component },
       { path: 'done', component: Step5Component },
       { path: '**', redirectTo: 'personal' },
-  ]},
+  ], data: wizardConfig},
   { path: '**', redirectTo: '' },
 ];
 
