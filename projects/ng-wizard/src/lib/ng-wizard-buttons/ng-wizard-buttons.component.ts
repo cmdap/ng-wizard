@@ -8,7 +8,7 @@ import { NgWizardOptions } from '../ng-wizard-options/ng-wizard-options.interfac
   selector: 'ng-wizard-buttons',
   templateUrl: './ng-wizard-buttons.component.html',
   styleUrls: ['./ng-wizard-buttons.component.scss'],
-  encapsulation: ViewEncapsulation.Native,
+  encapsulation: ViewEncapsulation.None, // TODO: figure out how to get rid of this (needed for custom buttons)
 })
 export class NgWizardButtonsComponent implements OnInit {
   public currentStepData$: Observable<NgWizardStepData>;

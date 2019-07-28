@@ -1,6 +1,7 @@
 import { Route } from '@angular/router';
 import { ComponentRef } from '@angular/core';
 import { NgWizardStepData } from './ng-wizard-step/ng-wizard-step-data.interface';
+import { NgWizardOptions } from './ng-wizard-options/ng-wizard-options.interface';
 
 /**
  * Returns the step title based on the Route configuration.
@@ -45,6 +46,42 @@ export function getStepDataForComponentName(stepData: NgWizardStepData[], compon
  */
 export function getStepDataForPath(stepData: NgWizardStepData[], path: string) {
   return stepData.find(data => data.path === path);
+}
+
+/**
+ * Returns the default wizard options.
+ */
+export function getDefaultWizardOptions(): NgWizardOptions {
+  return {
+    navBar: {
+      icons: {
+        previous: '<i class="material-icons">done</i>',
+        current: '<i class="material-icons">create</i>',
+        next: '<i class="material-icons">lock</i>',
+      },
+    },
+    buttons: {
+      previous: {
+        label: '<i class="material-icons">chevron_left</i> Previous',
+      },
+      next: {
+        label: 'Next <i class="material-icons">chevron_right</i>',
+      },
+    }
+  };
+}
+
+/**
+ * Merges the wizard options in the wizard route's config with the default wizard options.
+ *
+ * @param wizardOptions The wizard options in the wizard route's config
+ */
+export function mergeWizardOptions(wizardOptions: {}): NgWizardOptions {
+  if (!wizardOptions) {
+    return getDefaultWizardOptions();
+  }
+
+  return { ...getDefaultWizardOptions(), ...wizardOptions };
 }
 
 /**

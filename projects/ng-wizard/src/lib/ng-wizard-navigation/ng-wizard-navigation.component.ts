@@ -7,7 +7,7 @@ import { NgWizardOptions } from '../ng-wizard-options/ng-wizard-options.interfac
   selector: 'ng-wizard-navigation',
   templateUrl: './ng-wizard-navigation.component.html',
   styleUrls: ['./ng-wizard-navigation.component.scss'],
-  encapsulation: ViewEncapsulation.None, // TODO: find out how to get icons working without this
+  encapsulation: ViewEncapsulation.None, // TODO: find out how to get custom icons working without this
 })
 export class NgWizardNavigationComponent implements OnInit {
   public stepData$;

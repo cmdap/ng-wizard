@@ -10,7 +10,7 @@ import { NgWizardOptions } from './ng-wizard-options/ng-wizard-options.interface
 
 @Injectable()
 export class NgWizardService {
-  public wizardOptions: NgWizardOptions = this.getDefaultWizardOptions();
+  public wizardOptions: NgWizardOptions;
 
   private wizardRoute: Route;
   private stepData: NgWizardStepData[] = [];
@@ -31,6 +31,7 @@ export class NgWizardService {
     if (!this.wizardRoute) {
       throw new NoWizardRoute(wizardComponentName);
     }
+    this.wizardOptions = utils.mergeWizardOptions(this.wizardRoute.data);
     this.loadChildRoutes(this.wizardRoute);
   }
 
@@ -178,25 +179,5 @@ export class NgWizardService {
       stepData.isCurrent = false;
       return stepData;
     });
-  }
-
-  private getDefaultWizardOptions(): NgWizardOptions {
-    return {
-      navBar: {
-        icons: {
-          previous: '<i class="material-icons">done</i>',
-          current: '<i class="material-icons">create</i>',
-          next: '<i class="material-icons">lock</i>',
-        },
-      },
-      buttons: {
-        previous: {
-          label: '<i class="material-icons">keyboard_arrow_left</i> Previous',
-        },
-        next: {
-          label: 'Next <i class="material-icons">keyboard_arrow_right</i>',
-        },
-      }
-    };
   }
 }

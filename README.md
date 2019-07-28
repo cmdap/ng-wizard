@@ -23,8 +23,9 @@ To install the NgWizard component in your Angular project directory run:
 ```
 $ npm install @cmdap/ng-wizard material-icons
 ```
+_If you don't want to use any of the default icons, you don't need to install the optional `material-icons` dependency._
 
-Then you can add a route for the `NgWizardComponent` to your Angular
+Then add a route for the `NgWizardComponent` to your Angular
 router configuration with each step in the wizard as a child route.
 
 For example, your `app-routing.module.ts` file for a wizard with 2 steps
@@ -73,6 +74,57 @@ export class Step1Component extends NgWizardStep {
 }
 ```
 
+### Wizard options
+Custom options can be passed to the NgWizard component via the `data` attribute of the wizard route.  
+For example:
+```
+const wizardConfig = {
+  navBar: {
+    icons: {
+      previous: '<i class="material-icons">cake</i>',
+      current: '<i class="material-icons">star</i>',
+      next: '<i class="material-icons">pool</i>',
+    },
+  },
+};
+
+const routes: Routes = [
+  { path: '', component: NgWizardComponent, children: [...], data: wizardConfig },
+  { path: '**', redirectTo: '' },
+];
+```
+Currently the supported configuration options which can be overwritten are (with their default values):
+```
+{
+  navBar: {
+    icons: {
+      previous: '<i class="material-icons">done</i>',
+      current: '<i class="material-icons">create</i>',
+      next: '<i class="material-icons">lock</i>',
+    },
+  },
+  buttons: {
+    previous: {
+      label: '<i class="material-icons">chevron_left</i> Previous',
+    },
+    next: {
+      label: 'Next <i class="material-icons">chevron_right</i>',
+    },
+  }
+}
+```
+_If you overwrite all the options containing the `material-icons` class you do not need to install the optional `material-icons` dependency._
+
+### Wizard step options
+Yet to be implemented (expected in August). 
+
+### Hooks
+Before navigating, the NgWizard component will call the active step's `wsOnNext` or `wsOnPrevious` method.
+Use these methods to save the current state of the step to a service or to perform any other logic you want to execture before leaving the active step.
+
+When a new step is displayed the `ngOnInit` method will be called by Angular.
+Use this method to initialize the step's data and/or check the user's access rights to this step.
+
 ### Cancel navigation
 If your step component's state is invalid return `false` from your
 `wsIsValid` method. This will cancel the navigation to the next step but
@@ -100,7 +152,7 @@ your own style rules overwriting the existing ones.
 `TODO`: describe how to overwrite the styling (Olga ?)
 
 ## Planned improvements
-* Allow extra configuration to be passed to the route's configuration
+* Allow extra configuration to be passed to the child route's configuration
   (custom icons, point of no return, next and previous button labels,
   step title, ...).
 * Improve the responsiveness of the basic styles.
@@ -109,3 +161,21 @@ your own style rules overwriting the existing ones.
 * Remove peerDependency on material-icons
 * Add support for more Angular versions
 
+## Contributing
+If you are willing to contribute to this project you can clone the source code from our [github repository](https://github.com/cmdap/ng-wizard).
+```
+$ git clone https://github.com/cmdap/ng-wizard.git
+``` 
+You will find a `src` folder containing the NgWizard demo project as seen on [https://cmdap.github.io/ng-wizard](https://cmdap.github.io/ng-wizard) as well as a `projects\ng-wizard` folder containing the source code for the ng-wizard component.
+
+### Useful commands
+In addition to the default Angular commands some useful NPM scripts have been added to the root `package.json` file.
+
+| Useful command | Description |
+| ------- | ----------- |
+| `npm start` | Starts a development server for the **demo project**. The server will start on [http://localhost:4200](http://localhost:4200). |
+| `ng build`| Builds the **demo project** to the `docs` folder. This folder will be published as the NgWizard's demo at [https://cmdap.github.io/ng-wizard](https://cmdap.github.io/ng-wizard). |
+| `npm test` | Runs the Karma/Jasmine tests for the **ng-wizard component** with code coverage enabled. |
+| `npm run lint` | Runs the linter on the **ng-wizard component**'s source code. |
+| `npm run build` | Builds the **ng-wizard component**'s source code to an NPM package in the `dist\ng-wizard` folder. Also copies the `README.md` (with assets) and `LICENSE.txt` files to that folder. |
+| `npm publish dist\ng-wizard --access public` | **Only for project owners**. Publishes the **ng-wizard package** to the NPM repository at [https://www.npmjs.com/package/@cmdap/ng-wizard](https://www.npmjs.com/package/@cmdap/ng-wizard). |
