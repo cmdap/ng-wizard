@@ -6,9 +6,12 @@ import { NgWizardStepData } from './ng-wizard-step/ng-wizard-step-data.interface
 import { NgWizardStep } from './ng-wizard-step/ng-wizard-step';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { NgWizardOptions } from './ng-wizard-options/ng-wizard-options.interface';
 
 @Injectable()
 export class NgWizardService {
+  public wizardOptions: NgWizardOptions;
+
   private wizardRoute: Route;
   private stepData: NgWizardStepData[] = [];
   private currentStepData: NgWizardStepData;
@@ -28,6 +31,7 @@ export class NgWizardService {
     if (!this.wizardRoute) {
       throw new NoWizardRoute(wizardComponentName);
     }
+    this.wizardOptions = utils.mergeWizardOptions(this.wizardRoute.data);
     this.loadChildRoutes(this.wizardRoute);
   }
 

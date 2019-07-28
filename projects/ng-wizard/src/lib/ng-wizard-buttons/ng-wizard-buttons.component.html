@@ -3,12 +3,12 @@
     <button *ngIf="currentStepData.previousStep"
             (click)="goToPreviousStep()"
             class="ng-wizard-button-previous">
-      Previous
+      <span [innerHTML]="wizardOptions.buttons.previous.label" class="ng-wizard-button-label"></span>
     </button>
     <button *ngIf="currentStepData.nextStep"
             (click)="goToNextStep()"
             class="ng-wizard-button-next">
-      Next
+      <span [innerHTML]="wizardOptions.buttons.next.label" class="ng-wizard-button-label"></span>
     </button>
   </div>
 </div>

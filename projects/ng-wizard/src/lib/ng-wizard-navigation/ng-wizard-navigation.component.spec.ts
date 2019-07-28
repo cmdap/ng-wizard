@@ -3,9 +3,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgWizardNavigationComponent } from './ng-wizard-navigation.component';
 import { NgWizardService } from '../ng-wizard.service';
 import { RouterTestingModule } from '@angular/router/testing';
-import { NgWizardErrorType } from '../ng-wizard-error/ng-wizard-error-type.enum';
 import { NgWizardStepData } from '../ng-wizard-step/ng-wizard-step-data.interface';
 import { Observable } from 'rxjs';
+import { getDefaultWizardOptions } from '../ng-wizard.utils';
 
 const stepData: NgWizardStepData[] = [
   { order: 1, title: 'Step 1' } as NgWizardStepData,
@@ -49,6 +49,7 @@ describe('NgWizardNavigationComponent', () => {
       }),
     );
     spyOn(service, 'navigateToStep');
+    service.wizardOptions = getDefaultWizardOptions();
 
     fixture.detectChanges();
   });
@@ -85,7 +86,7 @@ describe('NgWizardNavigationComponent', () => {
     expect(listItems[4].children[0].classList).toContain('ng-wizard-navigation-disabled');
   });
 
-  it('should call the service\'s navigateToStep method when a previous step is clicked', () => {
+  it("should call the service's navigateToStep method when a previous step is clicked", () => {
     element.querySelectorAll('.ng-wizard-navigation-link')[0].click();
     expect(service.navigateToStep).toHaveBeenCalledWith(stepData[0]);
     element.querySelectorAll('.ng-wizard-navigation-link')[1].click();
@@ -101,5 +102,16 @@ describe('NgWizardNavigationComponent', () => {
     element.querySelectorAll('.ng-wizard-navigation-disabled')[0].click();
     element.querySelectorAll('.ng-wizard-navigation-disabled')[1].click();
     expect(service.navigateToStep).not.toHaveBeenCalled();
+  });
+
+  it('should show the custom icons if defined in the wizard options', () => {
+    component.wizardOptions = {
+      ...getDefaultWizardOptions(),
+      ...{ navBar: { icons: { previous: 'P', current: 'C', next: 'N' } } },
+    };
+    fixture.detectChanges();
+    expect(element.querySelectorAll('.ng-wizard-navigation-link span')[0].innerHTML).toBe('P');
+    expect(element.querySelectorAll('.ng-wizard-navigation-active span')[0].innerHTML).toBe('C');
+    expect(element.querySelectorAll('.ng-wizard-navigation-disabled span')[0].innerHTML).toBe('N');
   });
 });
