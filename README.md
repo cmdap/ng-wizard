@@ -71,7 +71,7 @@ export class Step1Component extends NgWizardStep {
 ### Wizard options
 Custom options can be passed to the NgWizard component via the `data` attribute of the wizard route.  
 For example:
-```
+```typescript
 const wizardConfig = {
   navBar: {
     icons: {
@@ -83,12 +83,12 @@ const wizardConfig = {
 };
 
 const routes: Routes = [
-  { path: '', component: NgWizardComponent, children: [...], data: wizardConfig },
+  { path: '', component: NgWizardComponent, children: [], data: wizardConfig },
   { path: '**', redirectTo: '' },
 ];
 ```
 Currently the supported configuration options which can be overwritten are (with their default values):
-```
+```typescript
 {
   navBar: {
     icons: {
