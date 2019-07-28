@@ -9,8 +9,8 @@ A demo can be found at
 [https://cmdap.github.io/ng-wizard/](https://cmdap.github.io/ng-wizard/).
 
 ## Installation
-The NgWizard component is available as an NPM package. It has a single
-(peer)dependency on `material-icons` for displaying
+The NgWizard component is available as an NPM package.  
+It has an optional dependency on `material-icons` for displaying the default
 [Material icons](https://material.io/tools/icons) as well as some peer
 dependencies on Angular packages.  
 To install the NgWizard component in your Angular project directory run:
@@ -129,13 +129,12 @@ previous navigation make sure your `wsOnNext` and/or `wsOnPrevious`
 method returns `false`.  
 This will cancel the Wizard's navigation.   
 
-Your step component is responsible for displaying an error message or
-other reason why the navigation is cancelled.
+_Your step component is responsible for displaying an error message or
+other reason why the navigation is cancelled._
 
 ### Entry via URL
 Since the NgWizard component utilizes Angular's Routing it is possible
-for a user to access any step in the wizard via the URL.  
-If the user is not allowed to access a specific step you can check the
+for a user to access any step in the wizard via the URL. If the user is not allowed to access a specific step you can check the
 conditions and redirect the user in the step component's `ngOnInit`
 method.
 
@@ -143,7 +142,7 @@ method.
 The NgWizard component contains minimal styling rules to get you started
 during development. Your project will most likely require you to define
 your own style rules overwriting the existing ones.  
-`TODO`: describe how to overwrite the styling (Olga ?)
+`TODO`: describe how to overwrite the styling.
 
 ## Planned improvements
 * Allow extra configuration to be passed to the child route's configuration
@@ -152,7 +151,6 @@ your own style rules overwriting the existing ones.
 * Improve the responsiveness of the basic styles.
 * Improve the component's Accessibility (ARIA attributes, colors and
   contrasts).
-* Remove peerDependency on material-icons
 * Add support for more Angular versions
 
 ## Contributing
