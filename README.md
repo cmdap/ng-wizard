@@ -9,64 +9,64 @@ A demo can be found at
 [https://cmdap.github.io/ng-wizard/](https://cmdap.github.io/ng-wizard/).
 
 ## Installation
-The NgWizard component is available as an NPM package.  
-It has an optional dependency on `material-icons` for displaying the default
-[Material icons](https://material.io/tools/icons) as well as some peer
-dependencies on Angular packages.  
-To install the NgWizard component in your Angular project directory run:
-```
-$ npm install @cmdap/ng-wizard material-icons
-```
-_If you don't want to use any of the default icons, you don't need to install the optional `material-icons` dependency._
+1. The NgWizard component is available as an NPM package. To install the
+   NgWizard package in your Angular project directory run:
+    ```
+    $ npm install @cmdap/ng-wizard
+    ```
 
-Then add a route for the `NgWizardComponent` to your Angular
-router configuration with each step in the wizard as a child route.
+2. Then add a route for the `NgWizardComponent` to your Angular
+    router configuration with each step in the wizard as a child route.
 
-For example, your `app-routing.module.ts` file for a wizard with 2 steps
-can look like this:
-```typescript
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { NgWizardComponent } from '@cmdap/ng-wizard';
-import { Step1Component } from './step1/step1.component';
-import { Step2Component } from './step2/step2.component';
+    For example, your `app-routing.module.ts` file for a wizard with 2 steps can look like this (import statements hidden):
+    ```typescript
+    import { NgWizardComponent } from '@cmdap/ng-wizard';
 
+    const routes: Routes = [
+      { path: '', component: NgWizardComponent, children: [
+          { path: 'step-1', component: Step1Component },
+          { path: 'step-2', component: Step2Component },
+          { path: '**', redirectTo: 'step-1' },
+      ]},
+      { path: '**', redirectTo: '' },
+    ];
+    
+    @NgModule({
+      imports: [RouterModule.forRoot(routes)],
+      exports: [RouterModule]
+    })
+    export class AppRoutingModule { }
+    ```
 
-const routes: Routes = [
-  { path: '', component: NgWizardComponent, children: [
-      { path: 'step-1', component: Step1Component },
-      { path: 'step-2', component: Step2Component },
-      { path: '**', redirectTo: 'step-1' },
-  ]},
-  { path: '**', redirectTo: '' },
-];
+3. Finally, have your step components extend the `NgWizardStep` class or
+    implement the `NgWizardStepInterface`.
+    
+    A minimal step component file can look like this:
+    ```typescript
+    import { Component } from '@angular/core';
+    import { NgWizardStep } from '@cmdap/ng-wizard';
+    
+    @Component({
+      selector: 'app-step1',
+      templateUrl: './step1.component.html',
+    })
+    export class Step1Component extends NgWizardStep {
+      constructor() {
+        super();
+      }
+    }
+    ```
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
-```
+4. If you want to use the NgWizard's default
+    [Material icons](https://material.io/tools/icons) in your project you
+    have to import the
+    [material icons stylesheet](https://fonts.googleapis.com/icon?family=Material+Icons)
+    in your project.  
+    For example, add the following link to your `index.html`'s `<head>` tag.
+    ```html
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    ```
 
-Finally, have your step components extend the `NgWizardStep` class or
-implement the `NgWizardStepInterface` and you
-are all set.
-
-A minimal step component file can look like this:
-```typescript
-import { Component } from '@angular/core';
-import { NgWizardStep } from '@cmdap/ng-wizard';
-
-@Component({
-  selector: 'app-step1',
-  templateUrl: './step1.component.html',
-})
-export class Step1Component extends NgWizardStep {
-  constructor() {
-    super();
-  }
-}
-```
 
 ### Wizard options
 Custom options can be passed to the NgWizard component via the `data` attribute of the wizard route.  
@@ -107,7 +107,6 @@ Currently the supported configuration options which can be overwritten are (with
   }
 }
 ```
-_If you overwrite all the options containing the `material-icons` class you do not need to install the optional `material-icons` dependency._
 
 ### Wizard step options
 Yet to be implemented (expected in August). 

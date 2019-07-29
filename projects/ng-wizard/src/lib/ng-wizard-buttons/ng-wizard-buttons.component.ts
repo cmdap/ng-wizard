@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgWizardService } from '../ng-wizard.service';
 import { NgWizardStepData } from '../ng-wizard-step/ng-wizard-step-data.interface';
 import { Observable } from 'rxjs';
@@ -8,7 +8,6 @@ import { NgWizardOptions } from '../ng-wizard-options/ng-wizard-options.interfac
   selector: 'ng-wizard-buttons',
   templateUrl: './ng-wizard-buttons.component.html',
   styleUrls: ['./ng-wizard-buttons.component.scss'],
-  encapsulation: ViewEncapsulation.None, // TODO: figure out how to get rid of this (needed for custom buttons)
 })
 export class NgWizardButtonsComponent implements OnInit {
   public currentStepData$: Observable<NgWizardStepData>;

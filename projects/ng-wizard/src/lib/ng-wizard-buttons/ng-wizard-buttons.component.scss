@@ -29,7 +29,7 @@ div.ng-wizard-buttons-container {
         position: relative;
         top: -5px;
 
-        i {
+        ::ng-deep i.ng-wizard-icon {
           position: relative;
           top: 7px;
         }
