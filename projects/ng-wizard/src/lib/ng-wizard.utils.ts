@@ -2,20 +2,7 @@ import { Route } from '@angular/router';
 import { ComponentRef } from '@angular/core';
 import { NgWizardStepData } from './ng-wizard-step/ng-wizard-step-data.interface';
 import { NgWizardOptions } from './ng-wizard-options/ng-wizard-options.interface';
-
-/**
- * Returns the step title based on the Route configuration.
- * If the route has a data.title attribute it will be returned.
- * Else the path will be capitalized and '-' or '_' characters will be replaces by spaces.
- *
- * @param route The Angular Route object
- */
-export function getStepTitleFromRoute(route: Route): string {
-  if (route.data && route.data.title) {
-    return route.data.title;
-  }
-  return capitalize(insertSpaces(route.path));
-}
+import { NgWizardStepOptions } from './ng-wizard-step/ng-wizard-step-options';
 
 /**
  * Returns true if the component extends the NgWizardStep class or implements the NgWizardStepInterface.
@@ -82,6 +69,36 @@ export function mergeWizardOptions(wizardOptions: {}): NgWizardOptions {
   }
 
   return { ...getDefaultWizardOptions(), ...wizardOptions };
+}
+
+/**
+ * Returns the options passed to the wizard step route with an added title attribute.
+ *
+ * @param route The wizard step route configuration
+ */
+export function getWizardStepOptions(route: Route): NgWizardStepOptions {
+  if (!route.data) {
+    return { title: getStepTitleFromRoute(route) };
+  }
+
+  return {
+    ...route.data,
+    title: getStepTitleFromRoute(route),
+  };
+}
+
+/**
+ * Returns the step title based on the Route configuration.
+ * If the route has a data.title attribute it will be returned.
+ * Else the path will be capitalized and '-' or '_' characters will be replaces by spaces.
+ *
+ * @param route The Angular Route object
+ */
+export function getStepTitleFromRoute(route: Route): string {
+  if (route.data && route.data.title) {
+    return route.data.title;
+  }
+  return capitalize(insertSpaces(route.path));
 }
 
 /**

@@ -109,7 +109,45 @@ Currently the supported configuration options which can be overwritten are (with
 ```
 
 ### Wizard step options
-Yet to be implemented (expected in August). 
+Custom options for a specific step can be passed as the `data` attribute
+of the corresponding child route.  
+For example: 
+```typescript
+const doneStepOptions = {
+  icon: '<i class="material-icons ng-wizard-icon">done_all</i>',
+  buttons: {
+    previous: {
+      hidden: true,
+    },
+  },
+  disableNavigation: true,
+};
+
+const routes: Routes = [
+  { path: '', component: NgWizardComponent, children: [
+      { path: 'done', component: Step5Component, data: doneStepOptions },
+  ] },
+];
+```
+Currently the supported step configuration options which can be
+overwritten are: 
+```typescript
+{
+  title: string; // By default a human readable version of the path is used
+  icon: string; // This icon will be used for all stages of the step (previous/current/next)
+  buttons: {
+    previous: {
+      label: string;
+      hidden: boolean;
+    };
+    next: {
+      label: string;
+      hidden: boolean;
+    };
+  };
+  disableNavigation: boolean; // Disables navigation from the wizard's navigation bar
+}
+```
 
 ### Hooks
 Before navigating, the NgWizard component will call the active step's `wsOnNext` or `wsOnPrevious` method.
@@ -144,9 +182,6 @@ your own style rules overwriting the existing ones.
 `TODO`: describe how to overwrite the styling.
 
 ## Planned improvements
-* Allow extra configuration to be passed to the child route's configuration
-  (custom icons, point of no return, next and previous button labels,
-  step title, ...).
 * Improve the responsiveness of the basic styles.
 * Improve the component's Accessibility (ARIA attributes, colors and
   contrasts).

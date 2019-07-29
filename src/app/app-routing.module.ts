@@ -25,13 +25,34 @@ const wizardConfig = {
   // }
 };
 
+const confirmationStepOptions = {
+  buttons: {
+    previous: {
+      label: '<i class="material-icons ng-wizard-icon">create</i> Edit',
+    },
+    next: {
+      label: 'Confirm <i class="material-icons ng-wizard-icon">done_all</i>',
+    }
+  }
+};
+
+const doneStepOptions = {
+  icon: '<i class="material-icons ng-wizard-icon">done_all</i>',
+  buttons: {
+    previous: {
+      hidden: true,
+    },
+  },
+  disableNavigation: true,
+};
+
 const routes: Routes = [
   { path: '', component: NgWizardComponent, children: [
       { path: 'personal', component: Step1Component },
       { path: 'developer', component: Step2Component },
       { path: 'angular', component: Step3Component },
-      { path: 'confirmation', component: Step4Component },
-      { path: 'done', component: Step5Component },
+      { path: 'confirmation', component: Step4Component, data: confirmationStepOptions },
+      { path: 'done', component: Step5Component, data: doneStepOptions },
       { path: '**', redirectTo: 'personal' },
   ], data: wizardConfig},
   { path: '**', redirectTo: '' },

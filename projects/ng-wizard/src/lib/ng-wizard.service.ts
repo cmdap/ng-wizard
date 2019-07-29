@@ -155,11 +155,11 @@ export class NgWizardService {
     this.stepData.push({
       order: index + 1,
       componentName: stepRoute.component.name,
-      title: utils.getStepTitleFromRoute(stepRoute),
       path: stepRoute.path,
       previousStep: previousStep ? previousStep.path : undefined,
       nextStep: nextStep ? nextStep.path : undefined,
       isCurrent: false,
+      options: utils.getWizardStepOptions(stepRoute),
     });
     this.onStepDataChange();
   }

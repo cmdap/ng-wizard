@@ -1,14 +1,18 @@
 <div class="ng-wizard-buttons-container">
   <div *ngIf="currentStepData$ | async as currentStepData" class="ng-wizard-buttons">
-    <button *ngIf="currentStepData.previousStep"
+    <button *ngIf="currentStepData.previousStep && !currentStepData.options.buttons?.previous?.hidden"
             (click)="goToPreviousStep()"
             class="ng-wizard-button-previous">
-      <span [innerHTML]="wizardOptions.buttons.previous.label" class="ng-wizard-button-label"></span>
+      <span
+        [innerHTML]="currentStepData.options.buttons?.previous?.label || wizardOptions.buttons.previous.label"
+        class="ng-wizard-button-label"></span>
     </button>
-    <button *ngIf="currentStepData.nextStep"
+    <button *ngIf="currentStepData.nextStep && !currentStepData.options.buttons?.next?.hidden"
             (click)="goToNextStep()"
             class="ng-wizard-button-next">
-      <span [innerHTML]="wizardOptions.buttons.next.label" class="ng-wizard-button-label"></span>
+      <span
+        [innerHTML]="currentStepData.options.buttons?.next?.label || wizardOptions.buttons.next.label"
+        class="ng-wizard-button-label"></span>
     </button>
   </div>
 </div>

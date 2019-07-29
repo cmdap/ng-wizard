@@ -10,7 +10,7 @@ import { NgWizardOptions } from '../ng-wizard-options/ng-wizard-options.interfac
 })
 export class NgWizardNavigationComponent implements OnInit {
   public stepData$;
-  public currentStepData$;
+  public currentStepData;
 
   public wizardOptions: NgWizardOptions;
 
@@ -18,11 +18,14 @@ export class NgWizardNavigationComponent implements OnInit {
 
   ngOnInit() {
     this.stepData$ = this.service.getStepDataChangesAsObservable();
-    this.currentStepData$ = this.service.getCurrentStepDataAsObservable();
+    this.service.getCurrentStepDataAsObservable().subscribe(stepData => this.currentStepData = stepData);
     this.wizardOptions = this.service.wizardOptions;
   }
 
   public goToStep(stepData: NgWizardStepData) {
+    if (this.currentStepData.options.disableNavigation) {
+      return;
+    }
     this.service.navigateToStep(stepData);
   }
 }
