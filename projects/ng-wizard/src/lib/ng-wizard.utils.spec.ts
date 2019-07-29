@@ -103,4 +103,11 @@ describe('Utils', () => {
       } as NgWizardOptions);
     });
   });
+
+  describe('getWizardStepOptions', () => {
+    it('should return only the title attribute when the route does not have a data attribute', () => {
+      const route = { path: 'route-1' };
+      expect(utils.getWizardStepOptions(route)).toEqual({ title: 'Route 1' });
+    });
+  });
 });
