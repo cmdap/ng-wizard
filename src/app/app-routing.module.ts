@@ -10,17 +10,17 @@ import { Step5Component } from './step5/step5.component';
 const wizardConfig = {
   // navBar: {
   //   icons: {
-  //     previous: '<i class="material-icons">cake</i>',
-  //     current: '<i class="material-icons">star</i>',
-  //     next: '<i class="material-icons">pool</i>',
+  //     previous: '<i class="material-icons ng-wizard-icon">cake</i>',
+  //     current: '<i class="material-icons ng-wizard-icon">star</i>',
+  //     next: '<i class="material-icons ng-wizard-icon">pool</i>',
   //   },
   // },
   // buttons: {
   //   previous: {
-  //     label: '<i class="material-icons">arrow_left</i> Previous',
+  //     label: '<i class="material-icons ng-wizard-icon">arrow_left</i> Previous',
   //   },
   //   next: {
-  //     label: 'Next <i class="material-icons">arrow_right</i>',
+  //     label: 'Next <i class="material-icons ng-wizard-icon">arrow_right</i>',
   //   },
   // }
 };

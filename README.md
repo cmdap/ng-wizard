@@ -75,9 +75,9 @@ For example:
 const wizardConfig = {
   navBar: {
     icons: {
-      previous: '<i class="material-icons">cake</i>',
-      current: '<i class="material-icons">star</i>',
-      next: '<i class="material-icons">pool</i>',
+      previous: '<i class="material-icons ng-wizard-icon">cake</i>',
+      current: '<i class="material-icons ng-wizard-icon">star</i>',
+      next: '<i class="material-icons ng-wizard-icon">pool</i>',
     },
   },
 };
@@ -92,17 +92,17 @@ Currently the supported configuration options which can be overwritten are (with
 {
   navBar: {
     icons: {
-      previous: '<i class="material-icons">done</i>',
-      current: '<i class="material-icons">create</i>',
-      next: '<i class="material-icons">lock</i>',
+      previous: '<i class="material-icons ng-wizard-icon">done</i>',
+      current: '<i class="material-icons ng-wizard-icon">create</i>',
+      next: '<i class="material-icons ng-wizard-icon">lock</i>',
     },
   },
   buttons: {
     previous: {
-      label: '<i class="material-icons">chevron_left</i> Previous',
+      label: '<i class="material-icons ng-wizard-icon">chevron_left</i> Previous',
     },
     next: {
-      label: 'Next <i class="material-icons">chevron_right</i>',
+      label: 'Next <i class="material-icons ng-wizard-icon">chevron_right</i>',
     },
   }
 }
