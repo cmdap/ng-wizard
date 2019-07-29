@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ng-wizard-buttons-container\">\r\n  <div *ngIf=\"currentStepData$ | async as currentStepData\" class=\"ng-wizard-buttons\">\r\n    <button *ngIf=\"currentStepData.previousStep\"\r\n            (click)=\"goToPreviousStep()\"\r\n            class=\"ng-wizard-button-previous\">\r\n      <span [innerHTML]=\"wizardOptions.buttons.previous.label\" class=\"ng-wizard-button-label\"></span>\r\n    </button>\r\n    <button *ngIf=\"currentStepData.nextStep\"\r\n            (click)=\"goToNextStep()\"\r\n            class=\"ng-wizard-button-next\">\r\n      <span [innerHTML]=\"wizardOptions.buttons.next.label\" class=\"ng-wizard-button-label\"></span>\r\n    </button>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"ng-wizard-buttons-container\">\r\n  <div *ngIf=\"currentStepData$ | async as currentStepData\" class=\"ng-wizard-buttons\">\r\n    <button *ngIf=\"currentStepData.previousStep && !currentStepData.options.buttons?.previous?.hidden\"\r\n            (click)=\"goToPreviousStep()\"\r\n            class=\"ng-wizard-button-previous\">\r\n      <span\r\n        [innerHTML]=\"currentStepData.options.buttons?.previous?.label || wizardOptions.buttons.previous.label\"\r\n        class=\"ng-wizard-button-label\"></span>\r\n    </button>\r\n    <button *ngIf=\"currentStepData.nextStep && !currentStepData.options.buttons?.next?.hidden\"\r\n            (click)=\"goToNextStep()\"\r\n            class=\"ng-wizard-button-next\">\r\n      <span\r\n        [innerHTML]=\"currentStepData.options.buttons?.next?.label || wizardOptions.buttons.next.label\"\r\n        class=\"ng-wizard-button-label\"></span>\r\n    </button>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -247,7 +247,7 @@ var NoWsInterface = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ng-wizard-navigation-container\">\r\n  <nav class=\"ng-wizard-navigation\">\r\n    <ul class=\"ng-wizard-navigation-list\">\r\n      <li *ngFor=\"let stepData of stepData$ | async\" class=\"ng-wizard-navigation-list-item\">\r\n        <div *ngIf=\"stepData?.order < (currentStepData$ | async)?.order\"\r\n             (click)=\"goToStep(stepData)\" class=\"ng-wizard-navigation-link\">\r\n          <span [innerHTML]=\"wizardOptions.navBar.icons.previous\"></span>\r\n          <span class=\"ng-wizard-navigation-label\">\r\n            {{ stepData.title }}\r\n          </span>\r\n        </div>\r\n\r\n        <div\r\n          *ngIf=\"stepData?.order === (currentStepData$ | async)?.order\"\r\n          class=\"ng-wizard-navigation-active\">\r\n          <span [innerHTML]=\"wizardOptions.navBar.icons.current\"></span>\r\n          <span class=\"ng-wizard-navigation-label\">\r\n            {{ stepData.title }}\r\n          </span>\r\n        </div>\r\n\r\n        <div *ngIf=\"stepData?.order > (currentStepData$ | async)?.order\"\r\n             class=\"ng-wizard-navigation-disabled\">\r\n          <span [innerHTML]=\"wizardOptions.navBar.icons.next\"></span>\r\n          <span class=\"ng-wizard-navigation-label\">\r\n            {{ stepData.title }}\r\n          </span>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n</div>\r\n"
+module.exports = "<div class=\"ng-wizard-navigation-container\">\r\n  <nav class=\"ng-wizard-navigation\">\r\n    <ul class=\"ng-wizard-navigation-list\">\r\n      <li *ngFor=\"let stepData of stepData$ | async\" class=\"ng-wizard-navigation-list-item\">\r\n        <div *ngIf=\"stepData?.order < currentStepData?.order\"\r\n             (click)=\"goToStep(stepData);\"\r\n             [ngClass]=\"{\r\n               'ng-wizard-navigation-link': !currentStepData?.options.disableNavigation,\r\n               'ng-wizard-navigation-disabled': currentStepData?.options.disableNavigation\r\n             }\">\r\n          <span [innerHTML]=\"stepData.options.icon || wizardOptions.navBar.icons.previous\"></span>\r\n          <span class=\"ng-wizard-navigation-label\">\r\n            {{ stepData.options.title }}\r\n          </span>\r\n        </div>\r\n\r\n        <div\r\n          *ngIf=\"stepData?.order === currentStepData?.order\"\r\n          class=\"ng-wizard-navigation-active\">\r\n          <span [innerHTML]=\"stepData.options.icon || wizardOptions.navBar.icons.current\"></span>\r\n          <span class=\"ng-wizard-navigation-label\">\r\n            {{ stepData.options.title }}\r\n          </span>\r\n        </div>\r\n\r\n        <div *ngIf=\"stepData?.order > currentStepData?.order\"\r\n             class=\"ng-wizard-navigation-disabled\">\r\n          <span [innerHTML]=\"stepData.options.icon || wizardOptions.navBar.icons.next\"></span>\r\n          <span class=\"ng-wizard-navigation-label\">\r\n            {{ stepData.options.title }}\r\n          </span>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -290,11 +290,15 @@ var NgWizardNavigationComponent = /** @class */ (function () {
         this.service = service;
     }
     NgWizardNavigationComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.stepData$ = this.service.getStepDataChangesAsObservable();
-        this.currentStepData$ = this.service.getCurrentStepDataAsObservable();
+        this.service.getCurrentStepDataAsObservable().subscribe(function (stepData) { return _this.currentStepData = stepData; });
         this.wizardOptions = this.service.wizardOptions;
     };
     NgWizardNavigationComponent.prototype.goToStep = function (stepData) {
+        if (this.currentStepData.options.disableNavigation) {
+            return;
+        }
         this.service.navigateToStep(stepData);
     };
     NgWizardNavigationComponent = __decorate([
@@ -611,11 +615,11 @@ var NgWizardService = /** @class */ (function () {
         this.stepData.push({
             order: index + 1,
             componentName: stepRoute.component.name,
-            title: _ng_wizard_utils__WEBPACK_IMPORTED_MODULE_2__["getStepTitleFromRoute"](stepRoute),
             path: stepRoute.path,
             previousStep: previousStep ? previousStep.path : undefined,
             nextStep: nextStep ? nextStep.path : undefined,
             isCurrent: false,
+            options: _ng_wizard_utils__WEBPACK_IMPORTED_MODULE_2__["getWizardStepOptions"](stepRoute),
         });
         this.onStepDataChange();
     };
@@ -649,17 +653,18 @@ var NgWizardService = /** @class */ (function () {
 /*!*******************************************************!*\
   !*** ./projects/ng-wizard/src/lib/ng-wizard.utils.ts ***!
   \*******************************************************/
-/*! exports provided: getStepTitleFromRoute, componentImplementsNgWizardStepInterface, getStepDataForComponentName, getStepDataForPath, getDefaultWizardOptions, mergeWizardOptions */
+/*! exports provided: componentImplementsNgWizardStepInterface, getStepDataForComponentName, getStepDataForPath, getDefaultWizardOptions, mergeWizardOptions, getWizardStepOptions, getStepTitleFromRoute */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStepTitleFromRoute", function() { return getStepTitleFromRoute; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "componentImplementsNgWizardStepInterface", function() { return componentImplementsNgWizardStepInterface; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStepDataForComponentName", function() { return getStepDataForComponentName; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStepDataForPath", function() { return getStepDataForPath; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDefaultWizardOptions", function() { return getDefaultWizardOptions; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mergeWizardOptions", function() { return mergeWizardOptions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getWizardStepOptions", function() { return getWizardStepOptions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStepTitleFromRoute", function() { return getStepTitleFromRoute; });
 var __assign = (undefined && undefined.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -671,19 +676,6 @@ var __assign = (undefined && undefined.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-/**
- * Returns the step title based on the Route configuration.
- * If the route has a data.title attribute it will be returned.
- * Else the path will be capitalized and '-' or '_' characters will be replaces by spaces.
- *
- * @param route The Angular Route object
- */
-function getStepTitleFromRoute(route) {
-    if (route.data && route.data.title) {
-        return route.data.title;
-    }
-    return capitalize(insertSpaces(route.path));
-}
 /**
  * Returns true if the component extends the NgWizardStep class or implements the NgWizardStepInterface.
  *
@@ -744,6 +736,30 @@ function mergeWizardOptions(wizardOptions) {
         return getDefaultWizardOptions();
     }
     return __assign({}, getDefaultWizardOptions(), wizardOptions);
+}
+/**
+ * Returns the options passed to the wizard step route with an added title attribute.
+ *
+ * @param route The wizard step route configuration
+ */
+function getWizardStepOptions(route) {
+    if (!route.data) {
+        return { title: getStepTitleFromRoute(route) };
+    }
+    return __assign({}, route.data, { title: getStepTitleFromRoute(route) });
+}
+/**
+ * Returns the step title based on the Route configuration.
+ * If the route has a data.title attribute it will be returned.
+ * Else the path will be capitalized and '-' or '_' characters will be replaces by spaces.
+ *
+ * @param route The Angular Route object
+ */
+function getStepTitleFromRoute(route) {
+    if (route.data && route.data.title) {
+        return route.data.title;
+    }
+    return capitalize(insertSpaces(route.path));
 }
 /**
  * Capitalizes the first character of the passed value.
@@ -839,13 +855,32 @@ var wizardConfig = {
 //   },
 // }
 };
+var confirmationStepOptions = {
+    buttons: {
+        previous: {
+            label: '<i class="material-icons ng-wizard-icon">create</i> Edit',
+        },
+        next: {
+            label: 'Confirm <i class="material-icons ng-wizard-icon">done_all</i>',
+        }
+    }
+};
+var doneStepOptions = {
+    icon: '<i class="material-icons ng-wizard-icon">done_all</i>',
+    buttons: {
+        previous: {
+            hidden: true,
+        },
+    },
+    disableNavigation: true,
+};
 var routes = [
     { path: '', component: _projects_ng_wizard_src_lib_ng_wizard_component__WEBPACK_IMPORTED_MODULE_2__["NgWizardComponent"], children: [
             { path: 'personal', component: _step1_step1_component__WEBPACK_IMPORTED_MODULE_3__["Step1Component"] },
             { path: 'developer', component: _step2_step2_component__WEBPACK_IMPORTED_MODULE_4__["Step2Component"] },
             { path: 'angular', component: _step3_step3_component__WEBPACK_IMPORTED_MODULE_5__["Step3Component"] },
-            { path: 'confirmation', component: _step4_step4_component__WEBPACK_IMPORTED_MODULE_6__["Step4Component"] },
-            { path: 'done', component: _step5_step5_component__WEBPACK_IMPORTED_MODULE_7__["Step5Component"] },
+            { path: 'confirmation', component: _step4_step4_component__WEBPACK_IMPORTED_MODULE_6__["Step4Component"], data: confirmationStepOptions },
+            { path: 'done', component: _step5_step5_component__WEBPACK_IMPORTED_MODULE_7__["Step5Component"], data: doneStepOptions },
             { path: '**', redirectTo: 'personal' },
         ], data: wizardConfig },
     { path: '**', redirectTo: '' },
@@ -1242,7 +1277,7 @@ var Step2Component = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div [formGroup]=\"form\">\n  <h1>Angular usage</h1>\n  <p>\n    <label>Your project's Angular version*</label>\n    <input type=\"number\" formControlName=\"ngVersion\" size=\"3\"/>\n    <span class=\"error\"\n          *ngIf=\"form.get('ngVersion').touched && !form.get('ngVersion').valid\">\n      Version must be equal to or greater than 7.</span>\n  </p>\n  <p>\n    <input type=\"checkbox\" formControlName=\"ngRouter\">\n    <label>Your projects includes Angular's Router</label>\n  </p>\n</div>\n"
+module.exports = "<div [formGroup]=\"form\">\r\n  <h1>Angular usage</h1>\r\n  <p>\r\n    <label>Your project's Angular version*</label>\r\n    <input type=\"number\" formControlName=\"ngVersion\" size=\"3\"/>\r\n    <span class=\"error\"\r\n          *ngIf=\"form.get('ngVersion').touched && !form.get('ngVersion').valid\">\r\n      Version must be equal to or greater than 7.</span>\r\n  </p>\r\n  <p>\r\n    <input type=\"checkbox\" formControlName=\"ngRouter\" id=\"ngRouter\">\r\n    <label for=\"ngRouter\">Your projects includes Angular's Router</label>\r\n  </p>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1341,7 +1376,7 @@ var Step3Component = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Confirmation</h1>\n<table>\n  <tr>\n    <td>Last name</td>\n    <td>{{values.lastName}}</td>\n  </tr>\n  <tr>\n    <td>First name</td>\n    <td>{{values.firstName}}</td>\n  </tr>\n  <tr>\n    <td>GitHub username</td>\n    <td>{{values.gitUser}}</td>\n  </tr>\n  <tr>\n    <td>Favorite GitHub project</td>\n    <td>{{values.favoriteProject}}</td>\n  </tr>\n  <tr>\n    <td>Angular version</td>\n    <td>{{values.ngVersion}}</td>\n  </tr>\n  <tr>\n    <td>Angular router</td>\n    <td>{{values.ngRouter ? 'Yes' : 'No'}}</td>\n  </tr>\n</table>\n\n<br/><br/>\nTODO: Rename next button to 'Confirm' and previous button to 'Edit'\n"
+module.exports = "<h1>Confirmation</h1>\r\n<table>\r\n  <tr>\r\n    <td>Last name</td>\r\n    <td>{{values.lastName}}</td>\r\n  </tr>\r\n  <tr>\r\n    <td>First name</td>\r\n    <td>{{values.firstName}}</td>\r\n  </tr>\r\n  <tr>\r\n    <td>GitHub username</td>\r\n    <td>{{values.gitUser}}</td>\r\n  </tr>\r\n  <tr>\r\n    <td>Favorite GitHub project</td>\r\n    <td>{{values.favoriteProject}}</td>\r\n  </tr>\r\n  <tr>\r\n    <td>Angular version</td>\r\n    <td>{{values.ngVersion}}</td>\r\n  </tr>\r\n  <tr>\r\n    <td>Angular router</td>\r\n    <td>{{values.ngRouter ? 'Yes' : 'No'}}</td>\r\n  </tr>\r\n</table>\r\n"
 
 /***/ }),
 
@@ -1420,7 +1455,7 @@ var Step4Component = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>All steps completed!</h1>\n<br/>\nTODO: remove previous button and disable navigation\n"
+module.exports = "<h1>All steps completed!</h1>\r\n<br/>\r\nNavigation is disabled\r\n"
 
 /***/ }),
 
