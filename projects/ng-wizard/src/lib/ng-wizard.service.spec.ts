@@ -390,9 +390,7 @@ describe('NgWizardService with the wizard component on a path', () => {
 
       service.navigateToStep(stepData[1]);
 
-      expect(router.navigate).toHaveBeenCalledWith([stepData[1].path], {
-        relativeTo: jasmine.anything(),
-      });
+      expect(router.navigate).toHaveBeenCalledWith([wizardRoute.path + '/' + stepData[1].path]);
     });
   });
 });
