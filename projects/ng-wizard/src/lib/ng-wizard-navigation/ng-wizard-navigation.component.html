@@ -1,9 +1,8 @@
 <div class="ng-wizard-navigation-container">
   <nav class="ng-wizard-navigation">
     <ul class="ng-wizard-navigation-list">
-      <li *ngFor="let stepData of stepData$ | async" class="ng-wizard-navigation-list-item">
+      <li *ngFor="let stepData of stepData$ | async" class="ng-wizard-navigation-list-item" (click)="goToStep(stepData);">
         <div *ngIf="stepData?.order < currentStepData?.order"
-             (click)="goToStep(stepData);"
              [ngClass]="{
                'ng-wizard-navigation-link': !currentStepData?.options.disableNavigation,
                'ng-wizard-navigation-disabled': currentStepData?.options.disableNavigation

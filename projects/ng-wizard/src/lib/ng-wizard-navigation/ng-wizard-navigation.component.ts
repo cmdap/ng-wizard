@@ -23,7 +23,7 @@ export class NgWizardNavigationComponent implements OnInit {
   }
 
   public goToStep(stepData: NgWizardStepData) {
-    if (this.currentStepData.options.disableNavigation) {
+    if (this.currentStepData.options.disableNavigation || stepData.order >= this.currentStepData.order) {
       return;
     }
     this.service.navigateToStep(stepData);

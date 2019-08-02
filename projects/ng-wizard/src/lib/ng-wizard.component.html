@@ -1,7 +1,7 @@
-<div>
+<div class="ng-wizard-container">
   <ng-wizard-error [error]="error"></ng-wizard-error>
   <ng-wizard-navigation></ng-wizard-navigation>
-  <div class="ng-wizard-content-container" style="margin: auto;">
+  <div class="ng-wizard-content-container">
     <router-outlet (activate)="onActivate($event)"></router-outlet>
   </div>
   <ng-wizard-buttons></ng-wizard-buttons>
