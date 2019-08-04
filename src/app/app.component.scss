@@ -1,12 +1,6 @@
 .wizard-container {
   max-width: 800px;
-  margin: 25px auto;
-  padding: 0 25px 15px 25px;
-  border: solid 1px lightgrey;
-  border-radius: 10px;
-
-  background: url('../assets/ng-wizard-transparent.png') no-repeat right bottom;
-  background-size: contain;
+  margin: auto;
 }
 
 ::ng-deep label {
