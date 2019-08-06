@@ -182,10 +182,12 @@ your own style rules overwriting the existing ones.
 `TODO`: describe how to overwrite the styling.
 
 ## Planned improvements
-* Improve the responsiveness of the basic styles.
+* Improve the basic styles (responsiveness, options)
 * Improve the component's Accessibility (ARIA attributes, colors and
-  contrasts).
+  contrasts)
 * Add support for more Angular versions
+* Make the wizard step methods async
+* Add an option to not push step navigation to the browser history
 
 ## Contributing
 If you are willing to contribute to this project you can clone the source code from our [github repository](https://github.com/cmdap/ng-wizard).
