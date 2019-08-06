@@ -34,7 +34,7 @@ export function getStepDataForPath(stepData: NgWizardStepData[], path: string) {
 export function getStepDataForUrl(stepData: NgWizardStepData[], url: string) {
   // gets 'path' in the url '/wizard/path?key=value'
   const path = url.split('/').pop().split('?')[0];
-  return this.getStepDataForPath(stepData, path);
+  return getStepDataForPath(stepData, path);
 }
 
 /**
