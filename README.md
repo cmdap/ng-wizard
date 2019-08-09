@@ -202,6 +202,8 @@ You can use one of the provided themes by importing it in your `styles.scss` fil
 * Improve the component's Accessibility (ARIA attributes, colors and
   contrasts).
 * Add support for more Angular versions
+* Make the wizard step methods async
+* Add an option to not push step navigation to the browser history
 * Add support for setting the wizard's configuration programmatically
 
 ## Contributing

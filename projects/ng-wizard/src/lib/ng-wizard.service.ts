@@ -1,5 +1,5 @@
 import { ComponentRef, Injectable } from '@angular/core';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { Route, Router } from '@angular/router';
 import * as utils from './ng-wizard.utils';
 import { NoChildRoutes, NoWizardRoute, NoWsInterface } from './ng-wizard-error/ng-wizard.error';
 import { NgWizardStepData } from './ng-wizard-step/ng-wizard-step-data.interface';
@@ -19,7 +19,7 @@ export class NgWizardService {
 
   private stepDataChanges = new BehaviorSubject<NgWizardStepData[]>([]);
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(private router: Router) {}
 
   /**
    * Initializes the wizard by parsing the wizard's child routes found in Angular's router config
@@ -47,10 +47,7 @@ export class NgWizardService {
     // Cast to unknown before casting to NgWizardStep to let typescript know we checked and approve
     // this conversion.
     this.currentComponent = (componentRef as unknown) as NgWizardStep;
-    this.currentStepData = utils.getStepDataForComponentName(
-      this.stepData,
-      componentRef.constructor.name,
-    );
+    this.currentStepData = utils.getStepDataForUrl(this.stepData, this.router.url);
     this.currentStepData.componentRef = componentRef;
     this.resetCurrentStep();
     this.currentStepData.isCurrent = true;
@@ -97,10 +94,7 @@ export class NgWizardService {
    * Utility method to navigate to the previous step.
    */
   public navigateToPreviousStep() {
-    const previousStepData = utils.getStepDataForPath(
-      this.stepData,
-      this.currentStepData.previousStep,
-    );
+    const previousStepData = utils.getStepDataForPath(this.stepData, this.currentStepData.previousStep);
 
     return this.navigateToStep(previousStepData);
   }
@@ -127,9 +121,7 @@ export class NgWizardService {
    * @param wizardComponentName The name of the wizard component
    */
   private getWizardRoute(wizardComponentName: string): Route {
-    return this.router.config.find(
-      (route) => route.component && route.component.name === wizardComponentName,
-    );
+    return this.router.config.find((route) => route.component && route.component.name === wizardComponentName);
   }
 
   /**

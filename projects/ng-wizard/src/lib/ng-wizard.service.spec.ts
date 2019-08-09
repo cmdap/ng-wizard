@@ -13,12 +13,12 @@ import { NoChildRoutes, NoWizardRoute, NoWsInterface } from './ng-wizard-error/n
 @Component({
   template: 'Step 1 works!',
 })
-class Step1Component extends NgWizardStep { }
+class Step1Component extends NgWizardStep {}
 
 @Component({
   template: 'Step 2 works!',
 })
-class Step2Component extends NgWizardStep { }
+class Step2Component extends NgWizardStep {}
 
 @Component({
   template: 'Step 3 does not work!',
@@ -79,11 +79,18 @@ describe('NgWizardService', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [Step1Component, Step2Component, Step3Component, OtherComponent],
-      providers: [NgWizardService],
-      imports: [
-        NgWizardModule,
-        RouterTestingModule.withRoutes([wizardRoute, { path: 'other', component: OtherComponent }]),
+      providers: [
+        NgWizardService,
+        {
+          provide: Router,
+          useValue: {
+            config: [wizardRoute, { path: 'other', component: OtherComponent }],
+            url: 'step-2',
+            navigate: () => true,
+          },
+        },
       ],
+      imports: [NgWizardModule],
     }).compileComponents();
   }));
 
@@ -117,12 +124,12 @@ describe('NgWizardService', () => {
     });
 
     it('should store the current stepData and currentComponent', () => {
-      const componentRef = (new Step1Component() as unknown) as ComponentRef<any>;
+      const componentRef = (new Step2Component() as unknown) as ComponentRef<any>;
       service.registerActiveComponent(componentRef);
 
       expect((service as any).currentComponent).toBe(componentRef);
       expect((service as any).currentStepData).toEqual({
-        ...stepData[0],
+        ...stepData[1],
         isCurrent: true,
         componentRef: componentRef,
       });
@@ -130,21 +137,20 @@ describe('NgWizardService', () => {
 
     it('should emit a stepDataChange event', () => {
       spyOn((service as any).stepDataChanges, 'next');
-      const componentRef = (new Step1Component() as unknown) as ComponentRef<any>;
+      const componentRef = (new Step2Component() as unknown) as ComponentRef<any>;
       service.registerActiveComponent(componentRef);
 
       expect((service as any).stepDataChanges.next).toHaveBeenCalled();
     });
 
     it('should set only the latest registered active step as current step', () => {
-      const component1Ref = (new Step1Component() as unknown) as ComponentRef<any>;
-      service.registerActiveComponent(component1Ref);
-      expect((service as any).stepData[0].isCurrent).toBe(true);
-      expect((service as any).stepData[1].isCurrent).toBe(false);
-      expect((service as any).stepData[2].isCurrent).toBe(false);
+      (service as any).stepData[0].isCurrent = true;
+      (service as any).stepData[1].isCurrent = false;
+      (service as any).stepData[2].isCurrent = false;
+      const component1Ref = (new Step2Component() as unknown) as ComponentRef<any>;
 
-      const component2Ref = (new Step2Component() as unknown) as ComponentRef<any>;
-      service.registerActiveComponent(component2Ref);
+      service.registerActiveComponent(component1Ref);
+
       expect((service as any).stepData[0].isCurrent).toBe(false);
       expect((service as any).stepData[1].isCurrent).toBe(true);
       expect((service as any).stepData[2].isCurrent).toBe(false);
@@ -152,9 +158,7 @@ describe('NgWizardService', () => {
 
     it('should throw a NO_WS_INTERFACE error if the activated step does not implement the NgWizardStep interface', () => {
       const component3Ref = (new Step3Component() as unknown) as ComponentRef<any>;
-      expect(() => service.registerActiveComponent(component3Ref)).toThrow(
-        new NoWsInterface('Step3Component'),
-      );
+      expect(() => service.registerActiveComponent(component3Ref)).toThrow(new NoWsInterface('Step3Component'));
     });
   });
 
@@ -169,21 +173,21 @@ describe('NgWizardService', () => {
     });
 
     it("should call the current component's wsIsValid method", () => {
-      const component1Ref = (new Step1Component() as unknown) as ComponentRef<any>;
-      service.registerActiveComponent(component1Ref);
+      const component2Ref = (new Step2Component() as unknown) as ComponentRef<any>;
+      service.registerActiveComponent(component2Ref);
 
-      spyOn((component1Ref as unknown) as NgWizardStep, 'wsIsValid');
-      service.navigateToStep(stepData[1]);
-      expect(((component1Ref as unknown) as NgWizardStep).wsIsValid).toHaveBeenCalled();
+      spyOn((component2Ref as unknown) as NgWizardStep, 'wsIsValid');
+      service.navigateToStep(stepData[2]);
+      expect(((component2Ref as unknown) as NgWizardStep).wsIsValid).toHaveBeenCalled();
     });
 
     it("should call the current component's wsOnNext method if the order of the step is greater than the current step", () => {
-      const component1Ref = (new Step1Component() as unknown) as ComponentRef<any>;
-      service.registerActiveComponent(component1Ref);
+      const component2Ref = (new Step2Component() as unknown) as ComponentRef<any>;
+      service.registerActiveComponent(component2Ref);
 
-      spyOn((component1Ref as unknown) as NgWizardStep, 'wsOnNext');
-      service.navigateToStep(stepData[1]);
-      expect(((component1Ref as unknown) as NgWizardStep).wsOnNext).toHaveBeenCalled();
+      spyOn((component2Ref as unknown) as NgWizardStep, 'wsOnNext');
+      service.navigateToStep(stepData[2]);
+      expect(((component2Ref as unknown) as NgWizardStep).wsOnNext).toHaveBeenCalled();
     });
 
     it("should call the current component's wsOnPrevious method if the order of the step is less than the current step", () => {
@@ -196,20 +200,20 @@ describe('NgWizardService', () => {
     });
 
     it("should call the route's navigate method with the new path", () => {
-      const component1Ref = (new Step1Component() as unknown) as ComponentRef<any>;
-      service.registerActiveComponent(component1Ref);
+      const component2Ref = (new Step2Component() as unknown) as ComponentRef<any>;
+      service.registerActiveComponent(component2Ref);
 
-      service.navigateToStep(stepData[1]);
+      service.navigateToStep(stepData[0]);
 
-      expect(router.navigate).toHaveBeenCalledWith([stepData[1].path]);
+      expect(router.navigate).toHaveBeenCalledWith([stepData[0].path]);
     });
 
     it("should not call the route's navigate method if the wsOnNext method returns false", () => {
-      const component1Ref = (new Step1Component() as unknown) as ComponentRef<any>;
-      service.registerActiveComponent(component1Ref);
+      const component2Ref = (new Step2Component() as unknown) as ComponentRef<any>;
+      service.registerActiveComponent(component2Ref);
 
-      spyOn((component1Ref as unknown) as NgWizardStep, 'wsOnNext').and.returnValue(false);
-      service.navigateToStep(stepData[1]);
+      spyOn((component2Ref as unknown) as NgWizardStep, 'wsOnNext').and.returnValue(false);
+      service.navigateToStep(stepData[2]);
 
       expect(router.navigate).not.toHaveBeenCalled();
     });
@@ -231,13 +235,13 @@ describe('NgWizardService', () => {
     });
 
     it("should call the service's navigateToStep method with the next step's stepData", () => {
-      const component1Ref = (new Step1Component() as unknown) as ComponentRef<any>;
-      service.registerActiveComponent(component1Ref);
+      const component2Ref = (new Step2Component() as unknown) as ComponentRef<any>;
+      service.registerActiveComponent(component2Ref);
 
       spyOn(service, 'navigateToStep');
       service.navigateToNextStep();
 
-      expect(service.navigateToStep).toHaveBeenCalledWith(stepData[1]);
+      expect(service.navigateToStep).toHaveBeenCalledWith(stepData[2]);
     });
   });
 
@@ -267,10 +271,7 @@ describe('NgWizardService without wizard route', () => {
     TestBed.configureTestingModule({
       declarations: [OtherComponent],
       providers: [NgWizardService],
-      imports: [
-        NgWizardModule,
-        RouterTestingModule.withRoutes([{ path: 'other', component: OtherComponent }]),
-      ],
+      imports: [NgWizardModule, RouterTestingModule.withRoutes([{ path: 'other', component: OtherComponent }])],
     }).compileComponents();
   }));
 
@@ -280,9 +281,7 @@ describe('NgWizardService without wizard route', () => {
 
   describe('loadWizardRoutes', () => {
     it('should throw a NO_WIZARD_ROUTE error', () => {
-      expect(() => service.loadWizardRoutes(ngWizardComponentName)).toThrow(
-        new NoWizardRoute(ngWizardComponentName),
-      );
+      expect(() => service.loadWizardRoutes(ngWizardComponentName)).toThrow(new NoWizardRoute(ngWizardComponentName));
     });
   });
 });
@@ -296,10 +295,7 @@ describe('NgWizardService without child routes', () => {
     TestBed.configureTestingModule({
       declarations: [OtherComponent],
       providers: [NgWizardService],
-      imports: [
-        NgWizardModule,
-        RouterTestingModule.withRoutes([{ path: '', component: NgWizardComponent }]),
-      ],
+      imports: [NgWizardModule, RouterTestingModule.withRoutes([{ path: '', component: NgWizardComponent }])],
     }).compileComponents();
   }));
 
@@ -365,8 +361,11 @@ describe('NgWizardService with the wizard component on a path', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [Step1Component, Step2Component, Step3Component],
-      providers: [NgWizardService],
-      imports: [NgWizardModule, RouterTestingModule.withRoutes([wizardRoute])],
+      providers: [
+        NgWizardService,
+        { provide: Router, useValue: { config: [wizardRoute], url: 'step-1', navigate: () => true } },
+      ],
+      imports: [NgWizardModule],
     }).compileComponents();
   }));
 

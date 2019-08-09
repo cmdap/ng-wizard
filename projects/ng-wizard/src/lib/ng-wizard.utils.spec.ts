@@ -48,23 +48,26 @@ describe('Utils', () => {
     { path: 'some-other-path', componentName: 'SomeOtherComponent' } as NgWizardStepData,
   ];
 
-  describe('getStepDataFromComponentName', () => {
-    it('should return the stepData for the given componentName', () => {
-      expect(utils.getStepDataForComponentName(stepData, 'SomeComponent')).toEqual(stepData[0]);
-    });
-
-    it('should return undefined if there is no stepData for the given componentName', () => {
-      expect(utils.getStepDataForComponentName(stepData, 'Woooops')).toBeUndefined();
-    });
-  });
-
-  describe('getStepDataFromPath', () => {
+  describe('getStepDataForPath', () => {
     it('should return the stepData for the given path', () => {
       expect(utils.getStepDataForPath(stepData, 'some-other-path')).toEqual(stepData[1]);
     });
 
     it('should return undefined if there is no stepData for the given path', () => {
       expect(utils.getStepDataForPath(stepData, 'Woooops')).toBeUndefined();
+    });
+  });
+
+  describe('getStepDataForUrl', () => {
+    it('should return the stepData for the given url', () => {
+      expect(utils.getStepDataForUrl(stepData, '/some-path')).toEqual(stepData[0]);
+      expect(utils.getStepDataForUrl(stepData, '/wizard/some-other-path')).toEqual(stepData[1]);
+      expect(utils.getStepDataForUrl(stepData, '/wizard/child/some-other-path?url=no')).toEqual(stepData[1]);
+    });
+
+    it('should return undefined if there is no stepData for the given url', () => {
+      expect(utils.getStepDataForPath(stepData, '/does-not-exist')).toBeUndefined();
+      expect(utils.getStepDataForPath(stepData, '/wizard/does-not-exist?something=yes')).toBeUndefined();
     });
   });
 

@@ -498,9 +498,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var NgWizardService = /** @class */ (function () {
-    function NgWizardService(router, route) {
+    function NgWizardService(router) {
         this.router = router;
-        this.route = route;
         this.stepData = [];
         this.stepDataChanges = new rxjs__WEBPACK_IMPORTED_MODULE_4__["BehaviorSubject"]([]);
     }
@@ -528,7 +527,7 @@ var NgWizardService = /** @class */ (function () {
         // Cast to unknown before casting to NgWizardStep to let typescript know we checked and approve
         // this conversion.
         this.currentComponent = componentRef;
-        this.currentStepData = _ng_wizard_utils__WEBPACK_IMPORTED_MODULE_2__["getStepDataForComponentName"](this.stepData, componentRef.constructor.name);
+        this.currentStepData = _ng_wizard_utils__WEBPACK_IMPORTED_MODULE_2__["getStepDataForUrl"](this.stepData, this.router.url);
         this.currentStepData.componentRef = componentRef;
         this.resetCurrentStep();
         this.currentStepData.isCurrent = true;
@@ -645,7 +644,7 @@ var NgWizardService = /** @class */ (function () {
     };
     NgWizardService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], NgWizardService);
     return NgWizardService;
 }());
@@ -658,14 +657,14 @@ var NgWizardService = /** @class */ (function () {
 /*!*******************************************************!*\
   !*** ./projects/ng-wizard/src/lib/ng-wizard.utils.ts ***!
   \*******************************************************/
-/*! exports provided: componentImplementsNgWizardStepInterface, getStepDataForComponentName, getStepDataForPath, getDefaultWizardOptions, mergeWizardOptions, getWizardStepOptions, getStepTitleFromRoute */
+/*! exports provided: componentImplementsNgWizardStepInterface, getStepDataForPath, getStepDataForUrl, getDefaultWizardOptions, mergeWizardOptions, getWizardStepOptions, getStepTitleFromRoute */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "componentImplementsNgWizardStepInterface", function() { return componentImplementsNgWizardStepInterface; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStepDataForComponentName", function() { return getStepDataForComponentName; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStepDataForPath", function() { return getStepDataForPath; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStepDataForUrl", function() { return getStepDataForUrl; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDefaultWizardOptions", function() { return getDefaultWizardOptions; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mergeWizardOptions", function() { return mergeWizardOptions; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getWizardStepOptions", function() { return getWizardStepOptions; });
@@ -690,16 +689,6 @@ function componentImplementsNgWizardStepInterface(componentRef) {
     return 'wsIsValid' in componentRef && 'wsOnNext' in componentRef && 'wsOnPrevious' in componentRef;
 }
 /**
- * Returns the NgWizardStepData with the given ComponentName in the stepData list or undefined if
- * none is found.
- *
- * @param stepData The list with NgWizardStepDatas
- * @param componentName The componentName you want to get the NgWizardStepData for
- */
-function getStepDataForComponentName(stepData, componentName) {
-    return stepData.find(function (data) { return data.componentName === componentName; });
-}
-/**
  * Returns the NgWizardStepData with the given path in the stepData list or undefined if none is
  * found.
  *
@@ -708,6 +697,18 @@ function getStepDataForComponentName(stepData, componentName) {
  */
 function getStepDataForPath(stepData, path) {
     return stepData.find(function (data) { return data.path === path; });
+}
+/**
+ * Returns the NgWizardStepData for the given url in the stepData list or undefined if none is
+ * found.
+ *
+ * @param stepData The list with NgWizardStepDatas
+ * @param url The url which you want to get the NgWizardStepData for
+ */
+function getStepDataForUrl(stepData, url) {
+    // gets 'path' in the url '/wizard/path?key=value'
+    var path = url.split('/').pop().split('?')[0];
+    return getStepDataForPath(stepData, path);
 }
 /**
  * Returns the default wizard options.

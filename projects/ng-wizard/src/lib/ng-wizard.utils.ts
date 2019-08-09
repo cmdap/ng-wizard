@@ -14,17 +14,6 @@ export function componentImplementsNgWizardStepInterface(componentRef: Component
 }
 
 /**
- * Returns the NgWizardStepData with the given ComponentName in the stepData list or undefined if
- * none is found.
- *
- * @param stepData The list with NgWizardStepDatas
- * @param componentName The componentName you want to get the NgWizardStepData for
- */
-export function getStepDataForComponentName(stepData: NgWizardStepData[], componentName: string) {
-  return stepData.find(data => data.componentName === componentName);
-}
-
-/**
  * Returns the NgWizardStepData with the given path in the stepData list or undefined if none is
  * found.
  *
@@ -33,6 +22,19 @@ export function getStepDataForComponentName(stepData: NgWizardStepData[], compon
  */
 export function getStepDataForPath(stepData: NgWizardStepData[], path: string) {
   return stepData.find(data => data.path === path);
+}
+
+/**
+ * Returns the NgWizardStepData for the given url in the stepData list or undefined if none is
+ * found.
+ *
+ * @param stepData The list with NgWizardStepDatas
+ * @param url The url which you want to get the NgWizardStepData for
+ */
+export function getStepDataForUrl(stepData: NgWizardStepData[], url: string) {
+  // gets 'path' in the url '/wizard/path?key=value'
+  const path = url.split('/').pop().split('?')[0];
+  return getStepDataForPath(stepData, path);
 }
 
 /**
