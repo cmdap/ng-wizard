@@ -1,6 +1,6 @@
 {
   "name": "ng-wizard-demo",
-  "version": "1.4.3",
+  "version": "1.5.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
