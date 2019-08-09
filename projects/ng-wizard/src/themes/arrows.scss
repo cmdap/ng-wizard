@@ -1,0 +1,82 @@
+@import './common';
+
+/* Adapted from Dipu Raj's SmartWizard 4 arrows theme */
+
+nav.ng-wizard-navigation {
+  background-color: #ddd;
+  border: none;
+
+  ul.ng-wizard-navigation-list {
+    background: #f5f5f5;
+    overflow: hidden;
+
+    li.ng-wizard-navigation-list-item {
+      div {
+        padding: 5px 0 15px 45px;
+        position: relative;
+        display: block;
+        border: 0;
+        border-radius: 0;
+        outline-style: none;
+        color: #fff;
+        background: #5cb85c;
+
+        &:after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 0;
+          border-top: 50px solid transparent;
+          border-bottom: 50px solid transparent;
+          border-left: 30px solid #5cb85c;
+          position: absolute;
+          top: 50%;
+          margin-top: -50px;
+          left: 100%;
+          z-index: 2;
+        }
+
+        &:before {
+          content: " ";
+          display: block;
+          width: 0;
+          height: 0;
+          border-top: 50px solid transparent;
+          border-bottom: 50px solid transparent;
+          border-left: 30px solid #fff;
+          position: absolute;
+          top: 50%;
+          margin-top: -50px;
+          margin-left: 1px;
+          left: 100%;
+          z-index: 1;
+        }
+      }
+
+      &:first-child div {
+        padding-left: 15px;
+      }
+
+      div.ng-wizard-navigation-link {
+
+      }
+
+      div.ng-wizard-navigation-active {
+        background: #5bc0de !important;
+
+        &:after {
+          border-left: 30px solid #5bc0de !important;
+        }
+      }
+
+      div.ng-wizard-navigation-disabled {
+        background: #ddd !important;
+        cursor: not-allowed;
+
+        &:after {
+          border-left: 30px solid #ddd !important;
+        }
+      }
+    }
+  }
+}

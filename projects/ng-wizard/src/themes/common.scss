@@ -1,0 +1,114 @@
+/* Adapted from Dipu Raj's SmartWizard 4 themes */
+
+.ng-wizard-container {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+  border: solid 1px #e9e7dc;
+
+  .ng-wizard-content-container {
+    position: relative;
+    margin: 0;
+    padding: 10px;
+    border: 0 solid #D4D4D4;
+    text-align: left;
+  }
+}
+
+nav.ng-wizard-navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid #dee2e6;
+
+
+  ul.ng-wizard-navigation-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    li.ng-wizard-navigation-list-item {
+      display: list-item;
+      position: relative;
+      float: left;
+      cursor: pointer;
+
+      div {
+        border: none;
+        //color: #bbb;
+        text-decoration: none;
+        outline-style: none;
+        background: transparent;
+
+        i.ng-wizard-icon {
+          position: relative;
+          top: 7px;
+          border: solid 1px #fff;
+          border-radius: 50%;
+          padding: 5px;
+        }
+      }
+    }
+  }
+}
+
+div.ng-wizard-buttons-container {
+  padding: 10px;
+
+  div.ng-wizard-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "btn-previous btn-next";
+
+    button {
+      width: 150px;
+      height: 35px;
+      background-color: #6c757d;
+      border: solid 1px #6c757d;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      outline: none;
+
+      &:hover {
+        background-color: #5a6268;
+        border-color: #545b62;
+      }
+
+      &.ng-wizard-button-previous {
+        grid-area: btn-previous;
+        justify-self: start;
+      }
+
+      &.ng-wizard-button-next {
+        grid-area: btn-next;
+        justify-self: end;
+      }
+
+      .ng-wizard-button-label {
+        position: relative;
+        top: -5px;
+
+        i.ng-wizard-icon {
+          position: relative;
+          top: 7px;
+        }
+      }
+    }
+  }
+}
+
+/* Responsive CSS */
+@media screen and (max-width: 768px) {
+  .ng-wizard-container li.ng-wizard-navigation-list-item {
+    float: none !important;
+    border-right: none !important;
+  }
+}
