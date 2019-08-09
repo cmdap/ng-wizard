@@ -1,5 +1,5 @@
 # NgWizard
-![ng-wizard logo](ng-wizard-200.png)
+![ng-wizard logo](./readme-img/ng-wizard-200.png)
 
 The NgWizard component is a simple wizard/stepper component for
 [Angular](https://angular.io) 7 utilizing
@@ -175,17 +175,34 @@ for a user to access any step in the wizard via the URL. If the user is not allo
 conditions and redirect the user in the step component's `ngOnInit`
 method.
 
-### Styling
-The NgWizard component contains minimal styling rules to get you started
-during development. Your project will most likely require you to define
-your own style rules overwriting the existing ones.  
-`TODO`: describe how to overwrite the styling.
+### Themes
+The NgWizard component contains 3 themes you can use and extend, or you can write your own style rules.  
+The themes are based on Dipu Raj's SmartWizard 4 themes and are called `default`, `arrows` and `dots`.  
+Because this library uses Angular's style encapsulation you must import the theme or your style rules in the root `styles` file of your
+Angular project.  
+
+You can use one of the provided themes by importing it in your `styles.scss` file:
+```
+@import './node_modules/@cmdap/ng-wizard/themes/default';
+```
+
+**Default**  
+![default theme showcase](./readme-img/default-theme.png)
+
+**Arrows**  
+![default theme showcase](./readme-img/arrows-theme.png)
+
+**Dots**
+![default theme showcase](./readme-img/dots-theme.png)
+
+*The provided themes are currently not optimized for responsive designs.*
 
 ## Planned improvements
-* Improve the responsiveness of the basic styles.
+* Improve the responsiveness of the provided themes.
 * Improve the component's Accessibility (ARIA attributes, colors and
   contrasts).
 * Add support for more Angular versions
+* Add support for setting the wizard's configuration programmatically
 
 ## Contributing
 If you are willing to contribute to this project you can clone the source code from our [github repository](https://github.com/cmdap/ng-wizard).
@@ -203,5 +220,5 @@ In addition to the default Angular commands some useful NPM scripts have been ad
 | `ng build`| Builds the **demo project** to the `docs` folder. This folder will be published as the NgWizard's demo at [https://cmdap.github.io/ng-wizard](https://cmdap.github.io/ng-wizard). |
 | `npm test` | Runs the Karma/Jasmine tests for the **ng-wizard component** with code coverage enabled. |
 | `npm run lint` | Runs the linter on the **ng-wizard component**'s source code. |
-| `npm run build` | Builds the **ng-wizard component**'s source code to an NPM package in the `dist\ng-wizard` folder. Also copies the `README.md` (with assets) and `LICENSE.txt` files to that folder. |
+| `npm run build` | Builds the **ng-wizard component**'s source code to an NPM package in the `dist\ng-wizard` folder. Also copies the `README.md` (with assets) and `LICENSE.txt` files as well as the ng-wizard's `themes` folder to that folder. |
 | `npm publish dist\ng-wizard --access public` | **Only for project owners**. Publishes the **ng-wizard package** to the NPM repository at [https://www.npmjs.com/package/@cmdap/ng-wizard](https://www.npmjs.com/package/@cmdap/ng-wizard). |

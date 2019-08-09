@@ -5,7 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build ng-wizard && npm run copyFiles",
-    "copyFiles": "cpy README.md dist/ng-wizard && cpy ng-wizard.png dist/ng-wizard && cpy LICENSE.txt dist/ng-wizard",
+    "copyFiles": "cpy README.md dist/ng-wizard && cpy readme-img/*.png dist/ng-wizard/readme-img && cpy LICENSE.txt dist/ng-wizard && npm run copyThemes",
+    "copyThemes": "cpy projects/ng-wizard/src/themes/*.scss dist/ng-wizard/themes",
     "test": "ng test ng-wizard --code-coverage",
     "lint": "ng lint ng-wizard"
   },
