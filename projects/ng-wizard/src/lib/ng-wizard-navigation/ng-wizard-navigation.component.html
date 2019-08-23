@@ -7,7 +7,7 @@
                'ng-wizard-navigation-link': !currentStepData?.options.disableNavigation,
                'ng-wizard-navigation-disabled': currentStepData?.options.disableNavigation
              }">
-          <span [innerHTML]="stepData.options.icon || wizardOptions.navBar.icons.previous"></span>
+          <span [innerHTML]="stepData.options.icon || wizardOptions.navBar.icons.previous" class="ng-wizard-navigation-icon"></span>
           <span class="ng-wizard-navigation-label">
             {{ stepData.options.title }}
           </span>
@@ -16,7 +16,7 @@
         <div
           *ngIf="stepData?.order === currentStepData?.order"
           class="ng-wizard-navigation-active">
-          <span [innerHTML]="stepData.options.icon || wizardOptions.navBar.icons.current"></span>
+          <span [innerHTML]="stepData.options.icon || wizardOptions.navBar.icons.current" class="ng-wizard-navigation-icon"></span>
           <span class="ng-wizard-navigation-label">
             {{ stepData.options.title }}
           </span>
@@ -24,7 +24,7 @@
 
         <div *ngIf="stepData?.order > currentStepData?.order"
              class="ng-wizard-navigation-disabled">
-          <span [innerHTML]="stepData.options.icon || wizardOptions.navBar.icons.next"></span>
+          <span [innerHTML]="stepData.options.icon || wizardOptions.navBar.icons.next" class="ng-wizard-navigation-icon"></span>
           <span class="ng-wizard-navigation-label">
             {{ stepData.options.title }}
           </span>
