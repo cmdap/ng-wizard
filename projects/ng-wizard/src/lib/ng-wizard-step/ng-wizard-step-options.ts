@@ -11,5 +11,6 @@ export interface NgWizardStepOptions {
       hidden?: boolean;
     };
   };
+  cleanQueryParameters?: boolean;
   disableNavigation?: boolean;
 }

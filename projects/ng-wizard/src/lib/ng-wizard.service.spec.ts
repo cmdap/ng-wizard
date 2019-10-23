@@ -205,7 +205,7 @@ describe('NgWizardService', () => {
 
       service.navigateToStep(stepData[0]);
 
-      expect(router.navigate).toHaveBeenCalledWith([stepData[0].path]);
+      expect(router.navigate).toHaveBeenCalledWith([stepData[0].path], { queryParamsHandling: 'merge' });
     });
 
     it("should not call the route's navigate method if the wsOnNext method returns false", () => {
@@ -389,7 +389,7 @@ describe('NgWizardService with the wizard component on a path', () => {
 
       service.navigateToStep(stepData[1]);
 
-      expect(router.navigate).toHaveBeenCalledWith([wizardRoute.path + '/' + stepData[1].path]);
+      expect(router.navigate).toHaveBeenCalledWith([wizardRoute.path + '/' + stepData[1].path], { queryParamsHandling: 'merge' });
     });
   });
 });

@@ -79,6 +79,12 @@ export class NgWizardService {
     if (this.wizardRoute.path) {
       stepPath = [this.wizardRoute.path, stepData.path].join('/');
     }
+
+    if (stepData.options.cleanQueryParameters) {
+      return this.router.navigate([stepPath], { queryParams: {} });
+    } else {
+      return this.router.navigate([stepPath], { queryParamsHandling: 'merge' });
+    }
     return this.router.navigate([stepPath], { queryParamsHandling: 'merge' });
   }
 
