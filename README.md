@@ -120,6 +120,7 @@ const doneStepOptions = {
       hidden: true,
     },
   },
+  cleanQueryParameters: false,
   disableNavigation: true,
 };
 
@@ -145,6 +146,7 @@ overwritten are:
       hidden: boolean;
     };
   };
+  cleanQueryParameters: boolean; // Remove all existing parameters present in the route
   disableNavigation: boolean; // Disables navigation from the wizard's navigation bar
 }
 ```
