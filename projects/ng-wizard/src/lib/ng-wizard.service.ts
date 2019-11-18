@@ -142,6 +142,7 @@ export class NgWizardService {
 
     const childRoutes = wizardRoute.children.filter((route) => route.component);
 
+    this.stepData = [];
     for (let i = 0; i < childRoutes.length; i++) {
       this.registerStep(i, childRoutes[i], childRoutes[i - 1], childRoutes[i + 1]);
     }
