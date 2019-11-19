@@ -1,6 +1,6 @@
 {
   "name": "@cmdap/ng-wizard",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "A simple wizard/stepper component for Angular 7 utilizing Angular Routing for navigation.",
   "keywords": ["Angular", "Angular 7", "Wizard", "Stepper", "Router"],
   "bugs": {
