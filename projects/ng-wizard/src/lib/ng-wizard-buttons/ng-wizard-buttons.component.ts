@@ -28,4 +28,9 @@ export class NgWizardButtonsComponent implements OnInit {
   goToPreviousStep() {
     this.service.navigateToPreviousStep();
   }
+
+  goToPath(path: string) {
+    this.service.navigateToPath(path);
+  }
+
 }

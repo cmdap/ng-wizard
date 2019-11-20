@@ -10,6 +10,10 @@ export interface NgWizardStepOptions {
       label?: string;
       hidden?: boolean;
     };
+    extra?: {
+      label?: string;
+      path?: string;
+    }
   };
   cleanQueryParameters?: boolean;
   disableNavigation?: boolean;

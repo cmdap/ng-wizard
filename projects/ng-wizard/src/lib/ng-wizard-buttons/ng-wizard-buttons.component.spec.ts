@@ -1,4 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, tick } from '@angular/core/testing';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { NgWizardButtonsComponent } from './ng-wizard-buttons.component';
 import { NgWizardService } from '../ng-wizard.service';
@@ -6,6 +8,13 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { NgWizardStepData } from '../ng-wizard-step/ng-wizard-step-data.interface';
 import { Subject } from 'rxjs';
 import { getDefaultWizardOptions } from '../ng-wizard.utils';
+
+@Component({
+  selector: 'dummy-component',
+  template: `<div>dummy</div>`,
+})
+export class DummyComponent {
+}
 
 describe('NgWizardButtonsComponent', () => {
   let component: NgWizardButtonsComponent;
@@ -17,9 +26,11 @@ describe('NgWizardButtonsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [NgWizardButtonsComponent],
+      declarations: [NgWizardButtonsComponent, DummyComponent],
       providers: [NgWizardService],
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule.withRoutes([
+        { path: 'extra_path', component: DummyComponent }
+      ])],
     }).compileComponents();
   }));
 
@@ -144,4 +155,46 @@ describe('NgWizardButtonsComponent', () => {
     expect(element.querySelector('.ng-wizard-button-previous')).toBeNull();
     expect(element.querySelector('.ng-wizard-button-next')).toBeNull();
   });
+
+  it('should show the extra button labels when defined in the wizard step options', () => {
+    currentStepDataSubject.next({
+      previousStep: 'prev',
+      nextStep: 'next',
+      options: {
+        buttons: {
+          extra: {
+            label: 'EXTRA',
+            path: '/extra_path',
+          }
+        },
+      },
+    } as NgWizardStepData);
+    component.wizardOptions = getDefaultWizardOptions();
+    fixture.detectChanges();
+    expect(element.querySelector('.ng-wizard-button-extra .ng-wizard-button-label').innerHTML).toBe('EXTRA');
+  });
+
+  it('should go to the given path when the extra button is pressed', () => {
+    const path = '/extra_path';
+    currentStepDataSubject.next({
+      previousStep: 'prev',
+      nextStep: 'next',
+      options: {
+        buttons: {
+          extra: {
+            label: 'EXTRA',
+            path,
+          }
+        },
+      },
+    } as NgWizardStepData);
+    component.wizardOptions = getDefaultWizardOptions();
+    const router = TestBed.get(Router);
+    spyOn(router, 'navigate');
+    fixture.detectChanges();
+    const button = element.querySelector('.ng-wizard-button-extra');
+    button.click();
+    expect(router.navigate).toHaveBeenCalledWith([ path ], Object({ queryParamsHandling: 'merge' }));
+  });
+
 });

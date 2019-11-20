@@ -106,6 +106,13 @@ export class NgWizardService {
   }
 
   /**
+   * Utility method to navigate to a specific route path (external to the wizard)
+   */
+  public navigateToPath(path: string) {
+    return this.router.navigate([path], { queryParamsHandling: 'merge' });
+  }
+
+  /**
    * Returns the step data changes as an observable.
    */
   public getStepDataChangesAsObservable(): Observable<NgWizardStepData[]> {
