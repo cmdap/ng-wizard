@@ -1,23 +1,29 @@
 {
   "name": "@cmdap/ng-wizard",
-  "version": "1.8.0",
-  "description": "A simple wizard/stepper component for Angular 7 utilizing Angular Routing for navigation.",
-  "keywords": ["Angular", "Angular 7", "Wizard", "Stepper", "Router"],
+  "version": "9.0.0",
+  "description": "A simple wizard/stepper component for Angular 9 utilizing Angular Routing for navigation.",
+  "keywords": [
+    "Angular",
+    "Angular 9",
+    "Wizard",
+    "Stepper",
+    "Router"
+  ],
   "bugs": {
-    "url" : "https://github.com/cmdap/ng-wizard/issues",
-    "email" : "jonasbrems@gmail.com"
+    "url": "https://github.com/cmdap/ng-wizard/issues",
+    "email": "jonasbrems@gmail.com"
   },
   "license": "MIT",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/cmdap/ng-wizard.git"
+    "type": "git",
+    "url": "https://github.com/cmdap/ng-wizard.git"
   },
   "author": "Jonas Brems",
   "contributors": [],
   "private": false,
   "peerDependencies": {
-    "@angular/common": "^7.0.0",
-    "@angular/core": "^7.0.0",
-    "@angular/router": "^7.0.0"
+    "@angular/common": "~9.0.5",
+    "@angular/core": "~9.0.5",
+    "@angular/router": "~9.0.5"
   }
 }

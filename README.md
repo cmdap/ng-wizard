@@ -2,7 +2,7 @@
 ![ng-wizard logo](./readme-img/ng-wizard-200.png)
 
 The NgWizard component is a simple wizard/stepper component for
-[Angular](https://angular.io) 7 utilizing
+[Angular](https://angular.io) 9 utilizing
 [Angular Routing](https://angular.io/guide/router) for navigation.
 
 A demo can be found at
