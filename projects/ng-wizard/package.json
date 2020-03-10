@@ -1,6 +1,6 @@
 {
   "name": "@cmdap/ng-wizard",
-  "version": "2.0.0",
+  "version": "9.0.0",
   "description": "A simple wizard/stepper component for Angular 9 utilizing Angular Routing for navigation.",
   "keywords": [
     "Angular",
