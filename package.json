@@ -1,10 +1,10 @@
 {
   "name": "ng-wizard-demo",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build ng-wizard && npm run copyFiles",
+    "build": "ng build ng-wizard --prod && npm run copyFiles",
     "copyFiles": "cpy README.md dist/ng-wizard && cpy readme-img/*.png dist/ng-wizard/readme-img && cpy LICENSE.txt dist/ng-wizard && npm run copyThemes",
     "copyThemes": "cpy projects/ng-wizard/src/themes/*.scss dist/ng-wizard/themes",
     "test": "ng test ng-wizard --code-coverage",
@@ -26,7 +26,7 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.900.5",
+    "@angular-devkit/build-angular": "^0.1000.6",
     "@angular-devkit/build-ng-packagr": "~0.900.5",
     "@angular/cli": "^9.0.5",
     "@angular/compiler-cli": "~9.0.5",

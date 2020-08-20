@@ -41,6 +41,6 @@ export class Step3Component extends NgWizardStep implements OnInit {
   }
 
   private validateNgVersion(control: FormControl) {
-    return control.value && control.value >= 7 ? null : { validateNgVersion: { valid: false } };
+    return control.value && control.value >= 9 ? null : { validateNgVersion: { valid: false } };
   }
 }

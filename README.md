@@ -14,8 +14,22 @@ A demo can be found at
     ```
     $ npm install @cmdap/ng-wizard
     ```
+2. In your `app.module.ts` add `NgWizardModule` to your imports array.
+   ```
+   import { NgWizardModule } from '@cmdap/ng-wizard';
+   
+   @NgModule({
+     declarations: [...],
+     imports: [
+       ...,
+       NgWizardModule,
+     ],
+     providers: [...],
+     bootstrap: [...]
+   })
+   ```
 
-2. Then add a route for the `NgWizardComponent` to your Angular
+3. Then add a route for the `NgWizardComponent` to your Angular
     router configuration with each step in the wizard as a child route.
 
     For example, your `app-routing.module.ts` file for a wizard with 2 steps can look like this (import statements hidden):
@@ -38,7 +52,7 @@ A demo can be found at
     export class AppRoutingModule { }
     ```
 
-3. Finally, have your step components extend the `NgWizardStep` class or
+4. Finally, have your step components extend the `NgWizardStep` class or
     implement the `NgWizardStepInterface`.
     
     A minimal step component file can look like this:
@@ -57,7 +71,7 @@ A demo can be found at
     }
     ```
 
-4. If you want to use the NgWizard's default
+5. If you want to use the NgWizard's default
     [Material icons](https://material.io/tools/icons) in your project you
     have to import the
     [material icons stylesheet](https://fonts.googleapis.com/icon?family=Material+Icons)
