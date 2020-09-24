@@ -71,14 +71,14 @@ export class NgWizardService {
       return;
     }
 
-    let stepPath = stepData.path;
     // If the wizard is added to a specific path in the application we have to join that path and
     // the step's path as the path to navigate to.
     // The Angular Router's relativeTo option does not seem to work when using the hash location
     // strategy.
-    if (this.wizardRoute.path) {
-      stepPath = [this.wizardRoute.path, stepData.path].join('/');
-    }
+    // The path is based on the current route to allow route parameter
+    const routeFragment = this.router.url.split('/');
+    routeFragment[routeFragment.length - 1] = stepData.path;
+    const stepPath = routeFragment.join('/');
 
     if (stepData.options.cleanQueryParameters) {
       return this.router.navigate([stepPath], { queryParams: {} });
