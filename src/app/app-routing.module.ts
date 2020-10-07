@@ -6,23 +6,24 @@ import { Step2Component } from './step2/step2.component';
 import { Step3Component } from './step3/step3.component';
 import { Step4Component } from './step4/step4.component';
 import { Step5Component } from './step5/step5.component';
+import { NestedExampleComponent } from './nested-example/nested-example.component';
 
 const wizardConfig = {
-  // navBar: {
-  //   icons: {
-  //     previous: '<i class="material-icons ng-wizard-icon">cake</i>',
-  //     current: '<i class="material-icons ng-wizard-icon">star</i>',
-  //     next: '<i class="material-icons ng-wizard-icon">pool</i>',
-  //   },
-  // },
-  // buttons: {
-  //   previous: {
-  //     label: '<i class="material-icons ng-wizard-icon">arrow_left</i> Previous',
-  //   },
-  //   next: {
-  //     label: 'Next <i class="material-icons ng-wizard-icon">arrow_right</i>',
-  //   },
-  // }
+  navBar: {
+    icons: {
+      previous: '<i class="material-icons ng-wizard-icon">cake</i>',
+      current: '<i class="material-icons ng-wizard-icon">star</i>',
+      next: '<i class="material-icons ng-wizard-icon">pool</i>',
+    },
+  },
+  buttons: {
+    previous: {
+      label: '<i class="material-icons ng-wizard-icon">arrow_left</i> Previous',
+    },
+    next: {
+      label: 'Next <i class="material-icons ng-wizard-icon">arrow_right</i>',
+    },
+  }
 };
 
 const confirmationStepOptions = {
@@ -47,6 +48,16 @@ const doneStepOptions = {
 };
 
 const routes: Routes = [
+  { path: 'nested/:id', component: NestedExampleComponent, children: [
+      { path: 'wizard', component: NgWizardComponent, children: [
+          { path: 'personal', component: Step1Component },
+          { path: 'developer', component: Step2Component },
+          { path: 'angular', component: Step3Component },
+          { path: 'confirmation', component: Step4Component, data: confirmationStepOptions },
+          { path: 'done', component: Step5Component, data: doneStepOptions },
+          { path: '**', redirectTo: 'personal' },
+      ], data: { name: 'nestedExample', ...wizardConfig}}
+  ]},
   { path: '', component: NgWizardComponent, children: [
       { path: 'personal', component: Step1Component },
       { path: 'developer', component: Step2Component },
@@ -54,7 +65,7 @@ const routes: Routes = [
       { path: 'confirmation', component: Step4Component, data: confirmationStepOptions },
       { path: 'done', component: Step5Component, data: doneStepOptions },
       { path: '**', redirectTo: 'personal' },
-  ], data: wizardConfig},
+  ]},
   { path: '**', redirectTo: '' },
 ];
 

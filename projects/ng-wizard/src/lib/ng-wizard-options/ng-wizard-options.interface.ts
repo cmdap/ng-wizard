@@ -1,4 +1,5 @@
 export interface NgWizardOptions {
+  name: string;
   navBar: {
     icons: {
       previous: string;
