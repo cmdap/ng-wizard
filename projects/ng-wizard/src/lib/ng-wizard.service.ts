@@ -25,9 +25,10 @@ export class NgWizardService {
    * Initializes the wizard by parsing the wizard's child routes found in Angular's router config
    * into a list of NgWizardStepData.
    * @param wizardComponentName The name of the wizard component
+   * @param wizardName The unique name of the wizard
    */
-  public loadWizardRoutes(wizardComponentName: string) {
-    this.wizardRoute = this.getWizardRoute(wizardComponentName);
+  public loadWizardRoutes(wizardComponentName: string, wizardName: string = '') {
+    this.wizardRoute = this.getWizardRoute(wizardComponentName, wizardName);
     if (!this.wizardRoute) {
       throw new NoWizardRoute(wizardComponentName);
     }
@@ -77,7 +78,8 @@ export class NgWizardService {
     // strategy.
     // The path is based on the current route to allow route parameter
     const routeFragment = this.router.url.split('/');
-    routeFragment[routeFragment.length - 1] = stepData.path;
+    routeFragment.pop();
+    routeFragment.push(stepData.path);
     const stepPath = routeFragment.join('/');
 
     if (stepData.options.cleanQueryParameters) {
@@ -85,7 +87,6 @@ export class NgWizardService {
     } else {
       return this.router.navigate([stepPath], { queryParamsHandling: 'merge' });
     }
-    return this.router.navigate([stepPath], { queryParamsHandling: 'merge' });
   }
 
   /**
@@ -132,9 +133,30 @@ export class NgWizardService {
   /**
    * Returns the Angular Route for the wizard component found in Angular's router config.
    * @param wizardComponentName The name of the wizard component
+   * @param wizardName The unique name of the wizard
    */
-  private getWizardRoute(wizardComponentName: string): Route {
-    return this.router.config.find((route) => route.component && route.component.name === wizardComponentName);
+  private getWizardRoute(wizardComponentName: string, wizardName: string): Route {
+    const wizardRoutes = this.getAllWizardRoutes(this.router.config, wizardComponentName);
+    if (wizardName) {
+      return wizardRoutes.find((route) => route.data && route.data.name === wizardName);
+    } else {
+      return wizardRoutes.find((route) => !route.data || !route.data.name);
+    }
+  }
+
+  /**
+   * From a given array of routes config, returns an array of routes config whose component is wizardComponentName.
+   * Recursively look down every children route config
+   * @param routes An array of route config
+   * @param wizardComponentName The name of the component to look for
+   */
+  private getAllWizardRoutes (routes: Route[], wizardComponentName: string): Route[] {
+    let wizardRoutes = routes.filter((route) => route.component && route.component.name === wizardComponentName);
+    routes.filter((route) => route.children && route.children.length > 0).forEach((routeWithChildren) => {
+      const childWizardRoutes = this.getAllWizardRoutes(routeWithChildren.children, wizardComponentName);
+      wizardRoutes = wizardRoutes.concat(childWizardRoutes);
+    });
+    return wizardRoutes;
   }
 
   /**

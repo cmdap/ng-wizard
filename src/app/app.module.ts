@@ -10,6 +10,7 @@ import { Step3Component } from './step3/step3.component';
 import { Step4Component } from './step4/step4.component';
 import { Step5Component } from './step5/step5.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NestedExampleComponent } from './nested-example/nested-example.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     Step2Component,
     Step3Component,
     Step4Component,
-    Step5Component
+    Step5Component,
+    NestedExampleComponent
   ],
   imports: [
     BrowserModule,

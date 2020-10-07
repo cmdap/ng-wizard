@@ -1,5 +1,6 @@
 import { Component, ComponentRef } from '@angular/core';
 import { NgWizardService } from './ng-wizard.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'ng-wizard',
@@ -7,10 +8,17 @@ import { NgWizardService } from './ng-wizard.service';
 })
 export class NgWizardComponent {
   public error: Error;
+  private wizardName: string;
 
-  constructor(private service: NgWizardService) {
+  constructor(
+    private service: NgWizardService,
+    private route: ActivatedRoute,
+  ) {
     try {
-      this.service.loadWizardRoutes(this.constructor.name);
+      this.route.data.subscribe(data => {
+        this.wizardName = data ? data.name : '';
+      });
+      this.service.loadWizardRoutes(this.constructor.name, this.wizardName);
     } catch (error) {
       this.error = error;
     }

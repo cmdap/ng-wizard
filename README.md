@@ -104,6 +104,7 @@ const routes: Routes = [
 Currently the supported configuration options which can be overwritten are (with their default values):
 ```typescript
 {
+  name: '',
   navBar: {
     icons: {
       previous: '<i class="material-icons ng-wizard-icon">done</i>',
@@ -164,6 +165,30 @@ overwritten are:
   disableNavigation: boolean; // Disables navigation from the wizard's navigation bar
 }
 ```
+
+### Using more than one wizard
+If you want to use several different NgWizard on your project,
+you need to assign a unique `name` option on each of them. 
+This option is optional,
+but you can't have more than one unnammed NgWizard on your project.
+
+```typescript
+const routes: Routes = [
+  { 
+    path: 'wizard-1', 
+    component: NgWizardComponent, 
+    children: [...],
+    data: { name: 'my-wizard' },
+  },
+  { 
+    path: 'wizard-2', 
+    component: NgWizardComponent, 
+    children: [...],
+    data: { name: 'my-other-wizard' },
+  },
+];
+```
+
 
 ### Hooks
 Before navigating, the NgWizard component will call the active step's `wsOnNext` or `wsOnPrevious` method.

@@ -29,7 +29,7 @@ describe('NgWizardComponent', () => {
   }));
 
   beforeEach(() => {
-    service = TestBed.get(NgWizardService);
+    service = TestBed.inject(NgWizardService);
   });
 
   describe('no errors', () => {
@@ -44,7 +44,7 @@ describe('NgWizardComponent', () => {
     });
 
     it('should call the service\'s loadWizardRoutes method on creation', () => {
-      expect(service.loadWizardRoutes).toHaveBeenCalledWith(component.constructor.name);
+      expect(service.loadWizardRoutes).toHaveBeenCalledWith(component.constructor.name, undefined);
     });
 
     it('should call the service\'s registerActiveComponent method when a child component gets displayed', fakeAsync(() => {
@@ -69,7 +69,7 @@ describe('NgWizardComponent', () => {
     });
 
     it('should catch the service\'s loadWizardRoutes error', () => {
-      expect(service.loadWizardRoutes).toHaveBeenCalledWith(component.constructor.name);
+      expect(service.loadWizardRoutes).toHaveBeenCalledWith(component.constructor.name, undefined);
       expect(component.error).toEqual(new NoWizardRoute(''));
     });
 
