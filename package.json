@@ -1,6 +1,6 @@
 {
   "name": "ng-wizard-demo",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -26,7 +26,7 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.1000.6",
+    "@angular-devkit/build-angular": "0.901.9",
     "@angular-devkit/build-ng-packagr": "~0.900.5",
     "@angular/cli": "^9.0.5",
     "@angular/compiler-cli": "~9.0.5",

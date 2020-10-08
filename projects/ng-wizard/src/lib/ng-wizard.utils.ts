@@ -42,6 +42,7 @@ export function getStepDataForUrl(stepData: NgWizardStepData[], url: string) {
  */
 export function getDefaultWizardOptions(): NgWizardOptions {
   return {
+    name: '',
     navBar: {
       icons: {
         previous: '<i class="material-icons ng-wizard-icon">done</i>',
