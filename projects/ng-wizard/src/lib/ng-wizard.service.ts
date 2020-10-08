@@ -84,9 +84,8 @@ export class NgWizardService {
 
     if (stepData.options.cleanQueryParameters) {
       return this.router.navigate([stepPath], { queryParams: {} });
-    } else {
-      return this.router.navigate([stepPath], { queryParamsHandling: 'merge' });
     }
+    return this.router.navigate([stepPath], { queryParamsHandling: 'merge' });
   }
 
   /**
@@ -139,9 +138,8 @@ export class NgWizardService {
     const wizardRoutes = this.getAllWizardRoutes(this.router.config, wizardComponentName);
     if (wizardName) {
       return wizardRoutes.find((route) => route.data && route.data.name === wizardName);
-    } else {
-      return wizardRoutes.find((route) => !route.data || !route.data.name);
     }
+    return wizardRoutes.find((route) => !route.data || !route.data.name);
   }
 
   /**
