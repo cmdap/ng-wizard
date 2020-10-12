@@ -50,6 +50,7 @@ describe('NgWizardService', () => {
       { path: 'step-3', component: Step3Component },
       { path: '**', redirectTo: 'step-1' },
     ],
+    data: { name: ngWizardComponentName }
   };
 
   const stepData: NgWizardStepData[] = [
@@ -107,16 +108,6 @@ describe('NgWizardService', () => {
   describe('loadWizardRoutes', () => {
     it('should get the route config for the NgWizardComponent and store it', () => {
       service.loadWizardRoutes(ngWizardComponentName);
-      expect((service as any).wizardRoute).toEqual(wizardRoute);
-    });
-
-    it('should get the route config for the NgWizardComponent with empty name', () => {
-      service.loadWizardRoutes(ngWizardComponentName, '');
-      expect((service as any).wizardRoute).toEqual(wizardRoute);
-    });
-
-    it('should get the route config for the NgWizardComponent with undefined name', () => {
-      service.loadWizardRoutes(ngWizardComponentName, undefined);
       expect((service as any).wizardRoute).toEqual(wizardRoute);
     });
 
@@ -311,7 +302,9 @@ describe('NgWizardService without child routes', () => {
     TestBed.configureTestingModule({
       declarations: [OtherComponent],
       providers: [NgWizardService],
-      imports: [NgWizardModule, RouterTestingModule.withRoutes([{ path: '', component: NgWizardComponent }])],
+      imports: [NgWizardModule, RouterTestingModule.withRoutes(
+        [{ path: '', component: NgWizardComponent, data: { name: ngWizardComponentName } }]
+      )],
     }).compileComponents();
   }));
 
@@ -342,6 +335,7 @@ describe('NgWizardService with the wizard component on a path', () => {
       { path: 'step-3', component: Step3Component },
       { path: '**', redirectTo: 'step-1' },
     ],
+    data: { name: ngWizardComponentName }
   };
 
   const stepData: NgWizardStepData[] = [
@@ -412,8 +406,6 @@ describe('NgWizardService with the wizard component on a path', () => {
 
 describe('NgWizardService with more than one wizard', () => {
   let service: NgWizardService;
-
-  const ngWizardComponentName = 'NgWizardComponent';
 
   const wizardARoute: Route = {
     path: 'wizardA',
@@ -505,18 +497,18 @@ describe('NgWizardService with more than one wizard', () => {
   describe('loadWizardRoutes', () => {
     describe('for wizard A', () => {
       it('should store the child routes as a list of NgWizardStepData', () => {
-        service.loadWizardRoutes(ngWizardComponentName, wizardARoute.data.name);
+        service.loadWizardRoutes(wizardARoute.data.name);
         expect((service as any).stepData).toEqual(wizardAstepData);
       });
 
       it('should get the route config for the NgWizardComponent and store it', () => {
-        service.loadWizardRoutes(ngWizardComponentName, wizardARoute.data.name);
+        service.loadWizardRoutes(wizardARoute.data.name);
         expect((service as any).wizardRoute).toEqual(wizardARoute);
       });
 
       it('should emit a stepDataChange event for each added step', () => {
         spyOn((service as any).stepDataChanges, 'next');
-        service.loadWizardRoutes(ngWizardComponentName, wizardARoute.data.name);
+        service.loadWizardRoutes(wizardARoute.data.name);
         expect((service as any).stepDataChanges.next).toHaveBeenCalledWith(wizardAstepData);
         expect((service as any).stepDataChanges.next).toHaveBeenCalledTimes(2);
       });
@@ -524,18 +516,18 @@ describe('NgWizardService with more than one wizard', () => {
 
     describe('for wizard B', () => {
       it('should get the route config for the NgWizardComponent and store it', () => {
-        service.loadWizardRoutes(ngWizardComponentName, wizardBRoute.data.name);
+        service.loadWizardRoutes(wizardBRoute.data.name);
         expect((service as any).wizardRoute).toEqual(wizardBRoute);
       });
 
       it('should store the child routes as a list of NgWizardStepData', () => {
-        service.loadWizardRoutes(ngWizardComponentName, wizardBRoute.data.name);
+        service.loadWizardRoutes(wizardBRoute.data.name);
         expect((service as any).stepData).toEqual(wizardBstepData);
       });
 
       it('should emit a stepDataChange event for each added step', () => {
         spyOn((service as any).stepDataChanges, 'next');
-        service.loadWizardRoutes(ngWizardComponentName, wizardBRoute.data.name);
+        service.loadWizardRoutes(wizardBRoute.data.name);
 
         expect((service as any).stepDataChanges.next).toHaveBeenCalledTimes(2);
         expect((service as any).stepDataChanges.next).toHaveBeenCalledWith(wizardBstepData);
@@ -544,8 +536,8 @@ describe('NgWizardService with more than one wizard', () => {
 
     describe('for unknown wizard', () => {
       it('should throw a NO_WIZARD_ROUTE error', () => {
-        expect(() => service.loadWizardRoutes(ngWizardComponentName, 'unknown'))
-          .toThrow(new NoWizardRoute(ngWizardComponentName));
+        expect(() => service.loadWizardRoutes('unknown'))
+          .toThrow(new NoWizardRoute('unknown'));
       });
     });
   });
@@ -567,7 +559,7 @@ describe('NgWizardService with the wizard component on a nested path', () => {
       { path: 'step-2', component: Step2Component },
       { path: '**', redirectTo: 'step-1' },
     ],
-    data: { name: '' },
+    data: { name: ngWizardComponentName }
   };
 
   const stepData: NgWizardStepData[] = [
@@ -648,7 +640,7 @@ describe('NgWizardService with the wizard component on a dynamic path', () => {
       { path: 'step-2', component: Step2Component },
       { path: '**', redirectTo: 'step-1' },
     ],
-    data: {},
+    data: { name: ngWizardComponentName }
   };
 
   const stepData: NgWizardStepData[] = [

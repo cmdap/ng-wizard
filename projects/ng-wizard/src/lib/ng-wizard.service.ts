@@ -24,13 +24,12 @@ export class NgWizardService {
   /**
    * Initializes the wizard by parsing the wizard's child routes found in Angular's router config
    * into a list of NgWizardStepData.
-   * @param wizardComponentName The name of the wizard component
    * @param wizardName The unique name of the wizard
    */
-  public loadWizardRoutes(wizardComponentName: string, wizardName: string = '') {
-    this.wizardRoute = this.getWizardRoute(wizardComponentName, wizardName);
+  public loadWizardRoutes(wizardName: string) {
+    this.wizardRoute = this.getWizardRoute(wizardName);
     if (!this.wizardRoute) {
-      throw new NoWizardRoute(wizardComponentName);
+      throw new NoWizardRoute(wizardName);
     }
     this.wizardOptions = utils.mergeWizardOptions(this.wizardRoute.data);
     this.loadChildRoutes(this.wizardRoute);
@@ -131,27 +130,23 @@ export class NgWizardService {
 
   /**
    * Returns the Angular Route for the wizard component found in Angular's router config.
-   * @param wizardComponentName The name of the wizard component
    * @param wizardName The unique name of the wizard
    */
-  private getWizardRoute(wizardComponentName: string, wizardName: string): Route {
-    const wizardRoutes = this.getAllWizardRoutes(this.router.config, wizardComponentName);
-    if (wizardName) {
-      return wizardRoutes.find((route) => route.data && route.data.name === wizardName);
-    }
-    return wizardRoutes.find((route) => !route.data || !route.data.name);
+  private getWizardRoute(wizardName: string): Route {
+    const wizardRoutes = this.getAllWizardRoutes(this.router.config, wizardName);
+    return wizardRoutes.find((route) => route.data && route.data.name === wizardName);
   }
 
   /**
    * From a given array of routes config, returns an array of routes config whose component is wizardComponentName.
    * Recursively look down every children route config
    * @param routes An array of route config
-   * @param wizardComponentName The name of the component to look for
+   * @param wizardName The name of the wizard to look for
    */
-  private getAllWizardRoutes (routes: Route[], wizardComponentName: string): Route[] {
-    let wizardRoutes = routes.filter((route) => route.component && route.component.name === wizardComponentName);
+  private getAllWizardRoutes (routes: Route[], wizardName: string): Route[] {
+    let wizardRoutes = routes.filter((route) => route.data && route.data.name === wizardName);
     routes.filter((route) => route.children && route.children.length > 0).forEach((routeWithChildren) => {
-      const childWizardRoutes = this.getAllWizardRoutes(routeWithChildren.children, wizardComponentName);
+      const childWizardRoutes = this.getAllWizardRoutes(routeWithChildren.children, wizardName);
       wizardRoutes = wizardRoutes.concat(childWizardRoutes);
     });
     return wizardRoutes;

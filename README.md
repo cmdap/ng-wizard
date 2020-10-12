@@ -41,7 +41,7 @@ A demo can be found at
           { path: 'step-1', component: Step1Component },
           { path: 'step-2', component: Step2Component },
           { path: '**', redirectTo: 'step-1' },
-      ]},
+      ], data: { name: 'myWizard' }},
       { path: '**', redirectTo: '' },
     ];
     
@@ -87,6 +87,7 @@ Custom options can be passed to the NgWizard component via the `data` attribute 
 For example:
 ```typescript
 const wizardConfig = {
+  name: 'MyWizard',
   navBar: {
     icons: {
       previous: '<i class="material-icons ng-wizard-icon">cake</i>',
@@ -101,6 +102,8 @@ const routes: Routes = [
   { path: '**', redirectTo: '' },
 ];
 ```
+The `name` option is the only mandatory option. Every wizard needs to have a unique `name` defined on its route.
+
 Currently the supported configuration options which can be overwritten are (with their default values):
 ```typescript
 {
@@ -165,30 +168,6 @@ overwritten are:
   disableNavigation: boolean; // Disables navigation from the wizard's navigation bar
 }
 ```
-
-### Using more than one wizard
-If you want to use several different NgWizard on your project,
-you need to assign a unique `name` option on each of them. 
-This option is optional,
-but you can't have more than one unnammed NgWizard on your project.
-
-```typescript
-const routes: Routes = [
-  { 
-    path: 'wizard-1', 
-    component: NgWizardComponent, 
-    children: [...],
-    data: { name: 'my-wizard' },
-  },
-  { 
-    path: 'wizard-2', 
-    component: NgWizardComponent, 
-    children: [...],
-    data: { name: 'my-other-wizard' },
-  },
-];
-```
-
 
 ### Hooks
 Before navigating, the NgWizard component will call the active step's `wsOnNext` or `wsOnPrevious` method.

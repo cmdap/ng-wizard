@@ -16,9 +16,9 @@ export class NgWizardComponent {
   ) {
     try {
       this.route.data.subscribe(data => {
-        this.wizardName = data ? data.name : '';
+        this.wizardName = data.name;
       });
-      this.service.loadWizardRoutes(this.constructor.name, this.wizardName);
+      this.service.loadWizardRoutes(this.wizardName);
     } catch (error) {
       this.error = error;
     }

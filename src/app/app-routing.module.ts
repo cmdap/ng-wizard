@@ -65,7 +65,7 @@ const routes: Routes = [
       { path: 'confirmation', component: Step4Component, data: confirmationStepOptions },
       { path: 'done', component: Step5Component, data: doneStepOptions },
       { path: '**', redirectTo: 'personal' },
-  ]},
+  ], data: { name: 'ngWizard' }},
   { path: '**', redirectTo: '' },
 ];
 
