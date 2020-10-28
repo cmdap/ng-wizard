@@ -217,6 +217,12 @@ You can use one of the provided themes by importing it in your `styles.scss` fil
 
 *The provided themes are currently not optimized for responsive designs.*
 
+## Changelog
+### [10.0.0] - 2020-10-28
+#### Added
+- [BREAKING CHANGE] `name` field in `NgWizardOptions`. This field is mandatory for all NgWizard in your project. See [Wizard options](#Wizard-options)  
+
+
 ## Planned improvements
 * Improve the responsiveness of the provided themes.
 * Improve the component's Accessibility (ARIA attributes, colors and
