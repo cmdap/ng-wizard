@@ -222,16 +222,6 @@ You can use one of the provided themes by importing it in your `styles.scss` fil
 #### Added
 - [BREAKING CHANGE] `name` field in `NgWizardOptions`. This field is mandatory for all NgWizard in your project. See [Wizard options](#Wizard-options)  
 
-
-## Planned improvements
-* Improve the responsiveness of the provided themes.
-* Improve the component's Accessibility (ARIA attributes, colors and
-  contrasts).
-* Add support for more Angular versions
-* Make the wizard step methods async
-* Add an option to not push step navigation to the browser history
-* Add support for setting the wizard's configuration programmatically
-
 ## Contributing
 If you are willing to contribute to this project you can clone the source code from our [github repository](https://github.com/cmdap/ng-wizard).
 ```
