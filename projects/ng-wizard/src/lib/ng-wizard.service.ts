@@ -145,8 +145,14 @@ export class NgWizardService {
    */
   private getAllWizardRoutes (routes: Route[], wizardName: string): Route[] {
     let wizardRoutes = routes.filter((route) => route.data && route.data.name === wizardName);
+    // Recursive search in child routes
     routes.filter((route) => route.children && route.children.length > 0).forEach((routeWithChildren) => {
       const childWizardRoutes = this.getAllWizardRoutes(routeWithChildren.children, wizardName);
+      wizardRoutes = wizardRoutes.concat(childWizardRoutes);
+    });
+    // Recursive search in lazily loaded child routes
+    routes.filter((route) => (route as any)._loadedConfig?.routes?.length > 0).forEach((routeWithChildren) => {
+      const childWizardRoutes = this.getAllWizardRoutes((routeWithChildren as any)._loadedConfig.routes, wizardName);
       wizardRoutes = wizardRoutes.concat(childWizardRoutes);
     });
     return wizardRoutes;
